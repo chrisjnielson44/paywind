@@ -5,6 +5,7 @@ export default function Body() {
         <h1 className="font-bold text-white text-4xl animate-fade animate-once animate-ease-in">
             Log In Page
         </h1>    
+       
     </main>
     )
 }

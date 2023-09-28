@@ -32,7 +32,7 @@ export default function Body() {
                         <img className="" src="plaid.svg" alt="office content 1" />
                     </div>
                     <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
-                        <h2 className="mb-8 text-black text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Craft Your Financial Dashboard with Paywind</h2>
+                        <h2 className="mb-8 text-black text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Design Your Financial Dashboard with Paywind</h2>
                         <p className="mb-4 text-2xl">Introducing a finance app that bends to your will. With paywind's modular design, choose only the components you want, creating a personalized experience that mirrors your financial priorities. Your money, your way. Dive into a tailored financial journey with paywind today.</p>
                     </div>
 

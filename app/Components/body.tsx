@@ -8,7 +8,7 @@ export default function Body() {
                 <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
                     <div className="mr-auto place-self-center lg:col-span-7">
                         <h1 className="max-w-2xl mb-6 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Empower Your Finances with Paywind</h1>
-                        <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-2xl dark:text-gray-400">Discover the ultimate financial hub. Manage all your finances effortlessly in one simple, seamless app. Combining intuitive tools with personalized insights, Paywind ensures you're always in control of your financial journey. Dive in and experience the future of personal finance.</p>
+                        <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-2xl dark:text-gray-400">Discover the ultimate financial hub. Manage all your finances effortlessly in one simple, seamless app. Combining intuitive tools with personalized insights, Paywind ensures you&apos;re always in control of your financial journey. Dive in and experience the future of personal finance.</p>
                         <a href="/demo" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-bold text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 bg-green-500 hover:transition duration-300 ease-in-out bg-green-500 ">
                             View Demo
                         </a>
@@ -33,7 +33,7 @@ export default function Body() {
                     </div>
                     <div className="font-light text-gray-500 sm:text-lg dark:text-gray-400">
                         <h2 className="mb-8 text-black text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Design Your Financial Dashboard with Paywind</h2>
-                        <p className="mb-4 text-2xl">Introducing a finance app that bends to your will. With paywind's modular design, choose only the components you want, creating a personalized experience that mirrors your financial priorities. Your money, your way. Dive into a tailored financial journey with paywind today.</p>
+                        <p className="mb-4 text-2xl">Introducing a finance app that bends to your will. With paywind&apos;s modular design, choose only the components you want, creating a personalized experience that mirrors your financial priorities. Your money, your way. Dive into a tailored financial journey with paywind today.</p>
                     </div>
 
                 </div>

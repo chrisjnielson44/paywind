@@ -33,22 +33,19 @@ export default function AppInterface() {
                   </Link>
                   <Link
                     href="/demo/Metrics"
-                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/demo/Metrics' ? 'border-green-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700' }`}>                    Metrics
-                  </Link>
-                  {/* <Link
-                    href="/"
-                    className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${isActive() ? 'border-b-2 border-green-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                      }`}
-                  >
-                    Projects
+                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/demo/Metrics' ? 'border-green-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700' }`}>                    
+                    Metrics
                   </Link>
                   <Link
-                    href="#"
-                    className={`inline-flex items-center px-1 pt-1 text-sm font-medium ${isActive() ? 'border-b-2 border-green-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
-                      }`}
-                  >
-                    Calendar
-                  </Link> */}
+                    href="/demo/crypto"
+                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/demo/crypto' ? 'border-green-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700' }`}>                    
+                    Crypto
+                  </Link>
+                  <Link
+                    href="/demo/send-money"
+                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/demo/send-money' ? 'border-green-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700' }`}>                    
+                    Send Money
+                  </Link>
                 </div>
               </div>
               <div className="flex flex-1 items-center justify-center px-2 lg:ml-6 lg:justify-end">

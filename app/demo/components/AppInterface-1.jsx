@@ -1,7 +1,7 @@
 'use client'
 
 import Dashboard from '../dashboard/dashboard'
-import Banks from '../Metrics/banks'
+import Banks from '../Metrics/metrics'
 import { Fragment, useState } from 'react'
 import { Dialog, Menu, Transition } from '@headlessui/react'
 import {

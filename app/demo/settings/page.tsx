@@ -3,7 +3,7 @@ import Settings from './settings'
 
 export default function Home() {
     return(
-        <main className='bg-white'>
+        <main >
             <AppInterface/>
             <Settings/>
         </main>

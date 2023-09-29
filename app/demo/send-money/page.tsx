@@ -1,11 +1,11 @@
 import AppInterface from "../components/AppInterface-2";
-import Metrics from "./metrics";
+import SendMoney from "./SendMoney"
 
 export default function Home() {
     return(
         <main>
             <AppInterface/>
-            <Metrics/>
+            <SendMoney/>
         </main>
     )
 }

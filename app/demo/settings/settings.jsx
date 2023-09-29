@@ -22,7 +22,6 @@ const secondaryNavigation = [
     { name: 'Notifications', href: '#', icon: BellIcon, current: false },
     { name: 'Plan', href: '#', icon: CubeIcon, current: false },
     { name: 'Billing', href: '#', icon: CreditCardIcon, current: false },
-    { name: 'Team members', href: '#', icon: UsersIcon, current: false },
 ]
 
 function classNames(...classes) {
@@ -33,7 +32,7 @@ export default function Settings() {
     const [automaticTimezoneEnabled, setAutomaticTimezoneEnabled] = useState(true)
 
     return (
-        <>
+        <div className='bg-white dark:bg-gray-800 '> 
             <div className="mx-auto max-w-7xl pt-10 lg:flex lg:gap-x-16 lg:px-8">
                 <aside className="flex overflow-x-auto border-b border-gray-900/5 py-4 lg:block lg:w-64 lg:flex-none lg:border-0 lg:py-20">
                     <nav className="flex-none px-4 sm:px-6 lg:px-0">
@@ -65,18 +64,21 @@ export default function Settings() {
                 </aside>
 
                 <main className="px-4 py-16 sm:px-6 lg:flex-auto lg:px-0 lg:py-20">
+                    <div className='pb-8 flex justify-end '>
+                        <img class=" h-20 w-20 rounded-full border-2 shadow-xl" src="/smallprof.png" alt="" />
+                    </div>
                     <div className="mx-auto max-w-2xl space-y-16 sm:space-y-20 lg:mx-0 lg:max-w-none">
                         <div>
                             <h2 className="text-base font-semibold leading-7 text-gray-900">Profile</h2>
                             <p className="mt-1 text-sm leading-6 text-gray-500">
-                                This information will be displayed publicly so be careful what you share.
+                                
                             </p>
 
                             <dl className="mt-6 space-y-6 divide-y divide-gray-100 border-t border-gray-200 text-sm leading-6">
                                 <div className="pt-6 sm:flex">
                                     <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">Full name</dt>
                                     <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
-                                        <div className="text-gray-900">Tom Cook</div>
+                                        <div className="text-gray-900">Christopher Nielson</div>
                                         <button type="button" className="font-semibold text-green-600 hover:text-green-500">
                                             Update
                                         </button>
@@ -85,7 +87,16 @@ export default function Settings() {
                                 <div className="pt-6 sm:flex">
                                     <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">Email address</dt>
                                     <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
-                                        <div className="text-gray-900">tom.cook@example.com</div>
+                                        <div className="text-gray-900">example.email@paywind.io</div>
+                                        <button type="button" className="font-semibold text-green-600 hover:text-green-500">
+                                            Update
+                                        </button>
+                                    </dd>
+                                </div>
+                                <div className="pt-6 sm:flex">
+                                    <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6">Phone Number</dt>
+                                    <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
+                                        <div className="text-gray-900">+1 999-999-9999</div>
                                         <button type="button" className="font-semibold text-green-600 hover:text-green-500">
                                             Update
                                         </button>
@@ -101,25 +112,19 @@ export default function Settings() {
 
                             <ul role="list" className="mt-6 divide-y divide-gray-100 border-t border-gray-200 text-sm leading-6">
                                 <li className="flex justify-between gap-x-6 py-6">
-                                    <div className="h-auto w-20 flex-shrink-0">
-                                        <img className="h-15 w-15" src="/chase.svg" alt="" />
+                                    <div className=" ">
+                                        <img className="h-20 w-20" src="/chase.svg" alt="" />
                                     </div>
-
-                                    <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
-                                        Connected
-                                    </span>
 
                                     <button type="button" className="font-semibold text-green-600 hover:text-green-500">
                                         Update
                                     </button>
                                 </li>
                                 <li className="flex justify-between gap-x-6 py-6">
-                                     <div className="h-auto w-20 flex-shrink-0">
-                                        <img className="h-15 w-15  " src="/usbank.svg" alt="" />
+                                    <div>
+                                        <img className="h-20 w-20" src="/usbank.svg" alt="" />
                                     </div>
-                                    <span className="inline-flex items-center rounded-md bg-green-50 px-2 py-1 text-xs font-medium text-green-700 ring-1 ring-inset ring-green-600/20">
-                                        Connected
-                                    </span>
+
                                     <button type="button" className="font-semibold text-green-600 hover:text-green-500">
                                         Update
                                     </button>
@@ -206,6 +211,6 @@ export default function Settings() {
                     </div>
                 </main>
             </div>
-        </>
+        </div>
     )
 }

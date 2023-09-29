@@ -65,7 +65,7 @@ export default function Settings() {
 
                 <main className="px-4 py-16 sm:px-6 lg:flex-auto lg:px-0 lg:py-20">
                     <div className='pb-8 flex justify-end '>
-                        <img class=" h-20 w-20 rounded-full border-2 shadow-xl" src="/smallprof.png" alt="" />
+                        <img class=" h-20 w-20 rounded-full border-2 shadow-xl" src="/kermit.png" alt="" />
                     </div>
                     <div className="mx-auto max-w-2xl space-y-16 sm:space-y-20 lg:mx-0 lg:max-w-none">
                         <div>

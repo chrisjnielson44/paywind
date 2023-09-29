@@ -22,6 +22,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/prototype/app/Components/app.jsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "app/prototype/app/Components/app.jsx", "app/api/plaid/index.js", "app/demo/settings/connect-bank/ConnectBank.jsx", "app/demo/settings/connect-bank/page.jsx"],
   "exclude": ["node_modules"]
 }

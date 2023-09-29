@@ -28,22 +28,22 @@ export default function AppInterface() {
                 <div className="hidden lg:ml-6 lg:flex lg:space-x-8">
                   <Link
                     href="/demo/dashboard"
-                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/demo/dashboard' ? 'border-green-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700' }`}>
+                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/demo/dashboard' ? 'border-green-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}`}>
                     Dashboard
                   </Link>
                   <Link
                     href="/demo/Metrics"
-                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/demo/Metrics' ? 'border-green-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700' }`}>                    
+                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/demo/Metrics' ? 'border-green-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}`}>
                     Metrics
                   </Link>
                   <Link
                     href="/demo/crypto"
-                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/demo/crypto' ? 'border-green-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700' }`}>                    
+                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/demo/crypto' ? 'border-green-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}`}>
                     Crypto
                   </Link>
                   <Link
                     href="/demo/send-money"
-                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/demo/send-money' ? 'border-green-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700' }`}>                    
+                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/demo/send-money' ? 'border-green-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}`}>
                     Send Money
                   </Link>
                 </div>
@@ -96,8 +96,8 @@ export default function AppInterface() {
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
                       <img
-                        className="h-8 w-8 rounded-full grayscale"
-                        src="/smallprof.png"
+                        className="h-8 w-8 rounded-full ring-1 ring-gray-300 "
+                        src="/kermit.png"
                         alt=""
                       />
                     </Menu.Button>
@@ -111,24 +111,27 @@ export default function AppInterface() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-                     
+                    <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <div className="px-4 py-3">
+                        <p className="text-sm">Signed in as</p>
+                        <p className="truncate text-sm font-medium text-gray-900">kermitfrog@paywind.io</p>
+                      </div>
                       <Menu.Item>
-                          <Link
-                            href="/demo/settings"
-                            className={`block px-4 py-2 text-sm text-gray-700  hover:bg-gray-100 hover:text-gray-800 ${pathname === '/demo/settings' ? 'ring-green-500' : '' }`}
-                          >
-                            Settings
-                          </Link>
+                        <Link
+                          href="/demo/settings"
+                          className={`block px-4 py-2 text-sm text-gray-700  hover:bg-gray-100 hover:text-gray-800 ${pathname === '/demo/settings' ? 'ring-green-500' : ''}`}
+                        >
+                          Settings
+                        </Link>
                       </Menu.Item>
                       <Menu.Item>
-                          <Link
-                            href="/demo/signout"
-                            className={`block px-4 py-2 text-sm text-gray-700  hover:bg-gray-100 hover:text-gray-800 ${pathname === '/demo/signout' ? 'border-green-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700' }`}
-                          >
-                            Sign out
-                          </Link>
-                      
+                        <Link
+                          href="/"
+                          className={`block px-4 py-2 text-sm text-gray-700  hover:bg-gray-100 hover:text-gray-800 ${pathname === '/demo/signout' ? 'border-green-500 text-gray-900' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'}`}
+                        >
+                          Sign out
+                        </Link>
+
                       </Menu.Item>
                     </Menu.Items>
                   </Transition>
@@ -142,31 +145,28 @@ export default function AppInterface() {
               {/* Current: "bg-green-50 border-green-500 text-green-700", Default: "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800" */}
               <Disclosure.Button
                 as="a"
-                href="#"
-                className="block border-l-4 border-green-500 bg-green-50 py-2 pl-3 pr-4 text-base font-medium text-green-700"
-              >
+                href="/demo/dashboard"
+                className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${pathname === '/demo/dashboard' ? 'bg-green-50 border-green-500 text-green-700' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800'}`}>
                 Dashboard
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800"
-              >
+                href="/demo/Metrics"
+                className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${pathname === '/demo/Metrics' ? 'bg-green-50 border-green-500 text-green-700' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800'}`}>
                 Metrics
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800"
-              >
-                Projects
+                href="/demo/crypto"
+                className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${pathname === '/demo/crypto' ? 'bg-green-50 border-green-500 text-green-700' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800'}`}>
+
+                Crypto
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="#"
-                className="block border-l-4 border-transparent py-2 pl-3 pr-4 text-base font-medium text-gray-600 hover:border-gray-300 hover:bg-gray-50 hover:text-gray-800"
-              >
-                Calendar
+                href="/demo/send-money"
+                className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${pathname === '/demo/send-money' ? 'bg-green-50 border-green-500 text-green-700' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800'}`}>
+                Send Money
               </Disclosure.Button>
             </div>
             <div className="border-t border-gray-200 pb-3 pt-4">
@@ -174,13 +174,13 @@ export default function AppInterface() {
                 <div className="flex-shrink-0">
                   <img
                     className="h-10 w-10 rounded-full"
-                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                    src="/kermit.png"
                     alt=""
                   />
                 </div>
                 <div className="ml-3">
-                  <div className="text-base font-medium text-gray-800">Tom Cook</div>
-                  <div className="text-sm font-medium text-gray-500">tom@example.com</div>
+                  <div className="text-base font-medium text-gray-800">Christopher Nielson</div>
+                  <div className="text-sm font-medium text-gray-500">example.email@paywind.io</div>
                 </div>
                 <button
                   type="button"
@@ -194,14 +194,7 @@ export default function AppInterface() {
               <div className="mt-3 space-y-1">
                 <Disclosure.Button
                   as="a"
-                  href="#"
-                  className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
-                >
-                  Your Profile
-                </Disclosure.Button>
-                <Disclosure.Button
-                  as="a"
-                  href="#"
+                  href="/demo/settings"
                   className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
                 >
                   Settings

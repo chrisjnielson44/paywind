@@ -21,6 +21,7 @@
     "next": "latest",
     "plaid": "^16.0.0",
     "react": "latest",
+    "react-beautiful-dnd": "^13.1.1",
     "react-dom": "latest"
   },
   "devDependencies": {

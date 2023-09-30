@@ -15,7 +15,7 @@ const userStats: FinancialStats = {
 
 export default function Metrics() {
   return (
-    <main id="dashboard" className='top-0 h-screen bg-white'>
+    <main id="dashboard" className='top-0 h-screen bg-white dark:bg-gray-900'>
       <div className='pt-20 mx-auto max-w-7xl'>
         
         <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>

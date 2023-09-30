@@ -30,7 +30,7 @@ export default function SendMoney() {
   };
 
   return (
-    <div className='bg-white h-screen '>
+    <div className='bg-white h-screen dark:bg-gray-900'>
       <div className='mx-auto max-w-7xl pt-20'>
       <h2 className='text-2xl mb-4'>Send Money</h2>
 

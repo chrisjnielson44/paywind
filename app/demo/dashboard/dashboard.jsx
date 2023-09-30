@@ -144,9 +144,12 @@ export default function Dashboard() {
                   <dt class="truncate py-2 text-lg font-medium text-gray-500">Investments</dt>
                   <dd class="mt-1 text-2xl font-semibold tracking-tight text-gray-900  md:text-3xl">$90,234.00</dd>
                 </div>
-                <Link href="/demo/settings" className='overflow-hidden text-center rounded-lg bg-white px-4 py-5  border-2 sm:p-6 border-2 border-dashed border-gray-300 p-12 hover:border-gray-400'>
-                    <span class=" block text-2xl font-semibold text-gray-900">Add Bank +</span>
-                </Link>
+                
+                <button type="button" class="overflow-hidden rounded-lg bg-white px-4 py-5  border-2 sm:p-6 border-2 border-dashed border-gray-300 p-12 text-center hover:border-gray-400 ">
+                  <Link href="/demo/settings">
+                    <span class="mt-2 block text-2xl font-semibold text-gray-900">Add Bank +</span>
+                  </Link>
+                </button>
               </dl>
             </div>
           </div>

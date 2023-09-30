@@ -17,7 +17,7 @@ export default function Body() {
                                 <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">
                                     <a href="#">Christopher Nielson</a>
                                 </h3>
-                                <span className="text-gray-500 dark:text-gray-400">CEO & Web Developer</span>
+                                <span className="text-gray-500 dark:text-gray-400">CEO & Web Developer, Student</span>
                                 <p className="mt-3 mb-4 font-light text-gray-500 dark:text-gray-400"></p>
                                 <ul className="flex space-x-4 sm:mt-0">
                                 <li>

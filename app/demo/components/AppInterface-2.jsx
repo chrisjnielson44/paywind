@@ -98,8 +98,8 @@ export default function AppInterface() {
                       </div>
                       <Menu.Item>
                         <Link
-                          href="/demo/settings"
-                          className={`block px-4 py-2 text-sm text-gray-700  hover:bg-gray-100 hover:text-gray-800 dark:text-gray-200 ${pathname === '/demo/settings' ? 'ring-green-500' : ''}`}
+                          href="/demo/settings/general"
+                          className={`block px-4 py-2 text-sm text-gray-700  hover:bg-gray-100 hover:text-gray-800 dark:text-gray-200 ${pathname === '/demo/settings/general' ? 'ring-green-500' : ''}`}
                         >
                           Settings
                         </Link>

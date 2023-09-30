@@ -1,5 +1,5 @@
 'use client'
-import DropDown from './components/dropdown'
+import DropDown from '../components/dropdown'
 import { Fragment, useState } from 'react'
 import { Dialog, Menu, Transition } from '@headlessui/react'
 import {
@@ -60,7 +60,7 @@ export default function Dashboard() {
           </div>
 
           <div>
-            <h3 class="text-3xl font-semibold leading-6 text-gray-900 pb-5 dark:text-white">Transactions</h3>
+            <h3 class="text-3xl font-semibold leading-6 text-gray-900 pb-5 dark:text-white">Recent Transactions</h3>
             <DropDown />
             <ul role="list" class="divide-y divide-gray-100 mt-5 border-2 rounded-lg px-4 shadow-lg dark:border-gray-400">
               <li class="flex justify-between gap-x-6 py-5">

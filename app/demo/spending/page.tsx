@@ -1,5 +1,5 @@
-import AppInterface from "../components/AppInterface-2";
-import Metrics from "./metrics";
+import AppInterface from "../components/AppInterface";
+import Metrics from "./spending";
 
 export default function Home() {
     return(

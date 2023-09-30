@@ -22,7 +22,9 @@
     "plaid": "^16.0.0",
     "react": "latest",
     "react-beautiful-dnd": "^13.1.1",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "react-slick": "^0.29.0",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/node": "latest",

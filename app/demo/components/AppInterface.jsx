@@ -43,9 +43,14 @@ export default function AppInterface() {
                     Dashboard
                   </Link>
                   <Link
-                    href="/demo/Metrics"
-                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/demo/Metrics' ? 'border-green-500 text-gray-900 dark:text-green-500' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-white dark:hover:text-gray-400'}`}>
-                    Metrics
+                    href="/demo/spending"
+                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/demo/spending' ? 'border-green-500 text-gray-900 dark:text-green-500' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-white dark:hover:text-gray-400'}`}>
+                    Spending
+                  </Link>
+                  <Link
+                    href="/demo/transactions"
+                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/demo/transactions' ? 'border-green-500 text-gray-900 dark:text-green-500' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-white dark:hover:text-gray-400'}`}>
+                    Transactions
                   </Link>
                   <Link
                     href="/demo/crypto"
@@ -53,10 +58,11 @@ export default function AppInterface() {
                     Crypto
                   </Link>
                   <Link
-                    href="/demo/send-money"
-                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/demo/send-money' ? 'border-green-500 text-gray-900 dark:text-green-500' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-white dark:hover:text-gray-400'}`}>
-                    Send Money
+                    href="/demo/transfer"
+                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/demo/transfer' ? 'border-green-500 text-gray-900 dark:text-green-500' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-white dark:hover:text-gray-400'}`}>
+                    Transfer
                   </Link>
+                  
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
@@ -131,22 +137,27 @@ export default function AppInterface() {
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/demo/Metrics"
-                className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${pathname === '/demo/Metrics' ? 'bg-green-50 border-green-500 text-green-700' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 dark:text-white'}`}>
-                Metrics
+                href="/demo/spending"
+                className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${pathname === '/demo/spending' ? 'bg-green-50 border-green-500 text-green-700' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 dark:text-white'}`}>
+                Spending
+              </Disclosure.Button>
+              <Disclosure.Button
+                as="a"
+                href="/demo/transactions"
+                className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${pathname === '/demo/transactions' ? 'bg-green-50 border-green-500 text-green-700' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 dark:text-white'}`}>
+                Transactions
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
                 href="/demo/crypto"
                 className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${pathname === '/demo/crypto' ? 'bg-green-50 border-green-500 text-green-700' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 dark:text-white'}`}>
-
                 Crypto
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"
-                href="/demo/send-money"
-                className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${pathname === '/demo/send-money' ? 'bg-green-50 border-green-500 text-green-700' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 dark:text-white'}`}>
-                Send Money
+                href="/demo/transfer"
+                className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${pathname === '/demo/transfer' ? 'bg-green-50 border-green-500 text-green-700' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 dark:text-white'}`}>
+                Transfer
               </Disclosure.Button>
             </div>
           </Disclosure.Panel>

@@ -1,4 +1,4 @@
-import AppInterface from "../components/AppInterface-2";
+import AppInterface from "../components/AppInterface";
 import Dashboard from "./dashboard";
 
 export default function Home() {

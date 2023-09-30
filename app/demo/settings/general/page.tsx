@@ -1,4 +1,4 @@
-import AppInterface from '../../components/AppInterface-2'
+import AppInterface from '../../components/AppInterface'
 import Settings from './settings'
 
 export default function Home() {

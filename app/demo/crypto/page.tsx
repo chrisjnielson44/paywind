@@ -1,4 +1,4 @@
-import AppInterface from "../components/AppInterface-2"
+import AppInterface from "../components/AppInterface"
 import Crypto from "./crypto"
 
 export default function Home() {

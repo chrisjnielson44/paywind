@@ -1,15 +1,7 @@
 'use client'
 import DropDown from '../components/dropdown'
-import { Fragment, useState } from 'react'
-import { Dialog, Menu, Transition } from '@headlessui/react'
-import {
-  ArrowDownCircleIcon,
-  ArrowPathIcon,
-  ArrowUpCircleIcon,
-  EllipsisHorizontalIcon,
-  PlusSmallIcon,
+import { useState } from 'react'
 
-} from '@heroicons/react/20/solid'
 
 import Link from "next/link"
 
@@ -21,7 +13,7 @@ export default function Dashboard() {
 
   return (
     <>
-      <main id="dashboard" className='top-0 bg-white dark:bg-gray-900'>
+      <main id="dashboard" className='top-0 bg-white dark:bg-gray-900 md:h-screen'>
         <div className='mx-auto max-w-7xl'>
           <div className="relative isolate overflow-hidden pt-20">
             {/* Secondary navigation */}

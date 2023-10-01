@@ -21,7 +21,7 @@ export default function Dashboard() {
 
   return (
     <>
-      <main id="dashboard" className='top-0 bg-white dark:bg-gray-900 h-screen'>
+      <main id="dashboard" className='top-0 bg-white dark:bg-gray-900'>
         <div className='mx-auto max-w-7xl'>
           <div className="relative isolate overflow-hidden pt-20">
             {/* Secondary navigation */}

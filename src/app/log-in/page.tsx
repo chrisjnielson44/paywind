@@ -20,9 +20,9 @@ export default function App() {
       >
         {({ signOut, user }) => (
           <main>
-            <h1>Hello {user.username}</h1>
-            <button onClick={signOut}>Sign out</button>
-          </main>
+          {user && <h1>Hello {user.username}</h1>}
+          <button onClick={signOut}>Sign out</button>
+      </main>
         )}
       </Authenticator>
       {/* <p className="mt-10 text-center text-sm text-gray-500 dark:text-white">

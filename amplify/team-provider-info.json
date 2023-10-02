@@ -17,6 +17,12 @@
       },
       "function": {
         "paywind66ab8ba2": {}
+      },
+      "storage": {
+        "s3paywindstorage7bcf0a33": {}
+      },
+      "api": {
+        "paywind": {}
       }
     }
   }

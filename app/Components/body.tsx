@@ -12,13 +12,10 @@ export default function Body() {
                         <a href="/demo/dashboard" className="inline-flex w-full items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg bg-primary-700 hover:bg-green-600 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 bg-green-500 hover:transition duration-300 ease-in-out bg-green-500 ">
                             View Demo
                         </a>
-                        {/* <a href="/demo/dashboard" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-base font-bold text-center text-white rounded-lg bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 bg-green-500 hover:transition duration-300 ease-in-out bg-green-500 ">
-                            Sign Up
-                            <svg className="w-5 h-5 ml-2 mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
-                        </a> */}
+                        
                     </div>
                     <div className=" lg:mt-0 lg:col-span-5 lg:flex">
-                        <img src="pig.svg" alt="pig" />
+                        <Image src="pig.svg" alt="pig" width="2432" height="1442"  />
                     </div>
                 </div>
             </section>
@@ -26,7 +23,7 @@ export default function Body() {
             <section className="bg-white dark:bg-gray-900 pb-24">
                 <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
                     <div className="grid grid-cols-1 gap-4 mt-8">
-                        <img className="" src="plaid.svg" alt="office content 1" />
+                        <Image className="" src="plaid.svg" alt="office content 1" width="2432" height="1442"/>
                     </div>
                     <div className="font-light text-gray-500 sm:text-lg dark:text-gray-300">
                         <h2 className="mb-8 text-black text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Design Your Financial Dashboard with Paywind</h2>
@@ -59,7 +56,7 @@ export default function Body() {
                                 </dl>
                             </div>
                         </div>
-                        <img src="personalfin.svg" alt="Product screenshot" className="" width="2432" height="1442"/>
+                        <Image src="personalfin.svg" alt="Product screenshot" className="" width="2432" height="1442"/>
                     </div>
                 </div>
             </section>

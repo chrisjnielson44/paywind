@@ -1,12 +1,7 @@
 'use client'
 import { Amplify } from 'aws-amplify';
 
-import {
-  Authenticator,
-  ThemeProvider,
-  Theme,
-  useTheme,
-} from '@aws-amplify/ui-react';
+import { Authenticator } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
 import awsmobile from '../aws-exports';

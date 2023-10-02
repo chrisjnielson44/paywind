@@ -9,8 +9,8 @@ import {
 } from '@aws-amplify/ui-react';
 import '@aws-amplify/ui-react/styles.css';
 
-import awsExports from '../aws-exports';
-Amplify.configure(awsExports);
+import awsmobile from '../aws-exports';
+Amplify.configure(awsmobile);
 
 
 

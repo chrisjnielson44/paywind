@@ -24,7 +24,7 @@
       "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
-        "mfaConfiguration": "OFF",
+        "mfaConfiguration": "OPTIONAL",
         "mfaTypes": [
           "SMS"
         ],
@@ -39,6 +39,7 @@
         },
         "signupAttributes": [
           "EMAIL",
+          "NAME",
           "PHONE_NUMBER"
         ],
         "socialProviders": [],

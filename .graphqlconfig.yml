@@ -1,0 +1,15 @@
+projects:
+  paywind:
+    schemaPath: app/graphql/schema.json
+    includes:
+      - app/graphql/**/*.ts
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: app/API.ts
+        docsFilePath: app/graphql
+extensions:
+  amplify:
+    version: 3

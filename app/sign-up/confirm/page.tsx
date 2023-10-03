@@ -3,6 +3,9 @@ import React, { useState } from 'react';
 import { Amplify, Auth } from 'aws-amplify';
 import { useRouter } from 'next/navigation';
 import awsmobile from '../../aws-exports';
+import { useSearchParams } from 'next/navigation'
+
+
 
 Amplify.configure(awsmobile);
 
@@ -11,11 +14,13 @@ type ConfirmSignUpParameters = {
     code: string;
 };
 
+
+
 export default function ConfirmSignUpPage() {
     const [username, setUsername] = useState<string>('');
     const [code, setCode] = useState<string>('');
     const [errorMessage, setErrorMessage] = useState<string | null>(null);
-
+  
 
     const router = useRouter();
 

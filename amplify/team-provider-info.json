@@ -17,6 +17,9 @@
       },
       "auth": {
         "paywind": {}
+      },
+      "storage": {
+        "s3paywindstoragebc1fc3f7": {}
       }
     }
   }

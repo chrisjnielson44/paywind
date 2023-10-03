@@ -26,11 +26,6 @@
       "static/chunks/main-app.js",
       "static/chunks/app/sign-up/page.js"
     ],
-    "/sign-up/confirm/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/sign-up/confirm/page.js"
-    ],
     "/log-in/log-in-success/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",

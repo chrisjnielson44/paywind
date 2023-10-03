@@ -6,6 +6,6 @@
 
 export { default as TodoCreateForm } from "./TodoCreateForm";
 export { default as TodoUpdateForm } from "./TodoUpdateForm";
-export { default as UserInfoCreateForm } from "./UserInfoCreateForm";
+export { default as UserInfo } from "./UserInfo";
 export { default as UserInfoUpdateForm } from "./UserInfoUpdateForm";
 export { default as studioTheme } from "./studioTheme";

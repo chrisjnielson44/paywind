@@ -1,15 +1,5 @@
 import AppInterface from '../../components/AppInterface'
 import Settings from './settings'
-
-// export default function Home() {
-//     return(
-//         <main >
-//             <AppInterface/>
-//             <Settings/>
-//         </main>
-//     )
-// }
-
 import { headers } from "next/headers";
 import { withSSRContext } from "aws-amplify";
 import { redirect } from "next/navigation";

@@ -1,13 +1,5 @@
 import AppInterface from '../components/AppInterface'
 import Transactions from './transactions'
-// export default function Home() {
-//     return(
-//         <main>
-//         <AppInterface/>
-//         <Transactions/>
-//         </main>
-//     )
-// }
 import { headers } from "next/headers";
 import { withSSRContext } from "aws-amplify";
 import { redirect } from "next/navigation";

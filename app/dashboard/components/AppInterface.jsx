@@ -1,17 +1,40 @@
 'use client';
-import { Fragment } from 'react'
+import { Fragment, useState, useEffect } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
-import SignOut from './signout';
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+import { Amplify, Auth } from 'aws-amplify';
+import { useRouter } from 'next/navigation';
+import awsExports from "../../aws-exports";
+Amplify.configure({ ...awsExports, ssr: true });
 
 export default function AppInterface() {
-  const signOut = SignOut();
+  const router = useRouter();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const fetchUser = async () => {
+        try {
+            const currentUser = await Auth.currentAuthenticatedUser();
+            setUser(currentUser);
+        } catch (err) {
+            console.error("Error fetching user: ", err);
+        }
+    };
+
+    fetchUser();
+}, []);
+
+  const handleSignOut = async () => {
+    try {
+      await Auth.signOut();
+      router.push('/log-in');
+    } catch (err) {
+      console.log('error signing in', err);
+    }
+  };
+
 
   const pathname = usePathname();
   const isActive = pathname;
@@ -42,7 +65,7 @@ export default function AppInterface() {
                 <div className="hidden sm:ml-6 sm:flex sm:space-x-8">
                   <Link
                     href="/dashboard/"
-                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/dashboard/dashboard' ? 'border-green-500 text-gray-900 dark:text-green-500' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-white dark:hover:text-gray-400'}`}>
+                    className={`link inline-flex items-center font-medium border-b-2 ${pathname === '/dashboard' ? 'border-green-500 text-gray-900 dark:text-green-500' : 'border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 dark:text-white dark:hover:text-gray-400'}`}>
                     Dashboard
                   </Link>
                   <Link
@@ -68,7 +91,7 @@ export default function AppInterface() {
                 </div>
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                
+
                 {/* Profile dropdown */}
                 <Menu as="div" className="relative ml-4 flex-shrink-0">
                   <div>
@@ -76,8 +99,8 @@ export default function AppInterface() {
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
                       <img
-                        className="h-8 w-8 rounded-full ring-1 ring-gray-300 "
-                        src="/kermit.png"
+                        className="h-8 w-8 p-1 rounded-full ring-1 ring-gray-300 "
+                        src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png"
                         alt=""
                       />
                     </Menu.Button>
@@ -92,10 +115,10 @@ export default function AppInterface() {
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-900 dark:ring-1 dark:ring-white dark:ring-opacity-5 dark:shadow-gray-700 dark:shadow-md">
-                      <div className="px-4 py-3">
-                        <p className="text-sm text-black dark:text-gray-200">Signed in as</p>
-                        <p className="truncate text-sm font-medium text-gray-900 dark:text-gray-200">kermitfrog@dashboard.io</p>
+                    <div className="px-4 py-3">
+                        <p className="truncate text-sm font-medium text-gray-900 dark:text-gray-200">{user?.attributes?.given_name} {user?.attributes?.family_name}</p>
                       </div>
+
                       <Menu.Item>
                         <Link
                           href="/dashboard/settings/general"
@@ -106,12 +129,16 @@ export default function AppInterface() {
                       </Menu.Item>
                       <Menu.Item>
                         <button
-                          onClick={signOut}
-                          className='block px-4 py-2 text-sm text-gray-700 border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700'
+                          onClick={handleSignOut}
+                          className='text-gray-700 block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 hover:text-gray-800 dark:text-gray-200'
                         >
                           Sign out
                         </button>
                       </Menu.Item>
+                      <div className="px-4 py-3">
+                        <p className="text-sm text-black dark:text-gray-200">Signed in as</p>
+                        <p className="truncate text-sm font-medium text-gray-900 dark:text-gray-200">{user?.attributes?.email}</p>
+                      </div>
                     </Menu.Items>
                   </Transition>
                 </Menu>
@@ -125,8 +152,8 @@ export default function AppInterface() {
               <Disclosure.Button
                 as="a"
                 href="/dashboard"
-                className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${pathname === '/dashboard/dashboard' ? 'bg-green-50 border-green-500 text-green-700' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 dark:text-white'}`}>
-                dashboard
+                className={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${pathname === '/dashboard' ? 'bg-green-50 border-green-500 text-green-700' : 'border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800 dark:text-white'}`}>
+                Dashboard
               </Disclosure.Button>
               <Disclosure.Button
                 as="a"

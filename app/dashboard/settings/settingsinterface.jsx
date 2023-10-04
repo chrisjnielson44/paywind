@@ -15,11 +15,11 @@ import { usePathname } from 'next/navigation';
 
 
 const secondaryNavigation = [
-    { name: 'General', href: '/demo/settings/general', icon: UserCircleIcon, current: true },
-    { name: 'Security', href: '/demo/settings/security', icon: FingerPrintIcon, current: false },
-    { name: 'Notifications', href: '/demo/settings/notifications', icon: BellIcon, current: false },
-    { name: 'Plan', href: '/demo/settings/plans', icon: CubeIcon, current: false },
-    { name: 'Billing', href: '/demo/settings/billing', icon: CreditCardIcon, current: false },
+    { name: 'General', href: '/dashboard/settings/general', icon: UserCircleIcon, current: true },
+    { name: 'Security', href: '/dashboard/settings/security', icon: FingerPrintIcon, current: false },
+    { name: 'Notifications', href: '/dashboard/settings/notifications', icon: BellIcon, current: false },
+    { name: 'Plan', href: '/dashboard/settings/plans', icon: CubeIcon, current: false },
+    { name: 'Billing', href: '/dashboard/settings/billing', icon: CreditCardIcon, current: false },
 ]
 
 function classNames(...classes) {

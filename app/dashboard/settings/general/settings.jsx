@@ -1,15 +1,10 @@
 'use client'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import SettingInterface from '../settingsinterface'
-import { Dialog, Switch } from '@headlessui/react'
-import {
-    BellIcon,
-    CreditCardIcon,
-    CubeIcon,
-    FingerPrintIcon,
-    UserCircleIcon,
-    UsersIcon,
-} from '@heroicons/react/24/outline'
+import { Amplify, Auth } from 'aws-amplify';
+import { Switch } from '@headlessui/react'
+import awsExports from "../../../aws-exports";
+Amplify.configure({ ...awsExports, ssr: true });
 
 
 
@@ -18,7 +13,21 @@ function classNames(...classes) {
 }
 
 export default function Settings() {
-    const [automaticTimezoneEnabled, setAutomaticTimezoneEnabled] = useState(true)
+    const [automaticTimezoneEnabled, setAutomaticTimezoneEnabled] = useState(true);
+    const [user, setUser] = useState(null);
+  
+    useEffect(() => {
+      const fetchUser = async () => {
+          try {
+              const currentUser = await Auth.currentAuthenticatedUser();
+              setUser(currentUser);
+          } catch (err) {
+              console.error("Error fetching user: ", err);
+          }
+      };
+  
+      fetchUser();
+  }, []);
 
     return (
         <div className='bg-white dark:bg-gray-900 '> 
@@ -27,7 +36,7 @@ export default function Settings() {
 
                 <main className="px-4 py-16 sm:px-6 lg:flex-auto lg:px-0 lg:py-20">
                     <div className='pb-8 flex justify-center md:justify-end '>
-                        <img class=" h-20 w-20 rounded-full border-2 shadow-xl bg-white" src="/kermit.png" alt="" />
+                        <img class="p-1 h-20 w-20 rounded-full border-2 shadow-xl bg-white" src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png" alt="" />
                     </div>
                     <div className="mx-auto max-w-2xl space-y-16 sm:space-y-20 lg:mx-0 lg:max-w-none">
                         <div>
@@ -40,22 +49,22 @@ export default function Settings() {
                                 <div className="pt-6 sm:flex">
                                     <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6 dark:text-white">Full name</dt>
                                     <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
-                                        <div className="text-gray-900 dark:text-white">Kermit Frog</div>
-                                        <button type="button" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
+                                        <div className="text-gray-900 dark:text-white">{user?.attributes?.given_name} {user?.attributes?.family_name}</div>
+                                        {/* <button type="button" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
                                             Update
-                                        </button>
+                                        </button> */}
                                     </dd>
                                 </div>
                                 <div className="pt-6 sm:flex">
                                     <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6 dark:text-white">Email address</dt>
                                     <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
-                                        <div className="text-gray-900 dark:text-white">kermit.frog@paywind.io</div>
-                                        <button type="button" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
+                                        <div className="text-gray-900 dark:text-white">{user?.attributes?.email}</div>
+                                        {/* <button type="button" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
                                             Update
-                                        </button>
+                                        </button> */}
                                     </dd>
                                 </div>
-                                <div className="pt-6 sm:flex">
+                                {/* <div className="pt-6 sm:flex">
                                     <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6 dark:text-white">Phone Number</dt>
                                     <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
                                         <div className="text-gray-900 dark:text-white">+1 999-999-9999</div>
@@ -63,7 +72,7 @@ export default function Settings() {
                                             Update
                                         </button>
                                     </dd>
-                                </div>
+                                </div> */}
 
                             </dl>
                         </div>
@@ -78,18 +87,18 @@ export default function Settings() {
                                         <img className="h-20 w-20" src="/chase.svg" alt="" />
                                     </div>
 
-                                    <button type="button" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
+                                    {/* <button type="button" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
                                         Update
-                                    </button>
+                                    </button> */}
                                 </li>
                                 <li className="flex justify-between gap-x-6 py-6">
                                     <div>
                                         <img className="h-20 w-20" src="/usbank.svg" alt="" />
                                     </div>
 
-                                    <button type="button" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
+                                    {/* <button type="button" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
                                         Update
-                                    </button>
+                                    </button> */}
                                 </li>
                             </ul>
 
@@ -107,9 +116,9 @@ export default function Settings() {
                             <ul role="list" className="mt-6 divide-y divide-gray-100 border-t border-gray-200 text-sm leading-6">
                                 <li className="flex justify-between gap-x-6 py-6">
                                     <div className="font-medium text-gray-900 dark:text-white">QuickBooks</div>
-                                    <button type="button" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
+                                    {/* <button type="button" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
                                         Update
-                                    </button>
+                                    </button> */}
                                 </li>
                             </ul>
 
@@ -131,18 +140,18 @@ export default function Settings() {
                                     <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6 dark:text-white">Language</dt>
                                     <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
                                         <div className="text-gray-900 dark:text-white">English</div>
-                                        <button type="button" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
+                                        {/* <button type="button" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
                                             Update
-                                        </button>
+                                        </button> */}
                                     </dd>
                                 </div>
                                 <div className="pt-6 sm:flex">
                                     <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6 dark:text-white">Date format</dt>
                                     <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
                                         <div className="text-gray-900 dark:text-white">DD-MM-YYYY</div>
-                                        <button type="button" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
+                                        {/* <button type="button" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
                                             Update
-                                        </button>
+                                        </button> */}
                                     </dd>
                                 </div>
                                 <Switch.Group as="div" className="flex pt-6">

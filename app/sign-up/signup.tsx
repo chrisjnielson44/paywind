@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import { Amplify, Auth } from 'aws-amplify';
 import { useRouter } from 'next/navigation';
-
 import awsExports from "../aws-exports";
 Amplify.configure({ ...awsExports, ssr: true });
 
@@ -19,16 +18,17 @@ export default function CustomSignUp() {
     const [code, setCode] = useState<string>('');
     const [isSignUpSubmitted, setIsSignUpSubmitted] = useState(false);
     const [errorCounter, setErrorCounter] = useState(0);
+    const [firstName, setFirstName] = useState<string>('');
+    const [lastName, setLastName] = useState<string>('');
 
 
     const handleError = (message: string) => {
         setErrorMessage(null); // First clear the current error message
-        setErrorCounter(prevCount => prevCount + 1); 
+        setErrorCounter(prevCount => prevCount + 1);
         setTimeout(() => { // Then set a new one after a short delay
             setErrorMessage(message);
         }, 0);
     };
-
 
     const router = useRouter();
 
@@ -51,7 +51,7 @@ export default function CustomSignUp() {
         const hasUpperCase = /[A-Z]/.test(password);
         const hasNumbers = /\d/.test(password);
         const hasSpecialCharacters = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/.test(password);
-        
+
 
         return password.length >= minLength && hasLowerCase && hasUpperCase && hasNumbers && hasSpecialCharacters;
     }
@@ -84,6 +84,8 @@ export default function CustomSignUp() {
                 password,
                 attributes: {
                     email, // optional
+                    'given_name': firstName,
+                    'family_name': lastName
                     // phone_number: formattedPhoneNumber, // optional - E.164 number convention
                     // other custom attributes
                 },
@@ -137,6 +139,37 @@ export default function CustomSignUp() {
 
                     {errorMessage && <p className="animate-shake animate-once animate-ease-in text-red-500 text-center">{errorMessage}</p>}
                     <form onSubmit={handleSignUp} className='block text-sm font-medium leading-6 text-gray-900' >
+                        <div>
+                            <label htmlFor="first-name" className="mt-4 block text-sm font-semibold leading-6 text-gray-900 dark:text-white">
+                                First Name
+                            </label>
+                            <div className="mt-2.5">
+                                <input
+                                    value={firstName}
+                                    onChange={(e) => setFirstName(e.target.value)}
+                                    type="text"
+                                    name="first-name"
+                                    id="first-name"
+                                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
+                                />
+                            </div>
+                        </div>
+
+                        <div>
+                            <label htmlFor="last-name" className="mt-4 block text-sm font-semibold leading-6 text-gray-900 dark:text-white">
+                                Last Name
+                            </label>
+                            <div className="mt-2.5">
+                                <input
+                                    value={lastName}
+                                    onChange={(e) => setLastName(e.target.value)}
+                                    type="text"
+                                    name="last-name"
+                                    id="last-name"
+                                    className="block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
+                                />
+                            </div>
+                        </div>
                         <div >
                             <label htmlFor="email" className="mt-4 block text-sm font-semibold leading-6 text-gray-900 dark:text-white">
                                 Email
@@ -251,8 +284,8 @@ export default function CustomSignUp() {
                     <h2 className="my-10 text-center text-3xl font-bold leading-9 tracking-tight text-gray-900 dark:text-white">
                         Confirm Signup</h2>
                     <form onSubmit={handleConfirmation} className='block text-sm font-medium leading-6 text-gray-900'>
-                    <h2 className="my-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-white">
-                        Confirmation Code was sent to: <p className='text-green-500'>{email}</p></h2>
+                        <h2 className="my-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-white">
+                            Confirmation Code was sent to: <p className='text-green-500'>{email}</p></h2>
                         {/* <div>
                         <label htmlFor="email" className="block text-md font-medium leading-6 text-gray-900 dark:text-white">
                             Username

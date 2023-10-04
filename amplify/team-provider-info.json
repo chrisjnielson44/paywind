@@ -12,14 +12,14 @@
       "AmplifyAppId": "d2m30dby00dtic"
     },
     "categories": {
-      "api": {
-        "paywind": {}
-      },
       "auth": {
         "paywind": {}
       },
       "storage": {
         "s3paywindstoragebc1fc3f7": {}
+      },
+      "api": {
+        "paywind": {}
       }
     }
   }

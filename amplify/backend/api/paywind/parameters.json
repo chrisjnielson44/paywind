@@ -1,6 +1,5 @@
 {
   "AppSyncApiName": "paywind",
   "DynamoDBBillingMode": "PAY_PER_REQUEST",
-  "DynamoDBEnableServerSideEncryption": false,
-  "AuthModeLastUpdated": "2023-10-03T01:29:01.668Z"
+  "DynamoDBEnableServerSideEncryption": false
 }

@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { Amplify, Auth } from 'aws-amplify';
 import { useRouter } from 'next/navigation';
 import awsmobile from '../aws-exports';
+import Link from 'next/link'
 // import { CognitoHostedUIIdentityProvider } from '@aws-amplify/auth';
 
 
@@ -90,9 +91,9 @@ export default function CustomAuthenticator() {
               </label>
               {/* You can expand this with password reset logic */}
               <div className="text-sm">
-                <a href="#" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
+                <Link href="/password-reset" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
                   Forgot password?
-                </a>
+                </Link>
               </div>
             </div>
             <div className="mt-2">

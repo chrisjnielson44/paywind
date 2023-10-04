@@ -1,7 +1,1 @@
-{
-  "/page": "app/page.js",
-  "/log-in/page": "app/log-in/page.js",
-  "/sign-up/page": "app/sign-up/page.js",
-  "/log-in/log-in-success/page": "app/log-in/log-in-success/page.js",
-  "/log-in/sign-out-success/page": "app/log-in/sign-out-success/page.js"
-}
+{}

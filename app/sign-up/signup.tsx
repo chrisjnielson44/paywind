@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { useState } from 'react';
 import { Amplify, Auth } from 'aws-amplify';
 import { useRouter } from 'next/navigation';
@@ -109,6 +109,7 @@ export default function CustomSignUp() {
 
     const handleConfirmation = async (e: React.FormEvent) => {
         e.preventDefault();
+        setErrorMessage(null);
 
         try {
             await Auth.confirmSignUp(username, code);

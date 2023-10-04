@@ -2,10 +2,12 @@
   "resourceName": "s3paywindstoragebc1fc3f7",
   "bucketName": "paywind-storage-bc1fc3f7",
   "policyUUID": "07972513",
-  "storageAccess": "auth",
-  "guestAccess": [],
-  "authAccess": [
-    "CREATE_AND_UPDATE",
+  "storageAccess": "authAndGuest",
+  "guestAccess": [
     "READ"
+  ],
+  "authAccess": [
+    "READ",
+    "CREATE_AND_UPDATE"
   ]
 }

@@ -2,12 +2,10 @@
 import { useState, useEffect } from 'react';
 import { Amplify, Auth } from 'aws-amplify';
 import { useRouter } from 'next/navigation';
-import awsmobile from '../aws-exports';
+import awsExports from '../aws-exports';
 import Link from 'next/link'
 // import { CognitoHostedUIIdentityProvider } from '@aws-amplify/auth';
-
-
-Amplify.configure(awsmobile);
+Amplify.configure({ ...awsExports, ssr: true });
 
 export default function CustomAuthenticator() {
   const [username, setEmail] = useState<string>('');
@@ -30,7 +28,7 @@ export default function CustomAuthenticator() {
     e.preventDefault();
     try {
       await Auth.signIn(username, password);
-      router.push('/log-in/log-in-success');
+      router.push('/dashboard');
 
     } catch (err) {
       if (typeof err === 'object' && err !== null && 'message' in err) {

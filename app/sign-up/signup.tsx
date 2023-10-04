@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 import { Amplify, Auth } from 'aws-amplify';
 import { useRouter } from 'next/navigation';
 
-import awsmobile from '../aws-exports';
-Amplify.configure(awsmobile);
+import awsExports from "../aws-exports";
+Amplify.configure({ ...awsExports, ssr: true });
 
 
 
@@ -113,7 +113,7 @@ export default function CustomSignUp() {
 
         try {
             await Auth.confirmSignUp(username, code);
-            router.push('/log-in/log-in-success');
+            router.push('/dashboard');
         } catch (err) {
             if (typeof err === 'object' && err !== null && 'message' in err) {
                 handleError(`Error signing up: ${err.message}`);

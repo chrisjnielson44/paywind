@@ -1,5 +1,6 @@
 
 import Image from "next/image"
+import Link from "next/link"
 
 export default function Body() {
     return (
@@ -8,14 +9,19 @@ export default function Body() {
                 <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
                     <div className="mr-auto place-self-center lg:col-span-7">
                         <h1 className="max-w-2xl mb-6 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Empower Your Finances with Paywind</h1>
-                        <p className="max-w-2xl mb-6 font-light text-gray-500 lg:mb-8 md:text-lg lg:text-2xl dark:text-gray-300">Discover the ultimate financial hub. Manage all your finances effortlessly in one simple, seamless app. Combining intuitive tools with personalized insights, Paywind ensures you&apos;re always in control of your financial journey. Dive in and experience the future of personal finance.</p>
-                        <a href="/demo/dashboard" className="inline-flex w-full items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg bg-primary-700 hover:bg-green-600 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900 bg-green-500 hover:transition duration-300 ease-in-out bg-green-500 ">
+                        <p className="max-w-2xl mb-6 font-light text-gray-500 text-2xl lg:mb-8  dark:text-gray-300">Discover the ultimate financial hub. Manage all your finances effortlessly in one simple, seamless app. Combining intuitive tools with personalized insights, Paywind ensures you&apos;re always in control of your financial journey. Dive in and experience the future of personal finance.</p>
+                        <Link href="/demo/dashboard" className="bg-black inline-flex items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg hover:bg-gray-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900  hover:transition duration-300 ease-in-out dark:ring-2 dark:ring-white ">
                             View Demo
-                        </a>
+                        </Link>
+                        <Link href="/sign-up" className="inline-flex items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg  hover:bg-green-600 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900  hover:transition duration-300 ease-in-out bg-green-500 ">
+                            Sign Up
+                            <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+
+                        </Link>
                         
                     </div>
                     <div className=" lg:mt-0 lg:col-span-5 lg:flex">
-                        <Image src="pig.svg" alt="pig" width="2432" height="1442"  />
+                        <Image src="https://chris-n.s3.us-east-2.amazonaws.com/images/pig.svg" alt="pig" width="2432" height="1442"  />
                     </div>
                 </div>
             </section>
@@ -23,7 +29,7 @@ export default function Body() {
             <section className="bg-white dark:bg-gray-900 pb-24">
                 <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
                     <div className="grid grid-cols-1 gap-4 mt-8">
-                        <Image className="" src="plaid.svg" alt="office content 1" width="2432" height="1442"/>
+                        <Image className="" src="https://chris-n.s3.us-east-2.amazonaws.com/images/plaid.svg" alt="office content 1" width="2432" height="1442"/>
                     </div>
                     <div className="font-light text-gray-500 sm:text-lg dark:text-gray-300">
                         <h2 className="mb-8 text-black text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Design Your Financial Dashboard with Paywind</h2>
@@ -56,7 +62,7 @@ export default function Body() {
                                 </dl>
                             </div>
                         </div>
-                        <Image src="personalfin.svg" alt="Product screenshot" className="" width="2432" height="1442"/>
+                        <Image src="https://chris-n.s3.us-east-2.amazonaws.com/images/personalfin.svg" alt="Product screenshot" className="" width="2432" height="1442"/>
                     </div>
                 </div>
             </section>

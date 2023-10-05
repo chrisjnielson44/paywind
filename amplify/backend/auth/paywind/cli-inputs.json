@@ -1,10 +1,10 @@
 {
   "version": "1",
   "cognitoConfig": {
-    "identityPoolName": "testAuthIdentityPool",
+    "identityPoolName": "paywind_identitypool_fe72cee1",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "paywin7b1482e6",
-    "userPoolName": "paywind",
+    "resourceNameTruncated": "paywinfe72cee1",
+    "userPoolName": "paywind_userpool_fe72cee1",
     "autoVerifiedAttributes": [
       "email"
     ],
@@ -14,42 +14,29 @@
     ],
     "smsAuthenticationMessage": "Your authentication code is {####}",
     "smsVerificationMessage": "Your verification code is {####}",
-    "emailVerificationSubject": "Verification Code - Paywind",
-    "emailVerificationMessage": "<div style=\"text-align:center;\">\n    <img src=\"https://chris-n.s3.us-east-2.amazonaws.com/images/paywind.png\" alt=\"Your Logo\" width=\"200\">\n    <p>Thank you for registering! Please verify your account using the code below:</p>\n    <div style=\"border: 2px solid #333; padding: 20px; display: inline-block; margin: 20px 0; font-size: 24px; font-weight: bold;\">\n        {####}\n    </div>\n    <p>Enter this code in the confirmation page to complete the registration process.</p>\n</div>",
+    "emailVerificationSubject": "Your verification code",
+    "emailVerificationMessage": "Your verification code is {####}",
     "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
-    "passwordPolicyCharacters": [
-      "Requires Lowercase",
-      "Requires Numbers",
-      "Requires Symbols",
-      "Requires Uppercase"
-    ],
+    "passwordPolicyCharacters": [],
     "requiredAttributes": [
-      "email",
-      "given_name",
-      "family_name"
+      "email"
     ],
     "aliasAttributes": [],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
-    "userpoolClientWriteAttributes": [],
-    "userpoolClientReadAttributes": [],
-    "userpoolClientLambdaRole": "paywin7b1482e6_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": false,
-    "sharedId": "7b1482e6",
-    "resourceName": "paywind",
-    "authSelections": "identityPoolAndUserPool",
-    "serviceName": "Cognito",
-    "usernameAttributes": [
+    "userpoolClientWriteAttributes": [
       "email"
     ],
-    "useDefault": "manual",
-    "userPoolGroups": false,
-    "userPoolGroupList": [],
-    "adminQueries": false,
-    "thirdPartyAuth": false,
-    "authProviders": [],
-    "usernameCaseSensitive": false,
-    "useEnabledMfas": true
+    "userpoolClientReadAttributes": [
+      "email"
+    ],
+    "userpoolClientLambdaRole": "paywinfe72cee1_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "authSelections": "identityPoolAndUserPool",
+    "resourceName": "paywind",
+    "sharedId": "fe72cee1",
+    "serviceName": "Cognito",
+    "useDefault": "manual"
   }
 }

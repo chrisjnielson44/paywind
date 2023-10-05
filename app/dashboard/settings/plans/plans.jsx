@@ -1,5 +1,4 @@
 'use client'
-import { useState } from 'react'
 import SettingInterface from '../settingsinterface'
 
 
@@ -24,12 +23,6 @@ export default function Plans() {
                                 Upgrade Plan
                             </button>
                         </div>
-
-
-
-
-
-
                     </div>
                 </main>
             </div>

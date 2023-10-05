@@ -1,32 +1,14 @@
 
 import AppInterface from "./components/AppInterface";
 import Dashboard from "./dashboard";
-import { headers } from "next/headers";
-import { withSSRContext } from "aws-amplify";
-import { redirect } from "next/navigation";
+import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 
-
-async function Home() {
-  const req = {
-    headers: {
-      cookie: headers().get("cookie"),
-    },
-  };
-
-  const { Auth } = withSSRContext({ req });
-
-  try {
-    const user = await Auth.currentAuthenticatedUser();
+export default withPageAuthRequired ( async function Home() {
     return (
         <main>
         <AppInterface/>
         <Dashboard/>
     </main>
-    );
-  } catch (error) {
-    console.log(error);
-    redirect("/log-in");
-  }
-}
+    )
+}, { returnTo: '/dashboard' })
 
-export default Home;

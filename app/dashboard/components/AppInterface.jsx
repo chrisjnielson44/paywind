@@ -1,40 +1,20 @@
 'use client';
-import { Fragment, useState, useEffect } from 'react'
+import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
-import { Amplify, Auth } from 'aws-amplify';
 import { useRouter } from 'next/navigation';
-import awsExports from "../../aws-exports";
-Amplify.configure({ ...awsExports, ssr: true });
+import { useUser } from '@auth0/nextjs-auth0/client';
+
+
 
 export default function AppInterface() {
   const router = useRouter();
-  const [user, setUser] = useState(null);
+  const { user, error, isLoading } = useUser();
 
-  useEffect(() => {
-    const fetchUser = async () => {
-        try {
-            const currentUser = await Auth.currentAuthenticatedUser();
-            setUser(currentUser);
-        } catch (err) {
-            console.error("Error fetching user: ", err);
-        }
-    };
-
-    fetchUser();
-}, []);
-
-  const handleSignOut = async () => {
-    try {
-      await Auth.signOut();
-      router.push('/log-in');
-    } catch (err) {
-      console.log('error signing in', err);
-    }
-  };
-
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>{error.message}</div>;
 
   const pathname = usePathname();
   const isActive = pathname;
@@ -99,8 +79,8 @@ export default function AppInterface() {
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
                       <img
-                        className="h-8 w-8 p-1 rounded-full ring-1 ring-gray-300 "
-                        src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png"
+                        className="h-8 w-auto  rounded-full ring-1 ring-gray-300 "
+                        src={user.picture}
                         alt=""
                       />
                     </Menu.Button>
@@ -115,8 +95,7 @@ export default function AppInterface() {
                     leaveTo="transform opacity-0 scale-95"
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-900 dark:ring-1 dark:ring-white dark:ring-opacity-5 dark:shadow-gray-700 dark:shadow-md">
-                    <div className="px-4 py-3">
-                        <p className="truncate text-sm font-medium text-gray-900 dark:text-gray-200">{user?.attributes?.given_name} {user?.attributes?.family_name}</p>
+                      <div className="px-4 py-3">
                       </div>
 
                       <Menu.Item>
@@ -128,16 +107,13 @@ export default function AppInterface() {
                         </Link>
                       </Menu.Item>
                       <Menu.Item>
-                        <button
-                          onClick={handleSignOut}
-                          className='text-gray-700 block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 hover:text-gray-800 dark:text-gray-200'
-                        >
-                          Sign out
-                        </button>
+                        <button className='text-gray-700 block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 hover:text-gray-800 dark:text-gray-200' >
+                          <a href="/api/auth/logout">Logout</a>                        
+                           </button>
                       </Menu.Item>
                       <div className="px-4 py-3">
                         <p className="text-sm text-black dark:text-gray-200">Signed in as</p>
-                        <p className="truncate text-sm font-medium text-gray-900 dark:text-gray-200">{user?.attributes?.email}</p>
+                        <p className="truncate text-sm font-medium text-gray-900 dark:text-gray-200">{user.email}</p>
                       </div>
                     </Menu.Items>
                   </Transition>

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { Amplify, Auth } from 'aws-amplify';
 import { useRouter } from 'next/navigation';
 
-import awsExports from "../aws-exports";
+import awsExports from "../../aws-exports";
 Amplify.configure({ ...awsExports, ssr: true });
 
 export default function ForgotPassword() {

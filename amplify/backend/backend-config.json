@@ -1,25 +1,22 @@
 {
   "api": {
-    "paywind": {
-      "dependsOn": [],
-      "output": {
-        "authConfig": {
-          "additionalAuthenticationProviders": [],
-          "defaultAuthentication": {
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 7
-            },
-            "authenticationType": "API_KEY"
-          }
+    "api803677b3": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "paywind96d57ac4"
         }
-      },
+      ],
       "providerPlugin": "awscloudformation",
-      "service": "AppSync"
+      "service": "API Gateway"
     }
   },
   "auth": {
     "paywind": {
-      "customAuth": false,
       "dependsOn": [],
       "frontendAuthConfig": {
         "mfaConfiguration": "OFF",
@@ -27,29 +24,46 @@
           "SMS"
         ],
         "passwordProtectionSettings": {
-          "passwordPolicyCharacters": [
-            "REQUIRES_LOWERCASE",
-            "REQUIRES_NUMBERS",
-            "REQUIRES_SYMBOLS",
-            "REQUIRES_UPPERCASE"
-          ],
+          "passwordPolicyCharacters": [],
           "passwordPolicyMinLength": 8
         },
         "signupAttributes": [
-          "EMAIL",
-          "GIVEN_NAME",
-          "FAMILY_NAME"
-        ],
-        "socialProviders": [],
-        "usernameAttributes": [
           "EMAIL"
         ],
+        "socialProviders": [],
+        "usernameAttributes": [],
         "verificationMechanisms": [
           "EMAIL"
         ]
       },
       "providerPlugin": "awscloudformation",
-      "service": "Cognito"
+      "service": "Cognito",
+      "serviceType": "managed"
+    }
+  },
+  "function": {
+    "paywind96d57ac4": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_paywind96d57ac4_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "paywind96d57ac4"
+        }
+      ]
+    },
+    "AMPLIFY_function_paywind96d57ac4_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "paywind96d57ac4"
+        }
+      ]
     }
   },
   "storage": {

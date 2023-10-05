@@ -1,12 +1,6 @@
 'use client'
 import { useState, useEffect } from 'react'
 import SettingInterface from '../settingsinterface'
-import { Amplify, Auth } from 'aws-amplify';
-import { Switch } from '@headlessui/react'
-import awsExports from "../../../aws-exports";
-Amplify.configure({ ...awsExports, ssr: true });
-
-
 
 function classNames(...classes) {
     return classes.filter(Boolean).join(' ')

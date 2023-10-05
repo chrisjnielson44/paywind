@@ -1,43 +1,22 @@
-'use client'
-// import DropDown from './components/dropdown'
-import { useState, useEffect } from 'react'
-import { Amplify, Auth } from 'aws-amplify';
-import { useRouter } from 'next/navigation';
-import awsExports from "../aws-exports";
-Amplify.configure({ ...awsExports, ssr: true });
+import { getSession } from '@auth0/nextjs-auth0';
+import APITestForm from './APItestform';
+
+ 
 
 
-import Link from "next/link";
-
-
-export default function Dashboard() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const router = useRouter();
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const fetchUser = async () => {
-        try {
-            const currentUser = await Auth.currentAuthenticatedUser();
-            setUser(currentUser);
-        } catch (err) {
-            console.error("Error fetching user: ", err);
-        }
-    };
-
-    fetchUser();
-}, []);
-
+export default async function Dashboard() {
+  const { user } = await getSession();
 
 
   return (
     <>
       <main id="dashboard" className='top-0 bg-white dark:bg-gray-900 md:h-screen'>
+      <APITestForm />
         <div className='mx-auto max-w-7xl'>
           <div className="relative isolate overflow-hidden pt-20">
             {/* Secondary navigation */}
             <div className='pb-20'>
-            <h3 class="text-3xl pb-20 font-semibold leading-6 text-gray-900 sm:text-center md:text-left dark:text-white">Greetings {user?.attributes?.given_name}</h3>
+            <h3 class="text-3xl pb-20 font-semibold leading-6 text-gray-900 sm:text-center md:text-left dark:text-white">Greetings {user.email} {}</h3>
 
               <h3 class="text-3xl font-semibold leading-6 text-gray-900 sm:text-center md:text-left dark:text-white">Accounts</h3>
               {/* <dl class="mt-10 grid grid-cols-1 grid-rows-2 gap-5 sm:grid-cols-3">

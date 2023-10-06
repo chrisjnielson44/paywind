@@ -1,27 +1,8 @@
 'use client'
-import { useState, useEffect } from 'react'
 import SettingInterface from '../settingsinterface'
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
 
 export default function Settings() {
-    const [automaticTimezoneEnabled, setAutomaticTimezoneEnabled] = useState(true);
-    const [user, setUser] = useState(null);
-  
-    useEffect(() => {
-      const fetchUser = async () => {
-          try {
-              const currentUser = await Auth.currentAuthenticatedUser();
-              setUser(currentUser);
-          } catch (err) {
-              console.error("Error fetching user: ", err);
-          }
-      };
-  
-      fetchUser();
-  }, []);
 
     return (
         <div className='bg-white dark:bg-gray-900 '> 
@@ -148,29 +129,7 @@ export default function Settings() {
                                         </button> */}
                                     </dd>
                                 </div>
-                                <Switch.Group as="div" className="flex pt-6">
-                                    <Switch.Label as="dt" className="flex-none pr-6 font-medium text-gray-900 sm:w-64 dark:text-white" passive>
-                                        Automatic timezone
-                                    </Switch.Label>
-                                    <dd className="flex flex-auto items-center justify-end">
-                                        <Switch
-                                            checked={automaticTimezoneEnabled}
-                                            onChange={setAutomaticTimezoneEnabled}
-                                            className={classNames(
-                                                automaticTimezoneEnabled ? 'bg-green-600' : 'bg-gray-200',
-                                                'flex w-8 cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-600'
-                                            )}
-                                        >
-                                            <span
-                                                aria-hidden="true"
-                                                className={classNames(
-                                                    automaticTimezoneEnabled ? 'translate-x-3.5' : 'translate-x-0',
-                                                    'h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out'
-                                                )}
-                                            />
-                                        </Switch>
-                                    </dd>
-                                </Switch.Group>
+                               
                             </dl>
                         </div>
                     </div>

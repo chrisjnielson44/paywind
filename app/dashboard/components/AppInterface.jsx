@@ -104,9 +104,7 @@ export default function AppInterface() {
                         </Link>
                       </Menu.Item>
                       <Menu.Item>
-                        <button className='text-gray-700 block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 hover:text-gray-800 dark:text-gray-200' >
-                          <a href="/api/auth/logout">Logout</a>                        
-                           </button>
+                          <a className='text-gray-700 block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 hover:text-gray-800 dark:text-gray-200' href="/api/auth/logout">Logout</a>                        
                       </Menu.Item>
                       <div className="px-4 py-3">
                         <p className="text-sm text-black dark:text-gray-200">Signed in as</p>

@@ -1,8 +1,12 @@
 
+'use client'
 import Image from "next/image"
 import Link from "next/link"
+import { usePlaidLink } from 'react-plaid-link';
 
 export default function Body() {
+    
+    
     return (
         <main className="bg-white dark:bg-gray-900">
             <section className="bg-white dark:bg-gray-900 pb-20">
@@ -10,12 +14,12 @@ export default function Body() {
                     <div className="mr-auto place-self-center lg:col-span-7">
                         <h1 className="max-w-2xl mb-6 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Empower Your Finances with Paywind</h1>
                         <p className="max-w-2xl mb-6 font-light text-gray-500 text-2xl lg:mb-8  dark:text-gray-300">Discover the ultimate financial hub. Manage all your finances effortlessly in one simple, seamless app. Combining intuitive tools with personalized insights, Paywind ensures you&apos;re always in control of your financial journey. Dive in and experience the future of personal finance.</p>
-                        <Link href="/demo/dashboard" className="w-1/3 bg-black inline-flex items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg hover:bg-gray-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900  hover:transition duration-300 ease-in-out dark:ring-2 dark:ring-white ">
+                        <Link href="/demo/dashboard" className="w-max bg-black inline-flex items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg hover:bg-gray-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900  hover:transition duration-300 ease-in-out dark:ring-2 dark:ring-white ">
                             View Demo
                         </Link>
-                        <a href="/dashboard" className="w-1/3 inline-flex items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg  hover:bg-green-600 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900  hover:transition duration-300 ease-in-out bg-green-500 ">
+                        <a href="/dashboard" className="w-max inline-flex items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg  hover:bg-green-600 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900  hover:transition duration-300 ease-in-out bg-green-500 ">
                             Sign Up
-                            <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                            <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </a>
                     </div>
                     <div className=" lg:mt-0 lg:col-span-5 lg:flex">
@@ -50,7 +54,7 @@ export default function Body() {
                                     <div className="relative pl-9">
                                         <dt className="inline text-xl font-semibold text-gray-900 dark:text-white">
                                             <svg className="absolute left-1 top-1 h-5 w-5 text-indigo-600 dark:text-white" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
-                                                <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clip-rule="evenodd" />
+                                                <path fill-rule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clipRule="evenodd" />
                                             </svg>
                                             True End-To-End Encryption
                                         </dt>

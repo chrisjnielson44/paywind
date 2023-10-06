@@ -1,9 +1,13 @@
 'use client'
 import SettingInterface from '../settingsinterface'
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 
 export default function Settings() {
+    const { user, error, isLoading } = useUser();
 
+    if (isLoading) return <div>Loading...</div>;
+    if (error) return <div>{error.message}</div>;
     return (
         <div className='bg-white dark:bg-gray-900 '> 
             <div className="mx-auto max-w-7xl pt-10 lg:flex lg:gap-x-16 lg:px-0">
@@ -11,7 +15,7 @@ export default function Settings() {
 
                 <main className="px-4 py-16 sm:px-6 lg:flex-auto lg:px-0 lg:py-20">
                     <div className='pb-8 flex justify-center md:justify-end '>
-                        <img class="p-1 h-20 w-20 rounded-full border-2 shadow-xl bg-white" src="https://www.freeiconspng.com/thumbs/profile-icon-png/profile-icon-9.png" alt="" />
+                        <img class="p-1 h-20 w-20 rounded-full border-2 shadow-xl bg-white" src={user.picture} alt="" />
                     </div>
                     <div className="mx-auto max-w-2xl space-y-16 sm:space-y-20 lg:mx-0 lg:max-w-none">
                         <div>
@@ -24,7 +28,7 @@ export default function Settings() {
                                 <div className="pt-6 sm:flex">
                                     <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6 dark:text-white">Full name</dt>
                                     <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
-                                        <div className="text-gray-900 dark:text-white">{user?.attributes?.given_name} {user?.attributes?.family_name}</div>
+                                        {/* <div className="text-gray-900 dark:text-white">{user?.attributes?.given_name} {user?.attributes?.family_name}</div> */}
                                         {/* <button type="button" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
                                             Update
                                         </button> */}
@@ -33,7 +37,7 @@ export default function Settings() {
                                 <div className="pt-6 sm:flex">
                                     <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6 dark:text-white">Email address</dt>
                                     <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
-                                        <div className="text-gray-900 dark:text-white">{user?.attributes?.email}</div>
+                                        <div className="text-gray-900 dark:text-white">{user.email}</div>
                                         {/* <button type="button" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
                                             Update
                                         </button> */}

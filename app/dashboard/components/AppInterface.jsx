@@ -6,6 +6,7 @@ import Link from 'next/link'
 import { usePathname, useRouter} from 'next/navigation';
 import { useUser } from '@auth0/nextjs-auth0/client';
 
+const pathname = usePathname();
 
 
 export default function AppInterface() {
@@ -15,7 +16,6 @@ export default function AppInterface() {
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>{error.message}</div>;
 
-  const pathname = usePathname();
   const isActive = pathname;
   return (
     <Disclosure as="nav" className="bg-white shadow sticky top-0 z-50 dark:bg-gray-900 dark:shadow-sm dark:shadow-gray-500 ">

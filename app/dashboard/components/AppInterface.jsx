@@ -3,14 +3,12 @@ import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import { usePathname, useRouter} from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useUser } from '@auth0/nextjs-auth0/client';
-
-const pathname = usePathname();
 
 
 export default function AppInterface() {
-  const router = useRouter();
+  const pathname = usePathname();
   const { user, error, isLoading } = useUser();
 
   if (isLoading) return <div>Loading...</div>;

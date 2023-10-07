@@ -77,7 +77,7 @@ export default function AppInterface() {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-auto  rounded-full ring-1 ring-gray-300 "
-                        src={user.picture}
+                        src={user?.picture || 'https://i.stack.imgur.com/l60Hf.png'}
                         alt=""
                       />
                     </Menu.Button>
@@ -108,7 +108,7 @@ export default function AppInterface() {
                       </Menu.Item>
                       <div className="px-4 py-3">
                         <p className="text-sm text-black dark:text-gray-200">Signed in as</p>
-                        <p className="truncate text-sm font-medium text-gray-900 dark:text-gray-200">{user.email}</p>
+                        <p className="truncate text-sm font-medium text-gray-900 dark:text-gray-200">{user?.email}</p>
                       </div>
                     </Menu.Items>
                   </Transition>

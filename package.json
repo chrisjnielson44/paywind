@@ -28,7 +28,8 @@
     "serverless-http": "^3.2.0",
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.7.32",
-    "swr": "^2.2.4"
+    "swr": "^2.2.4",
+    "web3": "^4.1.2"
   },
   "devDependencies": {
     "@types/node": "latest",

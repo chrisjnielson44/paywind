@@ -1,13 +1,12 @@
 import AppInterface from "../components/AppInterface";
-import Crypto from "./crypto";
-
+import CryptoBody from "./body";
 import { withPageAuthRequired } from '@auth0/nextjs-auth0';
 
 export default withPageAuthRequired ( async function Home() {
     return (
         <main>
         <AppInterface />
-        <Crypto />
+        <CryptoBody />
     </main>
     )
 }, { returnTo: '/dashboard/crypto' })

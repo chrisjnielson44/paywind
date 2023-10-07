@@ -5,7 +5,6 @@ import Link from "next/link"
 
 export default function Body() {
     
-    
     return (
         <main className="bg-white dark:bg-gray-900">
             <section className="bg-white dark:bg-gray-900 pb-20">

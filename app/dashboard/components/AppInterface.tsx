@@ -1,4 +1,4 @@
-'use client';
+'use client'
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
@@ -10,11 +10,10 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 export default function AppInterface() {
   const pathname = usePathname();
   const { user, error, isLoading } = useUser();
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>{error.message}</div>;
-
-  const isActive = pathname;
+  let profileImageSrc = 'https://i.stack.imgur.com/l60Hf.png'; // default image
+  if (!isLoading && user && user.picture) {
+    profileImageSrc = user.picture;
+  }
   return (
     <Disclosure as="nav" className="bg-white shadow sticky top-0 z-50 dark:bg-gray-900 dark:shadow-sm dark:shadow-gray-500 ">
       {({ open }) => (
@@ -77,7 +76,7 @@ export default function AppInterface() {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-auto  rounded-full ring-1 ring-gray-300 "
-                        src={user?.picture || 'https://i.stack.imgur.com/l60Hf.png'}
+                        src={isLoading || !user?.picture ? 'https://i.stack.imgur.com/l60Hf.png' : user.picture}
                         alt=""
                       />
                     </Menu.Button>
@@ -104,11 +103,17 @@ export default function AppInterface() {
                         </Link>
                       </Menu.Item>
                       <Menu.Item>
-                          <a className='text-gray-700 block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 hover:text-gray-800 dark:text-gray-200' href="/api/auth/logout">Logout</a>                        
+                        <a className='text-gray-700 block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 hover:text-gray-800 dark:text-gray-200' href="/api/auth/logout">Logout</a>
                       </Menu.Item>
                       <div className="px-4 py-3">
                         <p className="text-sm text-black dark:text-gray-200">Signed in as</p>
-                        <p className="truncate text-sm font-medium text-gray-900 dark:text-gray-200">{user?.email}</p>
+                        {isLoading ? (
+                          <p className="text-sm font-medium text-gray-900 dark:text-gray-200">Loading...</p>
+                        ) : error ? (
+                          <p className="text-sm font-medium text-red-500">Error fetching user data</p>
+                        ) : (
+                          <p className="truncate text-sm font-medium text-gray-900 dark:text-gray-200">{user?.email}</p>
+                        )}
                       </div>
                     </Menu.Items>
                   </Transition>

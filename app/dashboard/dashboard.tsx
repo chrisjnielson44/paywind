@@ -14,7 +14,6 @@ export default async function Dashboard() {
             {/* Secondary navigation */}
             <div className='pb-20'>
               <h3 className="text-3xl pb-20 font-semibold leading-6 text-gray-900 sm:text-center md:text-left dark:text-white">Greetings {user.email} { }</h3>
-              <script src="https://cdn.plaid.com/link/v2/stable/link-initialize.js"></script>
 
               <h3 className="text-3xl font-semibold leading-6 text-gray-900 sm:text-center md:text-left dark:text-white">Accounts</h3>
               {/* <dl className="mt-10 grid grid-cols-1 grid-rows-2 gap-5 sm:grid-cols-3">

@@ -1,8 +1,6 @@
 'use client'
 import SettingInterface from '../settingsinterface'
 
-
-
 export default function Plans() {
 
     return (

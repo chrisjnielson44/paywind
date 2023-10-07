@@ -1,27 +1,27 @@
+
 'use client'
+import { getSession } from '@auth0/nextjs-auth0';
 import SettingInterface from '../settingsinterface'
-import { useUser } from '@auth0/nextjs-auth0/client';
 
 
-export default function Settings() {
-    const { user, error, isLoading } = useUser();
+export default async function Settings() {
+    const session = await getSession();
+    const user = (session as any).user;
 
-    if (isLoading) return <div>Loading...</div>;
-    if (error) return <div>{error.message}</div>;
     return (
-        <div className='bg-white dark:bg-gray-900 '> 
+        <div className='bg-white dark:bg-gray-900 '>
             <div className="mx-auto max-w-7xl pt-10 lg:flex lg:gap-x-16 lg:px-0">
-                <SettingInterface/>
+                <SettingInterface />
 
                 <main className="px-4 py-16 sm:px-6 lg:flex-auto lg:px-0 lg:py-20">
                     <div className='pb-8 flex justify-center md:justify-end '>
-                        <img class="p-1 h-20 w-20 rounded-full border-2 shadow-xl bg-white" src={user.picture} alt="" />
+                        <img className="p-1 h-20 w-20 rounded-full border-2 shadow-xl bg-white" src={user.picture} alt="" />
                     </div>
                     <div className="mx-auto max-w-2xl space-y-16 sm:space-y-20 lg:mx-0 lg:max-w-none">
                         <div>
                             <h2 className="text-base font-semibold leading-7 text-gray-900 dark:text-white">Profile</h2>
                             <p className="mt-1 text-sm leading-6 text-gray-500">
-                                
+
                             </p>
 
                             <dl className="mt-6 space-y-6 divide-y divide-gray-100 border-t border-gray-200 text-sm leading-6">
@@ -133,7 +133,7 @@ export default function Settings() {
                                         </button> */}
                                     </dd>
                                 </div>
-                               
+
                             </dl>
                         </div>
                     </div>

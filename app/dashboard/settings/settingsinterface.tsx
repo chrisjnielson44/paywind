@@ -1,14 +1,11 @@
 
 'use client'
-import { useState } from 'react'
-import { Dialog, Switch } from '@headlessui/react'
 import {
     BellIcon,
     CreditCardIcon,
     CubeIcon,
     FingerPrintIcon,
     UserCircleIcon,
-    UsersIcon,
 } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
@@ -22,7 +19,7 @@ const secondaryNavigation = [
     { name: 'Billing', href: '/dashboard/settings/billing', icon: CreditCardIcon, current: false },
 ]
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 

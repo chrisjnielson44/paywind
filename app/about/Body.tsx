@@ -1,3 +1,4 @@
+import Image from "next/image"
 
 export default function Body() {
     return (
@@ -11,7 +12,7 @@ export default function Body() {
                     <div className="grid gap-8 mb-6 lg:mb-16 md:grid-cols-1">
                         <div className="items-center bg-gray-50 rounded-lg shadow sm:flex dark:bg-gray-800 dark:border-gray-700">
                             <a href="#">
-                                <img className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg grayscale" src="smallprof.png" alt="Bonnie Avatar"/>
+                                <Image className="w-full rounded-lg sm:rounded-none sm:rounded-l-lg grayscale" src="smallprof.png" alt="Bonnie Avatar"/>
                             </a>
                             <div className="p-5">
                                 <h3 className="text-xl font-bold tracking-tight text-gray-900 dark:text-white">

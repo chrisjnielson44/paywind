@@ -12,13 +12,15 @@ export default function Body() {
                     <div className="mr-auto place-self-center lg:col-span-7">
                         <h1 className="max-w-2xl mb-6 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-white">Empower Your Finances with Paywind</h1>
                         <p className="max-w-2xl mb-6 font-light text-gray-500 text-2xl lg:mb-8  dark:text-gray-300">Discover the ultimate financial hub. Manage all your finances effortlessly in one simple, seamless app. Combining intuitive tools with personalized insights, Paywind ensures you&apos;re always in control of your financial journey. Dive in and experience the future of personal finance.</p>
-                        <Link href="/demo/dashboard" className="w-max bg-black inline-flex items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg hover:bg-gray-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900  hover:transition duration-300 ease-in-out dark:ring-2 dark:ring-white ">
+                        <div className="flex items-center justify-center ">
+                        <Link href="/demo/dashboard" className="w-1/2 bg-black inline-flex items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg hover:bg-gray-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900  hover:transition duration-300 ease-in-out dark:ring-2 dark:ring-white md:text-xl ">
                             View Demo
                         </Link>
-                        <a href="/dashboard" className="w-max inline-flex items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg  hover:bg-green-600 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900  hover:transition duration-300 ease-in-out bg-green-500 ">
+                        <a href="/api/auth/signup" className="w-1/2 inline-flex items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg  hover:bg-green-600 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900  hover:transition duration-300 ease-in-out bg-green-500 md:text-xl">
                             Sign Up
                             <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                         </a>
+                        </div>
                     </div>
                     <div className=" lg:mt-0 lg:col-span-5 lg:flex">
                         <Image src="https://chris-n.s3.us-east-2.amazonaws.com/images/pig.svg" alt="pig" width="2432" height="1442"  />

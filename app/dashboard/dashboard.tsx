@@ -1,6 +1,5 @@
 import { getSession } from '@auth0/nextjs-auth0';
 import Accounts from './components/accouts';
-// import PlaidLink from './components/plaidlink'
 
 export default async function Dashboard() {
   const session = await getSession();
@@ -11,7 +10,6 @@ export default async function Dashboard() {
       <main id="dashboard" className='top-0 bg-white dark:bg-gray-900 h-screen md:h-screen'>
         <div className='mx-auto max-w-7xl'>
           <Accounts/>
-          {/* <PlaidLink/> */}
         </div>
       </main>
     </>

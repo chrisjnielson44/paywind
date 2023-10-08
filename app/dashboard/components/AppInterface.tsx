@@ -76,7 +76,7 @@ export default function AppInterface() {
                       <span className="sr-only">Open user menu</span>
                       <img
                         className="h-8 w-auto  rounded-full ring-1 ring-gray-300 "
-                        src={isLoading || !user?.picture ? 'https://i.stack.imgur.com/l60Hf.png' : user.picture}
+                        src={isLoading || !user?.picture ? 'https://papapsych.com/wp-content/uploads/2019/08/image.png' : user.picture}
                         alt=""
                       />
                     </Menu.Button>
@@ -92,6 +92,13 @@ export default function AppInterface() {
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-900 dark:ring-1 dark:ring-white dark:ring-opacity-5 dark:shadow-gray-700 dark:shadow-md">
                       <div className="px-4 py-3">
+                      {isLoading ? (
+                          <p className="text-sm font-medium text-gray-900 dark:text-gray-200">Loading...</p>
+                        ) : error ? (
+                          <p className="text-sm font-medium text-red-500">Error fetching user data</p>
+                        ) : (
+                          <p className="truncate text-sm font-medium text-gray-900 dark:text-gray-200">{user?.name}</p>
+                        )}
                       </div>
 
                       <Menu.Item>

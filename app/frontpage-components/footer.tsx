@@ -16,7 +16,7 @@ export default function Footer() {
                             <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Pages</h2>
                             <ul className="text-gray-600 dark:text-gray-400">
                             <li className="mb-4">
-                                    <Link href="/log-in" className="hover:underline ">Log In</Link>
+                                    <a href="/dashboard" className="hover:underline ">Log In</a>
                             </li>
                             <li className="mb-4">
                                     <Link href="/about" className="hover:underline ">About Us</Link>

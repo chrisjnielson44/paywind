@@ -43,7 +43,7 @@ export default function Metrics() {
         const etherBalance = await web3.eth.getBalance(accounts[0]);
         const formattedEtherBalance = web3.utils.fromWei(etherBalance, 'ether');
         
-        // Example: Get DAI token balance
+        // Get DAI token balance
         const daiContractAddress = '0x6b175474e89094c44da98b954eedeac495271d0f';  // Replace with the actual contract address
         const daiContract = new web3.eth.Contract(ERC20_ABI, daiContractAddress);
         const daiBalance = await daiContract.methods.balanceOf(accounts[0]).call();

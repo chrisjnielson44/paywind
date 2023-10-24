@@ -1,10 +1,23 @@
 'use client'
 import axios from 'axios';
+import web3 from "./web3";
 import { useState, useEffect } from 'react';
 
+// ERC20 ABI
+const ERC20_ABI = [
+  {
+    "constant": true,
+    "inputs": [{"name": "_owner", "type": "address"}],
+    "name": "balanceOf",
+    "outputs": [{"name": "balance", "type": "uint256"}],
+    "type": "function"
+  }
+]; 
 
 export default function Metrics() {
   const [cryptoData, setCryptoData] = useState(null);
+  const [accounts, setAccounts] = useState([]);
+  const [balances, setBalances] = useState({});
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -23,6 +36,23 @@ export default function Metrics() {
         });
         setCryptoData(response.data);
         setIsLoading(false);
+        const accounts = await web3.eth.getAccounts();
+        setAccounts(accounts);
+
+        // Get Ether balance
+        const etherBalance = await web3.eth.getBalance(accounts[0]);
+        const formattedEtherBalance = web3.utils.fromWei(etherBalance, 'ether');
+        
+        // Get DAI token balance
+        const daiContractAddress = '0x6b175474e89094c44da98b954eedeac495271d0f';  // Replace with the actual contract address
+        const daiContract = new web3.eth.Contract(ERC20_ABI, daiContractAddress);
+        const daiBalance = await daiContract.methods.balanceOf(accounts[0]).call();
+        const formattedDaiBalance = web3.utils.fromWei(daiBalance, 'ether');
+
+        setBalances({
+          ether: formattedEtherBalance,
+          DAI: formattedDaiBalance
+        });
       } catch (error) {
         console.error("Error fetching the crypto data", error);
       }
@@ -34,6 +64,19 @@ export default function Metrics() {
   return (
     <main id="dashboard" className='top-0 h-screen bg-white dark:bg-gray-900'>
       <div className='pt-20 mx-auto max-w-7xl'>
+      <div>
+        <h2>Your Accountsuh</h2>
+        <ul>
+          {accounts.map((account, index) => (
+            <li key={index}>{account}</li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h2>Your Balances</h2>
+        <p>Ether: {balances.ether}</p>
+        <p>DAI: {balances.DAI}</p>
+      </div>
             {isLoading ? (
                 <div>Loading...</div>
             ) : (

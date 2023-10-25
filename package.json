@@ -16,6 +16,7 @@
     "@vercel/kv": "^0.2.3",
     "aphrodite": "^2.4.0",
     "axios": "^1.5.1",
+    "bufferutil": "^4.0.8",
     "chart.js": "^4.4.0",
     "encoding": "^0.1.13",
     "iron-session": "^6.3.1",
@@ -30,6 +31,7 @@
     "slick-carousel": "^1.8.1",
     "sweetalert2": "^11.7.32",
     "swr": "^2.2.4",
+    "utf-8-validate": "^6.0.3",
     "web3": "^4.1.2"
   },
   "devDependencies": {

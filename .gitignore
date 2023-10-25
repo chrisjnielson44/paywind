@@ -25,16 +25,9 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-<<<<<<< HEAD
-# .env.local
-# .env
-=======
-<<<<<<< HEAD
-.env*local
-=======
 
->>>>>>> main
->>>>>>> ffa8977 (Update)
+# .env.local
+
 
 # vercel
 .vercel
@@ -45,31 +38,7 @@ next-env.d.ts
 
 #SDK
 
-<<<<<<< HEAD
-#amplify-do-not-edit-begin
-amplify/\#current-cloud-backend
-amplify/.config/local-*
-amplify/logs
-amplify/mock-data
-amplify/mock-api-resources
-amplify/backend/amplify-meta.json
-amplify/backend/.temp
-build/
-dist/
-node_modules/
-
-# aws-exports.js
-awsconfiguration.json
-amplifyconfiguration.json
-amplifyconfiguration.dart
-amplify-build-config.json
-amplify-gradle-config.json
-amplifytools.xcconfig
-.secret-*
-**.sample
-#amplify-do-not-edit-end
-=======
 
 #env
 .env*
->>>>>>> ffa8977 (Update)
+

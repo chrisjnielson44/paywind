@@ -25,8 +25,16 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
+<<<<<<< HEAD
 # .env.local
 # .env
+=======
+<<<<<<< HEAD
+.env*local
+=======
+
+>>>>>>> main
+>>>>>>> ffa8977 (Update)
 
 # vercel
 .vercel
@@ -37,6 +45,7 @@ next-env.d.ts
 
 #SDK
 
+<<<<<<< HEAD
 #amplify-do-not-edit-begin
 amplify/\#current-cloud-backend
 amplify/.config/local-*
@@ -59,3 +68,8 @@ amplifytools.xcconfig
 .secret-*
 **.sample
 #amplify-do-not-edit-end
+=======
+
+#env
+.env*
+>>>>>>> ffa8977 (Update)

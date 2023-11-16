@@ -2,6 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { UserProvider } from '@auth0/nextjs-auth0/client';
+import { Analytics } from '@vercel/analytics/react';
+
 
 
 
@@ -24,6 +26,7 @@ export default function RootLayout({
       <UserProvider>
        <body>{children}</body>
       </UserProvider>
+      <Analytics/>
     </html>
   )
 }

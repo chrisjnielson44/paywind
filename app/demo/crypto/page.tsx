@@ -1,4 +1,5 @@
 import AppInterface from "../components/AppInterface"
+import CryptoPage from "./demopage"
 // import Crypto from "./crypto"
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
         <main>
             <AppInterface/>
             {/* <Crypto/> */}
+            <CryptoPage/>
         </main>
     )
 }

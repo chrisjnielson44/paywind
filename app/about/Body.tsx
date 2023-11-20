@@ -13,11 +13,11 @@ export default function Body() {
                     <div className="grid gap-8 mb-6 lg:mb-16 md:grid-cols-1">
                     <h2 className="mb-1 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Mission</h2>
                     <p className="text-xl ">
-                    At Paywind, we're passionate about revolutionizing personal finance management. 
+                    At Paywind, we&apos;re passionate about revolutionizing personal finance management. 
                     Our mission is to empower users with an intuitive and comprehensive financial hub that simplifies and enhances the way you handle your finances. 
                     Our app, designed with a user-centric approach, offers a modular design allowing for a personalized experience that aligns with your unique financial goals. 
-                    By integrating innovative technology with insightful analytics, Paywind ensures that you're always in command of your financial journey, offering seamless budgeting, robust security, and efficient account management. 
-                    We're committed to making personal finance not just easier, but also a more insightful and growth-oriented experience. Join us at Paywind, where your financial wellness is our priority, and experience the future of personal finance management.
+                    By integrating innovative technology with insightful analytics, Paywind ensures that you&apos;re always in command of your financial journey, offering seamless budgeting, robust security, and efficient account management. 
+                    We&apos;re committed to making personal finance not just easier, but also a more insightful and growth-oriented experience. Join us at Paywind, where your financial wellness is our priority, and experience the future of personal finance management.
                     </p>
 
                     </div>

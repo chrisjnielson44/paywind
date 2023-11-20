@@ -5,6 +5,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import { useUser } from '@auth0/nextjs-auth0/client';
+import { signOut } from 'next-auth/react'
 
 
 export default function AppInterface() {
@@ -110,7 +111,9 @@ export default function AppInterface() {
                         </Link>
                       </Menu.Item>
                       <Menu.Item>
-                        <a className='text-gray-700 block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 hover:text-gray-800 dark:text-gray-200' href="/api/auth/logout">Logout</a>
+                        <button  onClick={() =>  {
+                                    signOut();
+                                }} className='text-gray-700 block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 hover:text-gray-800 dark:text-gray-200'>Logout</button>
                       </Menu.Item>
                       <div className="px-4 py-3">
                         <p className="text-sm text-black dark:text-gray-200">Signed in as</p>

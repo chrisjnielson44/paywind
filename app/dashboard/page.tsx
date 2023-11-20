@@ -1,14 +1,19 @@
-
+import { getServerSession } from "next-auth";
 import AppInterface from "./components/AppInterface";
 import Dashboard from "./dashboard";
-import { withPageAuthRequired } from '@auth0/nextjs-auth0';
+import { redirect } from "next/navigation"
 
-export default withPageAuthRequired ( async function Home() {
+export default async function Home() {
+  
     return (
         <main>
         <AppInterface/>
         <Dashboard/>
     </main>
     )
-}, { returnTo: '/dashboard' })
+}
 
+// const session = await getServerSession();
+// if(session) {
+//     redirect('/auth/login');
+// }

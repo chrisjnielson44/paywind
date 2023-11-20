@@ -1,8 +1,6 @@
-import { getSession } from '@auth0/nextjs-auth0';
 import Accounts from './components/accouts';
 export default async function Dashboard() {
-  const session = await getSession();
-  const user = (session as any).user;
+
 
   return (
     <>
@@ -15,4 +13,3 @@ export default async function Dashboard() {
   )
 }
 
-// Initiate New Pranch

@@ -1,6 +1,10 @@
 'use client'
 import { FormEvent, useState } from "react"
+import { useRouter } from 'next/navigation'
+
+
 export default async function SignUp() {
+    const router = useRouter();
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -12,8 +16,17 @@ export default async function SignUp() {
                 first_name: formData.get('first_name'),
                 family_name: formData.get('family_name')
             }),
-        });
-        console.log({ response })
+        })
+        console.log({ response });
+        // Check if the response was successful
+        if (response.ok) {
+            router.push('/auth/login');
+            router.refresh();
+        } else {
+            // Handle error case
+            console.error('Error during sign up:', await response.text());
+            // You might want to update the state here to show an error message to the user
+        }
     };
     return (
 
@@ -43,7 +56,7 @@ export default async function SignUp() {
                                     name="phone-number"
                                     type="text"
                                     autoComplete="phone-number"
-                                    
+
                                     className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
                                 />
                             </div>

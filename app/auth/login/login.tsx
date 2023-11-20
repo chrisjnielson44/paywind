@@ -36,8 +36,8 @@ export default async function Login() {
                 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                     <form className="space-y-6" onSubmit={handleSubmit}>
                         <div>
-                            <label htmlFor="email" className="block text-sm font-medium leading-6 dark:text-white text-green-500">
-                                Email address
+                            <label htmlFor="email" className="block text-sm font-bold leading-6 dark:text-white text-green-500">
+                                Email Address
                             </label>
                             <div className="mt-2">
                                 <input
@@ -53,7 +53,7 @@ export default async function Login() {
 
                         <div>
                             <div className="flex items-center justify-between">
-                                <label htmlFor="password" className="block text-sm font-medium leading-6 dark:text-white text-green-500">
+                                <label htmlFor="password" className="block text-sm font-bold leading-6 dark:text-white text-green-500">
                                     Password
                                 </label>
                                 <div className="text-sm">

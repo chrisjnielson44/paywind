@@ -1,5 +1,5 @@
 'use client'
-import { FormEvent } from "react"
+import { FormEvent, useState } from "react"
 export default async function SignUp() {
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -30,6 +30,24 @@ export default async function SignUp() {
 
                 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
                     <form className="space-y-6" onSubmit={handleSubmit}>
+                        <div className="">
+                            <label htmlFor="phone-number" className="block text-sm font-medium leading-6 dark:text-white text-green-500">
+                                Phone Number (Optional)
+                            </label>
+                            <div className="mt-2 flex ring-1 ring-gray-500 rounded-md focus:ring-inset focus:ring-green-500">
+                                <span className="flex items-center bg-white/5 border-r px-3 text-white">
+                                    +1
+                                </span>
+                                <input
+                                    id="phone-number"
+                                    name="phone-number"
+                                    type="text"
+                                    autoComplete="phone-number"
+                                    
+                                    className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
+                                />
+                            </div>
+                        </div>
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium leading-6 dark:text-white text-green-500">
                                 First Name
@@ -72,7 +90,6 @@ export default async function SignUp() {
                                     autoComplete="email"
                                     required
                                     className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
-                                    placeholder="johnnyappleseed@apple.com"
                                 />
                             </div>
                         </div>
@@ -81,6 +98,24 @@ export default async function SignUp() {
                             <div className="flex items-center justify-between">
                                 <label htmlFor="password" className="block text-sm font-medium leading-6 dark:text-white text-green-500">
                                     Password
+                                </label>
+
+                            </div>
+                            <div className="mt-2">
+                                <input
+                                    id="password"
+                                    name="password"
+                                    type="password"
+                                    autoComplete="current-password"
+                                    required
+                                    className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
+                                />
+                            </div>
+                        </div>
+                        <div>
+                            <div className="flex items-center justify-between">
+                                <label htmlFor="password" className="block text-sm font-medium leading-6 dark:text-white text-green-500">
+                                    Confirm Password
                                 </label>
 
                             </div>

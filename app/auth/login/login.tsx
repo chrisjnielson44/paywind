@@ -97,7 +97,6 @@ export default async function Login() {
                             </svg>
                             Sign in with GitHub
                             <div></div>
-
                         </button>
                         <p className="mt-10 text-center text-sm text-gray-400">
                             Don&apos;t have an account?{' '} 
@@ -105,8 +104,6 @@ export default async function Login() {
                                 Sign Up
                             </Link>
                         </p>
-
-
                     </div>
                 </div>
             </div>

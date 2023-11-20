@@ -4,17 +4,12 @@ import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
-import { useUser } from '@auth0/nextjs-auth0/client';
 import { signOut } from 'next-auth/react'
+
 
 
 export default function AppInterface() {
   const pathname = usePathname();
-  const { user, error, isLoading } = useUser();
-  let profileImageSrc = 'https://i.stack.imgur.com/l60Hf.png'; // default image
-  if (!isLoading && user && user.picture) {
-    profileImageSrc = user.picture;
-  }
   return (
     <Disclosure as="nav" className="bg-white shadow sticky top-0 z-50 dark:bg-gray-900 dark:shadow-sm dark:shadow-gray-500 ">
       {({ open }) => (
@@ -76,8 +71,8 @@ export default function AppInterface() {
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
                       <img
+                        src='https://i.stack.imgur.com/l60Hf.png'
                         className="h-8 w-auto  rounded-full ring-1 ring-gray-300 "
-                        src={isLoading || !user?.picture ? '/profileicon.svg' : user.picture}
                         alt=""
                       />
                     </Menu.Button>
@@ -93,13 +88,7 @@ export default function AppInterface() {
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-900 dark:ring-1 dark:ring-white dark:ring-opacity-5 dark:shadow-gray-700 dark:shadow-md">
                       <div className="px-4 py-3">
-                      {isLoading ? (
-                          <p className="text-sm font-medium text-gray-900 dark:text-gray-200">Loading...</p>
-                        ) : error ? (
-                          <p className="text-sm font-medium text-red-500">Error fetching user data</p>
-                        ) : (
-                          <p className="truncate text-sm font-medium text-gray-900 dark:text-gray-200">{user?.name}</p>
-                        )}
+                     
                       </div>
 
                       <Menu.Item>
@@ -117,13 +106,7 @@ export default function AppInterface() {
                       </Menu.Item>
                       <div className="px-4 py-3">
                         <p className="text-sm text-black dark:text-gray-200">Signed in as</p>
-                        {isLoading ? (
-                          <p className="text-sm font-medium text-gray-900 dark:text-gray-200">Loading...</p>
-                        ) : error ? (
-                          <p className="text-sm font-medium text-red-500">Error fetching user data</p>
-                        ) : (
-                          <p className="truncate text-sm font-medium text-gray-900 dark:text-gray-200">{user?.email}</p>
-                        )}
+                      
                       </div>
                     </Menu.Items>
                   </Transition>
@@ -134,7 +117,6 @@ export default function AppInterface() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="space-y-1 pb-3 pt-2">
-              {/* Current: "bg-green-50 border-green-500 text-green-700", Default: "border-transparent text-gray-600 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-800" */}
               <Disclosure.Button
                 as="a"
                 href="/dashboard"

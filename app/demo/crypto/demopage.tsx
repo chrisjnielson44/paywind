@@ -1,5 +1,6 @@
 'use client'
 import axios from 'axios';
+import handlerMetaMask from "../components/handlerMetaMask";
 import { useState, useEffect } from 'react';
 
 interface CryptoData {
@@ -64,7 +65,8 @@ const Metrics: React.FC = () => {
         )}
         <div className='pt-20'>
          <button 
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+          onClick={handlerMetaMask}>
           Connect with MetaMask
         </button>
         </div>

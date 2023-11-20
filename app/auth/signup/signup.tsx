@@ -31,7 +31,7 @@ export default async function SignUp() {
     };
     return (
 
-        <div className="bg-white dark:bg-gray-900 h-screen ">
+        <div className="bg-white dark:bg-gray-900 md:h-screen ">
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm ">
                     <div className="flex items-center justify-center">

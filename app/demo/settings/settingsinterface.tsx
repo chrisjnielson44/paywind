@@ -22,7 +22,7 @@ const secondaryNavigation = [
     { name: 'Billing', href: '/demo/settings/billing', icon: CreditCardIcon, current: false },
 ]
 
-function classNames(...classes) {
+function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
 }
 

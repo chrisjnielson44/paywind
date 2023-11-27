@@ -1,4 +1,4 @@
-import AppInterface from "../components/AppInterface";
+import AppInterface from "../components/AppInterfaceComp";
 import SendMoney from "./SendMoney"
 
 

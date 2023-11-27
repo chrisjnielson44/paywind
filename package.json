@@ -40,8 +40,8 @@
   "devDependencies": {
     "@types/bcrypt": "^5.0.2",
     "@types/node": "latest",
-    "@types/react": "latest",
-    "@types/react-dom": "latest",
+    "@types/react": "^18.2.38",
+    "@types/react-dom": "^18.2.17",
     "autoprefixer": "latest",
     "eslint": "latest",
     "eslint-config-next": "^14.0.3",

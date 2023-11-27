@@ -1,14 +1,19 @@
 'use client'
-import { Fragment } from 'react'
+import { Fragment, ReactNode } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation';
 import { signOut } from 'next-auth/react'
 
+interface AppInterfaceProps {
+  userEmail: string | null | undefined;
+  userName: string | null | undefined;
+  profileImageUrl: string;
+}
 
 
-export default function AppInterface() {
+const AppInterface: React.FC<AppInterfaceProps> = ({ userEmail, userName, profileImageUrl }) => {
   const pathname = usePathname();
   return (
     <Disclosure as="nav" className="bg-white shadow sticky top-0 z-50 dark:bg-gray-900 dark:shadow-sm dark:shadow-gray-500 ">
@@ -71,10 +76,11 @@ export default function AppInterface() {
                       <span className="absolute -inset-1.5" />
                       <span className="sr-only">Open user menu</span>
                       <img
-                        src='https://i.stack.imgur.com/l60Hf.png'
-                        className="h-8 w-auto  rounded-full ring-1 ring-gray-300 "
-                        alt=""
+                        src={profileImageUrl}
+                        className="h-10 w-10  bg-black rounded-full ring-1 ring-gray-300 "
+                        alt="test"
                       />
+                      
                     </Menu.Button>
                   </div>
                   <Transition
@@ -88,9 +94,8 @@ export default function AppInterface() {
                   >
                     <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none dark:bg-gray-900 dark:ring-1 dark:ring-white dark:ring-opacity-5 dark:shadow-gray-700 dark:shadow-md">
                       <div className="px-4 py-3">
-                     
+                      <p className='text-sm font-semibold'>{userName}</p>
                       </div>
-
                       <Menu.Item>
                         <Link
                           href="/dashboard/settings/general"
@@ -106,7 +111,7 @@ export default function AppInterface() {
                       </Menu.Item>
                       <div className="px-4 py-3">
                         <p className="text-sm text-black dark:text-gray-200">Signed in as</p>
-                      
+                        <p className='text-sm'>{userEmail}</p>
                       </div>
                     </Menu.Items>
                   </Transition>
@@ -154,3 +159,4 @@ export default function AppInterface() {
     </Disclosure>
   )
 }
+export default AppInterface;

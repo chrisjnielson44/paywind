@@ -1,19 +1,15 @@
-import { getServerSession } from "next-auth";
-import AppInterface from "./components/AppInterface";
-import Dashboard from "./dashboard";
-import { redirect } from "next/navigation"
+import { getServerSession } from "next-auth/next";
+import AppInterface from "./components/AppInterfaceComp";
 
-export default async function Home() {
-  
+import Dashboard from "./dashboard";
+import { authOptions } from "@/app/api/auth/[...nextauth]/route"
+
+
+export default function Home() {
     return (
         <main>
-        <AppInterface/>
-        <Dashboard/>
-    </main>
-    )
+            <AppInterface/>
+            <Dashboard />
+        </main>
+    );
 }
-
-// const session = await getServerSession();
-// if(session) {
-//     redirect('/auth/login');
-// }

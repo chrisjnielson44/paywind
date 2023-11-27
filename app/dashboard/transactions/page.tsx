@@ -1,4 +1,4 @@
-import AppInterface from '../components/AppInterface'
+import AppInterface from "../components/AppInterfaceComp";
 import Transactions from './transactions'
 
 export default async function Home() {

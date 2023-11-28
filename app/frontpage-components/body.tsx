@@ -23,7 +23,7 @@ export default function Body() {
                         </div>
                     </div>
                     <div className=" lg:mt-0 lg:col-span-5 lg:flex">
-                        <Image src="https://chris-n.s3.us-east-2.amazonaws.com/images/pig.svg" alt="pig" width="2432" height="1442"  />
+                        <Image src="/pig.svg" alt="pig" width="2432" height="1442"  />
                     </div>
                 </div>
             </section>

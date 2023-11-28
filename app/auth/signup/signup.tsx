@@ -1,37 +1,114 @@
 'use client'
-import { FormEvent } from "react"
+import { FormEvent, useState } from "react"
 import { useRouter } from 'next/navigation'
 import Link from "next/link";
+import toast, { Toaster } from "react-hot-toast";
+import { PatternFormat } from 'react-number-format';
+import { signIn } from "next-auth/react";
 
 
-export default async function SignUp() {
+export default function SignUp() {
     const router = useRouter();
+
+    const [phone, setPhone] = useState('');
+
+    const isNumeric = (str: string) => {
+        return !isNaN(parseFloat(str)) && isFinite(Number(str));
+    };
+
+
+    const validatePassword = (password: string): string | null => {
+        if (password.length < 8) {
+            return 'Password must be at least 8 characters long.';
+        }
+        if (!/[A-Z]/.test(password)) {
+            return 'Password must contain at least one uppercase letter.';
+        }
+        if (!/\d/.test(password)) {
+            return 'Password must contain at least one number.';
+        }
+        if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+            return 'Password must contain at least one special character.';
+        }
+        return null;
+    };
+
+    const validatePhoneNumber = (phoneNumber: string): boolean => {
+        // Regular expression for validating US phone number format +1 (###) ###-####
+        const phoneRegex = /^\+1 \(\d{3}\) \d{3}-\d{4}$/;
+        return phoneRegex.test(phoneNumber);
+    };
+
+
+
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
-        const response = await fetch(`/api/auth/register`, {
-            method: 'POST',
-            body: JSON.stringify({
-                email: formData.get('email'),
-                password: formData.get('password'),
-                first_name: formData.get('first_name'),
-                family_name: formData.get('family_name')
-            }),
-        })
-        console.log({ response });
-        // Check if the response was successful
-        if (response.ok) {
-            router.push('/auth/login');
-            router.refresh();
-        } else {
-            // Handle error case
-            console.error('Error during sign up:', await response.text());
-            // You might want to update the state here to show an error message to the user
+        const firstName = formData.get('first_name') as string;
+        const lastName = formData.get('family_name') as string;
+        const password = formData.get('password') as string;
+        const phoneNumber = formData.get('phone-number') as string;
+
+        const confirmPassword = formData.get('confirm-password') as string;
+
+
+        // Check for numeric values in first and last name
+        if (isNumeric(firstName) || isNumeric(lastName)) {
+            toast.error('First and Last name should not contain numbers.');
+            return;
+        }
+
+        const passwordError = validatePassword(password);
+        if (passwordError) {
+            toast.error(passwordError);
+            return;
+        }
+
+
+        if (password !== confirmPassword) {
+            toast.error('Passwords do not match');
+            return;
+        }
+
+        if (phoneNumber && !validatePhoneNumber(phoneNumber)) {
+            toast.error('Phone number must be in the format +1 (XXX) XXX-XXXX.');
+            return;
+        }
+
+        try {
+            const response = await fetch(`/api/auth/register`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    email: formData.get('email'),
+                    password: formData.get('password'),
+                    first_name: formData.get('first_name'),
+                    family_name: formData.get('family_name'),
+                    phone: formData.get('phone-number')
+                }),
+            });
+
+            const data = await response.json(); // Parse the response data
+
+            if (response.ok) {
+                router.push('/dashboard');
+                router.refresh();
+            } else {
+                // Use the error message from the response, if available
+                toast.error(data.message || 'An error occurred during sign up');
+            }
+        } catch (error) {
+            console.error('Error during sign up:', error);
+            toast.error('An unexpected error occurred');
         }
     };
     return (
 
         <div className="bg-white dark:bg-gray-900 md:h-screen ">
+
+            <Toaster />
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm ">
                     <div className="flex items-center justify-center">
@@ -48,24 +125,6 @@ export default async function SignUp() {
                     <form className="space-y-6 " onSubmit={handleSubmit}>
                         <div className="pb-5 sm:mx-auto sm:w-full sm:max-w-sm">
 
-                            {/* <div className="">
-                                <label htmlFor="phone-number" className="block text-sm font-medium leading-6 dark:text-white text-green-500">
-                                    Phone Number (Optional)
-                                </label>
-                                <div className="mt-2 flex ring-1 ring-gray-500 rounded-md focus:ring-inset focus:ring-green-500">
-                                    <span className="flex items-center bg-white/5 border-r px-3 text-black dark:text-white">
-                                        +1
-                                    </span>
-                                    <input
-                                        id="phone-number"
-                                        name="phone-number"
-                                        type="text"
-                                        autoComplete="phone-number"
-
-                                        className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
-                                    />
-                                </div>
-                            </div> */}
 
                             <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                                 <div className="sm:col-span-3">
@@ -99,6 +158,25 @@ export default async function SignUp() {
                                         />
                                     </div>
                                 </div>
+
+                                <div className="sm:col-span-full">
+                                    <label htmlFor="phone-number" className="block text-sm font-medium leading-6 dark:text-white text-green-500">
+                                        Phone Number
+                                    </label>
+                                    <div className="mt-2">
+                                        <PatternFormat
+                                            id="phone-number"
+                                            name="phone-number"
+                                            mask="_"
+                                            format="+1 (###) ###-####"
+                                            className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
+                                            placeholder="+1 (___) ___-____"
+                                            type="tel"
+                                            required
+                                        />
+                                    </div>
+                                </div>
+
 
                                 <div className="sm:col-span-full">
                                     <label htmlFor="email" className="block text-sm font-medium leading-6 dark:text-white text-green-500">
@@ -178,7 +256,7 @@ export default async function SignUp() {
                         </div>
 
                         <div className="pt-2">
-                            <button type="button" className="text-white w-full  bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-between dark:focus:ring-[#4285F4]/55 mr-2 mb-2"><svg className="mr-2 -ml-1 w-4 h-4" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path></svg>Google<div></div></button>
+                            <button type="button" onClick={() => signIn('google')} className="text-white w-full  bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-between dark:focus:ring-[#4285F4]/55 mr-2 mb-2"><svg className="mr-2 -ml-1 w-4 h-4" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path></svg>Google<div></div></button>
                         </div>
                         <div className="pt-2">
                             <button type="button" className="text-white w-full  dark:bg-white dark:text-black dark:hover:bg-gray-200 justify-between bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2">
@@ -197,7 +275,7 @@ export default async function SignUp() {
 
                             </button>
                         </div>
-                        
+
                         <p className="mt-5 text-center text-sm text-gray-400">
                             Already have an account?{' '}
                             <Link href="/auth/login" className="font-semibold leading-6 text-green-500 hover:text-green-300">
@@ -208,8 +286,6 @@ export default async function SignUp() {
                 </div>
 
             </div >
-
-
 
 
         </div >

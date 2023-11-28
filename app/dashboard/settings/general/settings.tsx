@@ -42,15 +42,15 @@ export default async function Settings() {
                                         </button>
                                     </dd>
                                 </div>
-                                {/* <div className="pt-6 sm:flex">
+                                <div className="pt-6 sm:flex">
                                     <dt className="font-medium text-gray-900 sm:w-64 sm:flex-none sm:pr-6 dark:text-white">Phone Number</dt>
                                     <dd className="mt-1 flex justify-between gap-x-6 sm:mt-0 sm:flex-auto">
-                                        <div className="text-gray-900 dark:text-white">+1 999-999-9999</div>
+                                        <div className="text-gray-900 dark:text-white"></div>
                                         <button type="button" className="font-semibold text-green-600 hover:text-green-500 dark:text-white">
                                             Update
                                         </button>
                                     </dd>
-                                </div> */}
+                                </div>
 
                             </dl>
                         </div>

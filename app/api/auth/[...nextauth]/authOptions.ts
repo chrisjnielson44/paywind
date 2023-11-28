@@ -54,8 +54,7 @@ export const authOptions : NextAuthOptions = {
   callbacks: {
     async session({ session, token }) {
       if (session.user && token) {
-        const response = await sql`
-          SELECT first_name, family_name, email, phone FROM users WHERE id=${token.sub}`;
+        const response = await sql`SELECT first_name, family_name, email, phone FROM users WHERE id=${token.sub}`;
         const user = response.rows[0];
 
         if (user) {

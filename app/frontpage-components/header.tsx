@@ -11,20 +11,6 @@ type CustomLinkProps = {
 
 export default function Header() {
     const pathname = usePathname();
-
-    // const CustomLink: React.FC<CustomLinkProps> = ({ href, children, className }) => {
-    //     const isActive = pathname === href;
-    //     const activeClass = isActive ? 'text-green-500' : '';
-
-    //     return (
-    //         <Link href={href}>
-    //             <span className={`${className} ${activeClass} cursor-pointer`}>
-    //                 {children}
-    //             </span>
-    //         </Link>
-    //     );
-    // };
-
     return (
         <header className=" top-0 z-50 border-green-400  ">
             <nav className="bg-white border-gray-200 px-4 lg:px-6 py-4 dark:bg-gray-900">
@@ -34,7 +20,7 @@ export default function Header() {
                     </Link>
                    
                     <div className="flex items-end lg:order-2">
-                        <Link href="/pricing" className="mr-4 text-black text-sm md:text-md lg:text-lg font-bold rounded-lg px-5 py-2 hover:text-white transition duration-300 ease-in-out dark:text-white bg-white border-2 border-black hover:bg-indigo-500  ">Paywind Pro</Link>
+                        <Link href="/pricing" className="mr-4 text-underline dark:bg-gray-900 dark:border-white text-black text-sm md:text-md lg:text-lg font-bold rounded-lg px-5 py-2 hover:text-white transition duration-300 ease-in-out dark:text-white bg-white border-2 border-black hover:bg-indigo-500  ">Paywind Pro</Link>
                         <Link href="/auth/login" className="text-white text-sm md:text-md lg:text-lg font-bold rounded-lg px-5 py-2 hover:text-white transition duration-300 ease-in-out dark:text-white bg-gray-900 border-2 border-white hover:bg-green-500 ">Log In</Link>
                     </div>
                     <div className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">

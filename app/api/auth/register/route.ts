@@ -4,7 +4,7 @@ import {sql} from '@vercel/postgres'
 
 export async function POST(request: Request) {
     try {
-        const { email, password, first_name, family_name, phone } = await request.json();
+        const { email, password, first_name, family_name, phone, role} = await request.json();
 
         // Check if email already exists
         const existingUserResult = await sql`
@@ -21,8 +21,8 @@ export async function POST(request: Request) {
 
         // Insert new user
         await sql`
-            INSERT INTO users (email, password, first_name, family_name, phone)
-            VALUES (${email}, ${hashedPassword}, ${first_name}, ${family_name}, ${phone})
+            INSERT INTO users (email, password, first_name, family_name, phone, role)
+            VALUES (${email}, ${hashedPassword}, ${first_name}, ${family_name}, ${phone}, ${role})
         `;
 
         return NextResponse.json({ message: 'success' });

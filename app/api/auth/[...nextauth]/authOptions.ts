@@ -6,6 +6,7 @@ import { compare } from 'bcrypt';
 import { sql } from '@vercel/postgres'
 import { NextAuthOptions } from "next-auth";
 
+
 export const authOptions : NextAuthOptions = {
   session: {
     strategy: 'jwt',
@@ -60,7 +61,10 @@ export const authOptions : NextAuthOptions = {
         if (user) {
           session.user.name = `${user.first_name} ${user.family_name}`;
           session.user.image = `https://ui-avatars.com/api/?name=${user.first_name}+${user.family_name}`;
-          session.user.email = user.email; 
+          session.user.email = user.email;
+          session.user.phonenumber = user.phone;
+          session.user.userid = token.sub;
+          
         }
       }
       return session;

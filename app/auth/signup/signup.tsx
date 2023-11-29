@@ -40,7 +40,6 @@ export default function SignUp() {
     };
 
 
-
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -86,7 +85,8 @@ export default function SignUp() {
                     password: formData.get('password'),
                     first_name: formData.get('first_name'),
                     family_name: formData.get('family_name'),
-                    phone: formData.get('phone-number')
+                    phone: formData.get('phone-number'),
+                    role: 'base'
                 }),
             });
 

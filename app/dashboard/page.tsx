@@ -1,11 +1,12 @@
-import AppInterface from "./components/AppInterfaceComp";
+import { AppInterface } from "./components/AppInterfaceComp";
 import Dashboard from "./dashboard";
 
-export default function Home() {
+
+export default async function Home() {
     return (
         <main>
-            <AppInterface/>
-            <Dashboard />
+            {/* <NewAppInterface userEmail={userEmail} userName={userName} profileImageUrl={profileImageUrl} children={<Dashboard/>}></NewAppInterface> */}
+            <AppInterface child={<Dashboard></Dashboard>}/>
         </main>
     );
 }

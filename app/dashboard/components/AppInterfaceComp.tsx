@@ -1,9 +1,13 @@
 import { getServerSession } from "next-auth/next";
-import AppInterface from "./AppInterface";
 import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions"
+import NewAppInterface from "./newAppInterface";
 
 
-export default async function Home() {
+interface AppInterfaceProps {
+    child: React.ReactNode;
+}
+
+export const AppInterface: React.FC<AppInterfaceProps> = async function ({ child }) {
     const session = await getServerSession(authOptions);
     const profileImageUrl = session?.user?.image ?? "User not signed in"; // Ensure this is a valid string
     const userEmail = session?.user?.email ?? "User not signed in"; // Using nullish coalescing
@@ -11,11 +15,7 @@ export default async function Home() {
 
     return (
         <div>
-            <AppInterface
-                userEmail={userEmail}
-                userName={userName}
-                profileImageUrl={profileImageUrl}
-            />
+            <NewAppInterface userEmail={userEmail} userName={userName} profileImageUrl={profileImageUrl} children={child}></NewAppInterface>
         </div>
     );
 }

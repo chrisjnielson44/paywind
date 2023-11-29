@@ -1,5 +1,5 @@
 'use client'
-import { Fragment, ReactNode } from 'react'
+import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
@@ -111,7 +111,7 @@ const AppInterface: React.FC<AppInterfaceProps> = ({ userEmail, userName, profil
                       </Menu.Item>
                       <div className="px-4 py-3">
                         <p className="text-sm text-black dark:text-gray-200">Signed in as</p>
-                        <p className='text-sm'>{userEmail}</p>
+                        <p className='text-sm '>{userEmail}</p>
                       </div>
                     </Menu.Items>
                   </Transition>

@@ -64,7 +64,8 @@ export const authOptions : NextAuthOptions = {
           session.user.email = user.email;
           session.user.phonenumber = user.phone;
           session.user.userid = token.sub;
-          
+          session.user.first_name = user.first_name;
+          session.user.last_name = user.family_name;
         }
       }
       return session;

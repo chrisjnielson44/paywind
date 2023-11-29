@@ -1,12 +1,13 @@
 import Notifications from './notifications'
-import AppInterface from "../../components/AppInterfaceComp";
+import { AppInterface } from "../../components/AppInterfaceComp";
 
 
 export default async function Home() {
     return (
         <main>
-        <AppInterface/>
-        <Notifications/>
-    </main>
+            <AppInterface child={
+                <Notifications />
+            } />
+        </main>
     )
 }

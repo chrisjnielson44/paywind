@@ -1,4 +1,4 @@
-import AppInterface from "../../components/AppInterfaceComp";
+import {AppInterface} from "../../components/AppInterfaceComp";
 
 import Settings from './settings'
 
@@ -6,9 +6,8 @@ import Settings from './settings'
 
 export default async function Home() {
     return (
-        <main>
-        <AppInterface/>
-        <Settings/>
+        <main >
+        <AppInterface child={ <Settings/>}/>
     </main>
     )
 }

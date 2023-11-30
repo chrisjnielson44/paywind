@@ -195,7 +195,7 @@ const NewAppInterface: React.FC<AppInterfaceProps> = ({ userEmail, userName, pro
                                                     item.current
                                                         ? 'dark:bg-gray-800 bg-gray-200 dark:text-white'
                                                         : 'dark:text-gray-400 text-black dark:hover:text-white hover:bg-gray-200 dark:hover:bg-gray-800',
-                                                    'group flex gap-x-3 rounded-md p-2 text-base leading-6 font-semibold'
+                                                    'group flex gap-x-3 rounded-md p-2 text-lg leading-6 font-semibold'
                                                 )}
                                             >
                                                 <item.icon className="h-6 w-6 shrink-0" aria-hidden="true" />

@@ -2,7 +2,7 @@
 'use client'
 import React, { Fragment, useState } from 'react'
 import { Dialog, Menu, Transition } from '@headlessui/react'
-import DarkModeBtn from './DarkModeToggle'
+import {ModeToggle} from './DarkModeToggle'
 import {
     Bars3Icon,
     BellIcon,
@@ -12,7 +12,6 @@ import {
     DocumentDuplicateIcon,
     FolderIcon,
     HomeIcon,
-    UsersIcon,
     XMarkIcon,
     CurrencyDollarIcon,
     InboxIcon
@@ -29,16 +28,16 @@ const navigation = [
     { name: 'Transactions', href: '/dashboard/transactions', icon: FolderIcon, current: false },
     { name: 'Calendar', href: '#', icon: CalendarIcon, current: false },
     { name: 'Documents', href: '#', icon: DocumentDuplicateIcon, current: false },
-    { name: 'Reports', href: '#', icon: ChartPieIcon, current: false },
+    { name: 'Reports', href: '#', icon: ChartPieIcon, current: false }
 ]
 const teams = [
     { id: 1, name: 'Heroicons', href: '#', initial: 'H', current: false },
     { id: 2, name: 'Tailwind Labs', href: '#', initial: 'T', current: false },
-    { id: 3, name: 'Workcation', href: '#', initial: 'W', current: false },
+    { id: 3, name: 'Workcation', href: '#', initial: 'W', current: false }
 ]
 const userNavigation = [
     { name: 'Your profile', href: '/dashboard/settings/general' },
-    { name: 'Sign out', href: '#' },
+    { name: 'Sign out', href: '#' }
 ]
 
 function classNames(...classes: string[]) {
@@ -52,7 +51,7 @@ interface AppInterfaceProps {
     children: React.ReactNode
 }
 
-const NewAppInterface: React.FC<AppInterfaceProps> = ({ userEmail, userName, profileImageUrl, children }) => {
+const AppInterface: React.FC<AppInterfaceProps> = ({ userEmail, userName, profileImageUrl, children }) => {
     const [sidebarOpen, setSidebarOpen] = useState(false)
     const pathname = usePathname();
 
@@ -308,7 +307,7 @@ const NewAppInterface: React.FC<AppInterfaceProps> = ({ userEmail, userName, pro
 
                             {/* Separator */}
                             <div className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-500" aria-hidden="true" />
-                                <DarkModeBtn/>
+                                <ModeToggle/>
                             {/* Profile dropdown */}
                             <Menu as="div" className="relative ml-2 flex-shrink-0">
                                 <div>
@@ -363,4 +362,4 @@ const NewAppInterface: React.FC<AppInterfaceProps> = ({ userEmail, userName, pro
         </div>
     )
 }
-export default NewAppInterface;
+export default AppInterface;

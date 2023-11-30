@@ -1,4 +1,4 @@
-import {AppInterface} from "../../components/AppInterfaceComp";
+import AppInterface from "../../components/AppInterfaceComp";
 
 import Settings from './settings'
 

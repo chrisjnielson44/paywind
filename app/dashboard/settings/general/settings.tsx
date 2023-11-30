@@ -2,7 +2,6 @@
 import { getServerSession } from 'next-auth/next';
 import SettingInterface from '../settingsinterface'
 import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions"
-import { userAgent } from 'next/server';
 
 
 export default async function Settings() {

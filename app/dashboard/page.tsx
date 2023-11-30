@@ -1,4 +1,4 @@
-import { AppInterface } from "./components/AppInterfaceComp";
+import AppInterface from "./components/AppInterfaceComp";
 import Dashboard from "./dashboard";
 
 export default async function Home() {

@@ -9,9 +9,9 @@ export default async function Settings() {
     const session = await getServerSession(authOptions);
 
     return (
-        <div >
+        <div>
             <SettingInterface></SettingInterface>
-            <div className=' bg-white dark:bg-gray-900 md:h-screen'>
+            <div className='bg-white dark:bg-gray-900 flex w-full min-h-screen'>
                 <div className="mx-auto max-w-7xl pt-10 lg:flex lg:gap-x-16 lg:px-0">
                     <main className="px-4 py-16 sm:px-6 lg:flex-auto lg:px-0 lg:py-20">
                         <div className="divide-y divide-gray-500">

@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { getServerSession } from 'next-auth';
 import { Analytics } from '@vercel/analytics/react';
-// import { SessionProvider } from 'next-auth/react';
+import  {ThemeProvider} from "./theme-provider";
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -25,8 +25,10 @@ export default async function RootLayout({
       <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"></meta>
       <meta name="theme-color" content="#111827" media="(prefers-color-scheme: dark)"></meta>
        <body>
+       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
         {children}
        <Analytics />
+       </ThemeProvider>
       </body>
     </html>
   )

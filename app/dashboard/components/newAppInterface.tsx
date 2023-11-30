@@ -2,7 +2,7 @@
 'use client'
 import React, { Fragment, useState } from 'react'
 import { Dialog, Menu, Transition } from '@headlessui/react'
-import {DarkModeBtn} from './DarkModeToggle'
+import DarkModeBtn from './DarkModeToggle'
 import {
     Bars3Icon,
     BellIcon,
@@ -243,7 +243,7 @@ const NewAppInterface: React.FC<AppInterfaceProps> = ({ userEmail, userName, pro
             </div>
 
             <div className="lg:pl-72 ">
-                <div className="sticky top-0 z-40  flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-500 bg-white dark:bg-gray-900 px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
+                <div className="sticky top-0 z-40  flex h-16 shrink-0 items-center gap-x-4 border-b border-gray-200 dark:border-gray-500 bg-white dark:bg-gray-900 px-4 shadow-sm sm:gap-x-6 sm:px-6 lg:px-8">
                     <button type="button" className="-m-2.5 p-2.5 text-gray-700 lg:hidden" onClick={() => setSidebarOpen(true)}>
                         <span className="sr-only">Open sidebar</span>
                         <Bars3Icon className="text-black dark:text-white h-6 w-6" aria-hidden="true" />
@@ -270,8 +270,7 @@ const NewAppInterface: React.FC<AppInterfaceProps> = ({ userEmail, userName, pro
                             />
                         </form>
                         <div className="flex items-center gap-x-4 lg:gap-x-6">
-                            <Menu as="div" className="relative ml-2 flex-shrink-0">
-                                <DarkModeBtn/>
+                            <Menu as="div" className="relative ml-2 flex-shrink-0">    
                                 <button className="mr-3 p-2.5 text-gray-400 hover:text-gray-500">
                                     <span className="sr-only">View Inbox</span>
                                     <InboxIcon className="text-black dark:text-white h-6 w-6 " aria-hidden="true" />
@@ -309,7 +308,7 @@ const NewAppInterface: React.FC<AppInterfaceProps> = ({ userEmail, userName, pro
 
                             {/* Separator */}
                             <div className="hidden lg:block lg:h-6 lg:w-px lg:bg-gray-500" aria-hidden="true" />
-
+                                <DarkModeBtn/>
                             {/* Profile dropdown */}
                             <Menu as="div" className="relative ml-2 flex-shrink-0">
                                 <div>

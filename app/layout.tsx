@@ -21,12 +21,17 @@ export default async function RootLayout({
   const session = await getServerSession();
   return (
   
-    <html lang="en">
-      <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"></meta>
+    <html lang="en" suppressHydrationWarning>
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)"></meta>
       <meta name="theme-color" content="#111827" media="(prefers-color-scheme: dark)"></meta>
        <body>
-       <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-        {children}
+       <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >        
+          {children}
        <Analytics />
        </ThemeProvider>
       </body>

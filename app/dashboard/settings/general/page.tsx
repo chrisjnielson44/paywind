@@ -7,7 +7,9 @@ import Settings from './settings'
 export default async function Home() {
     return (
         <main >
-        <AppInterface child={[<Settings/>]}/>
+        <AppInterface>
+            <Settings/>
+        </AppInterface>
     </main>
     )
 }

@@ -5,10 +5,9 @@ import SendMoney from "./SendMoney"
 export default async function Home() {
   return (
     <main>
-      <AppInterface child={[
-        <SendMoney />]
-
-      } />
+      <AppInterface>
+        <SendMoney/>
+      </AppInterface>
     </main>
   )
 }

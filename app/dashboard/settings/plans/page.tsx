@@ -5,9 +5,9 @@ import { AppInterface } from "../../components/AppInterfaceComp";
 export default async function Home() {
     return (
         <main>
-            <AppInterface child={
-            [<Plans />]
-            } />
+            <AppInterface>
+                <Plans/>
+            </AppInterface>
         </main>
     )
 }

@@ -5,8 +5,9 @@ import {AppInterface} from "../../components/AppInterfaceComp";
 export default async function Home() {
     return (
         <main>
-        <AppInterface child={        
-        [<Billing/>]}/>
-    </main>
+            <AppInterface>
+                <Billing />
+            </AppInterface>
+        </main>
     )
 }

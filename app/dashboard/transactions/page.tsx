@@ -4,9 +4,9 @@ import Transactions from './transactions'
 export default async function Home() {
     return (
         <main>
-            <AppInterface child={
+            <AppInterface child={[
                 <Transactions />
-            } />
+            ]} />
         </main>
     )
 }

@@ -7,7 +7,7 @@ export default async function Home() {
     return (
         <main>
             <AppInterface child={
-            <Security />
+            [<Security />]
             } />
         </main>
     )

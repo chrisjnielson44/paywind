@@ -6,7 +6,7 @@ export default async function Home() {
     return (
         <main>
         <AppInterface child={        
-        <Billing/>}/>
+        [<Billing/>]}/>
     </main>
     )
 }

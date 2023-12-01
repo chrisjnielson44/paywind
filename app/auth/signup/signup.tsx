@@ -139,7 +139,7 @@ export default function SignUp() {
                                             autoComplete="given-name"
                                             required
                                             placeholder="Johnny"
-                                            className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
+                                            className="block w-full rounded-md border-0 bg-white/5 py-1.5 px-2 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
                                         />
                                     </div>
                                 </div>
@@ -156,7 +156,7 @@ export default function SignUp() {
                                             autoComplete="family-name"
                                             required
                                             placeholder="Appleseed"
-                                            className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
+                                            className="block w-full rounded-md border-0 bg-white/5 py-1.5 px-2 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
                                         />
                                     </div>
                                 </div>
@@ -171,8 +171,8 @@ export default function SignUp() {
                                             name="phone-number"
                                             mask="_"
                                             format="+1 (###) ###-####"
-                                            className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
-                                            placeholder="+1 (___) ___-____"
+                                            className="block w-full rounded-md border-0 bg-white/5 py-1.5 px-2 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
+                                            placeholder="+1 (    ) ___-____"
                                             type="tel"
                                             required
                                         />
@@ -192,11 +192,10 @@ export default function SignUp() {
                                             autoComplete="email"
                                             required
                                             placeholder="example@example.com"
-                                            className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
+                                            className="block w-full rounded-md border-0 bg-white/5 py-1.5 px-2 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
                                         />
                                     </div>
                                 </div>
-
 
 
                                 <div className="col-span-full">
@@ -213,7 +212,7 @@ export default function SignUp() {
                                             type="password"
                                             autoComplete="current-password"
                                             required
-                                            className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
+                                            className="block w-full rounded-md border-0 bg-white/5 py-1.5 px-2 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
                                         />
                                     </div>
                                 </div>
@@ -232,7 +231,7 @@ export default function SignUp() {
                                             type="password"
                                             autoComplete="current-password"
                                             required
-                                            className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
+                                            className="block w-full rounded-md border-0 bg-white/5 py-1.5 px-2 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
                                         />
                                     </div>
                                 </div>

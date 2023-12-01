@@ -16,13 +16,13 @@ export default async function Login() {
             password: formData.get('password'),
             redirect: false
         })
-        console.log({ response });
-        if (!response?.error) {
+
+        if (response?.error) {
+            // Display the error using toast
+            toast.error(response.error);
+        } else {
+            // No error, proceed to dashboard
             router.push('/dashboard');
-            router.refresh();
-        } 
-        else {
-            toast.error('Incorrect Username or Password')
         }
     };
 
@@ -54,7 +54,7 @@ export default async function Login() {
                                     type="email"
                                     autoComplete="email"
                                     required
-                                    className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
+                                    className="block w-full rounded-md border-0 bg-white/5 py-1.5 px-2 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
                                 />
                             </div>
                         </div>
@@ -77,7 +77,7 @@ export default async function Login() {
                                     type="password"
                                     autoComplete="current-password"
                                     required
-                                    className="block w-full rounded-md border-0 bg-white/5 py-1.5 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
+                                    className="block w-full rounded-md border-0 bg-white/5 py-1.5 px-2 text-black dark:text-white shadow-sm ring-1 ring-inset ring-gray-500 focus:ring-2 focus:ring-inset focus:ring-green-500 sm:text-sm sm:leading-6"
                                 />
                             </div>
                         </div>

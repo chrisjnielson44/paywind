@@ -35,20 +35,27 @@ export const authOptions : NextAuthOptions = {
       async authorize(credentials, req) {
         const response = await sql`SELECT * FROM users WHERE email=${credentials?.email}`;
         const user = response.rows[0];
+    
+        // Check if user exists
+        if (!user) {
+          throw new Error('Account does not exist');
+        }
+    
         const passwordCorrect = await compare(
           credentials?.password || '',
           user.password
         );
         
-        console.log({passwordCorrect})
-
-        if(passwordCorrect) {
-          return {
-            id: user.id,
-            email: user.email
-          }
+        // Check if password is correct
+        if (!passwordCorrect) {
+          throw new Error('Incorrect password');
         }
-        return null;
+    
+        // User authenticated
+        return {
+          id: user.id,
+          email: user.email
+        };
       }
     })
   ],

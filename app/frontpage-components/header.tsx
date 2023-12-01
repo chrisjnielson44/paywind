@@ -2,6 +2,8 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { ModeToggle } from '../dashboard/components/DarkModeToggle';
+import { NavigationMenuDemo } from './dropdownnav';
 
 type CustomLinkProps = {
     href: string;
@@ -20,8 +22,10 @@ export default function Header() {
                     </Link>
                    
                     <div className="flex items-end lg:order-2">
-                        <Link href="/pricing" className="mr-4 text-underline dark:bg-gray-900 dark:border-white text-black text-sm md:text-md lg:text-lg font-bold rounded-lg px-5 py-2 hover:text-white transition duration-300 ease-in-out dark:text-white bg-white border-2 border-black hover:bg-indigo-500  ">Paywind Pro</Link>
-                        <Link href="/auth/login" className="text-white text-sm md:text-md lg:text-lg font-bold rounded-lg px-5 py-2 hover:text-white transition duration-300 ease-in-out dark:text-white bg-gray-900 border-2 border-white hover:bg-green-500 ">Log In</Link>
+                        <NavigationMenuDemo/>
+                        <div className='ml-3'>
+                        <ModeToggle/>
+                        </div>
                     </div>
                     <div className="hidden justify-between items-center w-full lg:flex lg:w-auto lg:order-1" id="mobile-menu-2">
                      

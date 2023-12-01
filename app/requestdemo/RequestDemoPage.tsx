@@ -115,7 +115,7 @@ export default function DemoPage() {
                         type="submit"
                         className="block w-full rounded-md bg-green-500 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-green-500"
                     >
-                        Let's talk
+                        Let&apos;s talk
                     </button>
                 </div>
             </form>

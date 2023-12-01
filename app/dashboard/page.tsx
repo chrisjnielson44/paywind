@@ -1,19 +1,13 @@
-import { getServerSession } from "next-auth";
-import AppInterface from "./components/AppInterface";
+import AppInterface from "./components/AppInterfaceComp";
 import Dashboard from "./dashboard";
-import { redirect } from "next/navigation"
 
 export default async function Home() {
-  
     return (
         <main>
-        <AppInterface/>
-        <Dashboard/>
-    </main>
-    )
+            {/* <NewAppInterface userEmail={userEmail} userName={userName} profileImageUrl={profileImageUrl} children={<Dashboard/>}></NewAppInterface> */}
+            <AppInterface>
+                <Dashboard/>
+            </AppInterface>
+        </main>
+    );
 }
-
-// const session = await getServerSession();
-// if(session) {
-//     redirect('/auth/login');
-// }

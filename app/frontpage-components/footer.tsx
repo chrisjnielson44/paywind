@@ -9,11 +9,10 @@ const navigation = {
     support: [
         { name: 'Pricing', href: '/pricing' },
         { name: 'Documentation', href: '#' },
-        { name: 'Guides', href: '#' },
-        { name: 'API Status', href: '#' },
+
     ],
     company: [
-        { name: 'About', href: '#' },
+        { name: 'About', href: '/about' },
         { name: 'Blog', href: '#' },
         { name: 'Jobs', href: '#' },
         { name: 'Press', href: '#' },
@@ -159,7 +158,7 @@ export default function Footer() {
                         </div>
                     </form>
                 </div> */}
-                <div className="mt-8 border-t border-white/10 pt-8 md:flex md:items-center md:justify-between">
+                <div className="mt-8 border-t border-black/10 dark:border-white/10 pt-8 md:flex md:items-center md:justify-between">
                     <div className="flex space-x-6 md:order-2">
                         {navigation.social.map((item) => (
                             <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">

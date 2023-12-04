@@ -150,7 +150,7 @@ const navigation = [
 
 export default function Body() {
     return (
-        <main className="isolate mb-40">
+        <main className="isolate pb-40 dark:bg-gray-900">
         {/* Hero section */}
         <div className="relative isolate -z-10">
           <svg

@@ -13,13 +13,10 @@ export default function Body() {
                         <h1 className="max-w-2xl mb-6 text-4xl font-extrabold tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white">Redefine Your Financial Future with Paywind</h1>
                         <p className="max-w-2xl mb-6 font-light text-gray-500 text-xl lg:mb-8  dark:text-gray-300">Step into the new era of investment management with Paywind. Our cutting-edge robo-advising platform transforms the way you track and grow your portfolio, offering a seamless integration of technology and financial expertise. Whether you&apos;re an individual investor seeking smart, data-driven insights for your personal investments, or a financial advisor managing multiple portfolios, Paywind caters to all your needs. With our user-friendly app, take charge of your investments, gain comprehensive market insights, and make informed decisions with ease. Join Paywind, where innovative investing meets convenience.</p>
                         <div className="flex items-center justify-center ">
-                            <Link href="/requestdemo" className="w-1/2 bg-black inline-flex items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg hover:bg-gray-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900  hover:transition duration-300 ease-in-out dark:ring-2 dark:ring-white md:text-xl ">
+                            <Link href="/requestdemo" className="w-full bg-black inline-flex items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg hover:bg-gray-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900  hover:transition duration-300 ease-in-out dark:ring-2 dark:ring-white md:text-xl ">
                                 Request a Demo
                             </Link>
-                            <a href="/auth/signup" className="w-1/2 inline-flex items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg  hover:bg-green-600 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900  hover:transition duration-300 ease-in-out bg-green-500 md:text-xl">
-                                Sign Up
-                                <svg className="w-5 h-5 ml-1 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
-                            </a>
+                           
                         </div>
                     </div>
                     <div className="sm:invisible md:invisible lg:visible lg:mt-0 lg:col-span-5 lg:flex ">
@@ -34,7 +31,7 @@ export default function Body() {
                         <Image className="" src="https://chris-n.s3.us-east-2.amazonaws.com/images/plaid.svg" alt="office content 1" width="2432" height="1442" />
                     </div>
                     <div className="font-light text-gray-500 sm:text-lg dark:text-gray-300">
-                        <h2 className="mb-8 text-black text-4xl font-extrabold tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white">Customize Your Investment Experience with Paywind</h2>
+                        <h2 className="mb-8 text-black text-4xl font-extrabold tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white">Customize Your Investment Experience</h2>
                         <p className="mb-4 text-xl">Welcome to a new dimension of investment tracking where you&apos;re in full control. Paywind&apos;s adaptable design lets you tailor your financial dashboard to align perfectly with your investment goals. Choose the features that matter most to you, from detailed portfolio analytics to real-time market updates, creating an experience that&apos;s as unique as your investment strategy. Whether you&apos;re a seasoned investor or just starting, Paywind&apos;s intuitive interface empowers you to navigate your financial journey with confidence and ease. </p>
                     </div>
 
@@ -45,7 +42,7 @@ export default function Body() {
                 <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
 
                     <div className="font-light text-gray-500 sm:text-lg dark:text-gray-300">
-                        <h2 className="mb-8 text-black text-4xl font-extrabold tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white">Discover Personalized Financial Solutions with Paywind</h2>
+                        <h2 className="mb-8 text-black text-4xl font-extrabold tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white">Discover Personalized Financial Solutions</h2>
                         <p className="mb-4 text-xl">
                             At Paywind, we understand that every financial journey is unique. That&apos;s why our platform is designed to identify and recommend the best financial solutions tailored to your individual needs. Whether you&apos;re exploring the benefits of a High-Yield Savings Account, considering the growth potential of Index Funds, or planning for retirement with a 401(k), Paywind is here to guide you. Our sophisticated algorithms analyze your financial profile and goals to suggest the most suitable options. With Paywind, you&apos;re not just investing; you&apos;re embarking on a path to financial wellbeing, armed with knowledge and tools tailored just for you. Embrace a smarter way to financial success with Paywind – your partner in personalized finance.</p>
                     </div>
@@ -55,7 +52,7 @@ export default function Body() {
                 </div>
             </section>
 
-   
+
 
 
             {/* <section className="bg-white dark:bg-gray-900 ">

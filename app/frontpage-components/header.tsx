@@ -15,41 +15,41 @@ const solutions = [
 
 
 const investing: { title: string; href: string; description: string }[] = [
-  {
-    title: "Automated Investing",
-    href: "/docs/primitives/alert-dialog",
-    description:
-      "Desc Here",
-  },
-  {
-    title: "IRAs and 401(k)",
-    href: "/docs/primitives/hover-card",
-    description:
-       "Desc Here",
-  },
-  {
-    title: "Portfolio Options",
-    href: "/docs/primitives/progress",
-    description:
-     "Desc Here",
-  },
-  {
-    title: "Crypto Investing",
-    href: "/docs/primitives/scroll-area",
-    description:  "Desc Here",
-  },
-  {
-    title: "Micro Investing",
-    href: "/docs/primitives/tabs",
-    description:
-    "Desc Here",
-  },
-  {
-    title: "Financial Tools",
-    href: "/docs/primitives/tooltip",
-    description:
-    "Desc Here",
-  },
+    {
+        title: "Automated Investing",
+        href: "/docs/primitives/alert-dialog",
+        description:
+            "Desc Here",
+    },
+    {
+        title: "IRAs and 401(k)",
+        href: "/docs/primitives/hover-card",
+        description:
+            "Desc Here",
+    },
+    {
+        title: "Portfolio Options",
+        href: "/docs/primitives/progress",
+        description:
+            "Desc Here",
+    },
+    {
+        title: "Crypto Investing",
+        href: "/docs/primitives/scroll-area",
+        description: "Desc Here",
+    },
+    {
+        title: "Micro Investing",
+        href: "/docs/primitives/tabs",
+        description:
+            "Desc Here",
+    },
+    {
+        title: "Financial Tools",
+        href: "/docs/primitives/tooltip",
+        description:
+            "Desc Here",
+    },
 ]
 
 function classNames(...classes: string[]) {
@@ -86,6 +86,9 @@ export default function Header() {
 
                     </div>
                     <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+                        {/* <Link href="/auth/signup" className=" bg-green-500 inline-flex items-center justify-center px-3 py-2 mr-1 text-md font-bold text-center text-white rounded-lg hover:bg-gray-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900  hover:transition duration-300 ease-in-out dark:ring-2 dark:ring-white ">
+                            Sign Up
+                        </Link> */}
                         <NavigationMenuDemo />
                         <div className='ml-3'>
                             <ModeToggle />

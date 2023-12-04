@@ -89,7 +89,7 @@ export function PagesDropDown() {
         <NavigationMenuItem>
           <NavigationMenuTrigger className="text-md font-semibold dark:bg-gray-900 dark:hover:bg-gray-800">Investing</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[400px] ">
               {investing.map((component) => (
                 <ListItem
                   key={component.title}
@@ -103,7 +103,7 @@ export function PagesDropDown() {
           </NavigationMenuContent>
         </NavigationMenuItem>
         <NavigationMenuItem>
-          <Link href="/pricing" legacyBehavior passHref>
+          <Link href="/about" legacyBehavior passHref>
             <NavigationMenuLink className="group inline-flex h-10 w-max dark:bg-gray-900 dark:hover:bg-gray-800 items-center justify-center rounded-md bg-background px-4 py-2 text-md font-semibold transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
               About
             </NavigationMenuLink>

@@ -14,16 +14,16 @@ export default function Body() {
                         <p className="max-w-2xl mb-6 font-light text-gray-500 text-xl lg:mb-8  dark:text-gray-300">Step into the new era of investment management with Paywind. Our cutting-edge robo-advising platform transforms the way you track and grow your portfolio, offering a seamless integration of technology and financial expertise. Whether you&apos;re an individual investor seeking smart, data-driven insights for your personal investments, or a financial advisor managing multiple portfolios, Paywind caters to all your needs. With our user-friendly app, take charge of your investments, gain comprehensive market insights, and make informed decisions with ease. Join Paywind, where innovative investing meets convenience.</p>
                         <div className="flex items-center justify-center ">
                             <Link href="/requestdemo" className="w-1/2 bg-black inline-flex items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg hover:bg-gray-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900  hover:transition duration-300 ease-in-out dark:ring-2 dark:ring-white md:text-xl ">
-                                Request Demo
+                                Request a Demo
                             </Link>
                             <a href="/auth/signup" className="w-1/2 inline-flex items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg  hover:bg-green-600 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900  hover:transition duration-300 ease-in-out bg-green-500 md:text-xl">
                                 Sign Up
-                                <svg className="w-5 h-5 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                                <svg className="w-5 h-5 ml-1 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                             </a>
                         </div>
                     </div>
-                    <div className=" lg:mt-0 lg:col-span-5 lg:flex">
-                        <Image src="/pig.svg" alt="pig" width="2432" height="1442" />
+                    <div className="sm:invisible md:invisible lg:visible lg:mt-0 lg:col-span-5 lg:flex ">
+                        <Image src="/pig2.svg" alt="pig" width="2432" height="2500" className="animate-fade" />
                     </div>
                 </div>
             </section>
@@ -43,20 +43,22 @@ export default function Body() {
 
             <section className="bg-white dark:bg-gray-900 pb-20">
                 <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
-                    
+
                     <div className="font-light text-gray-500 sm:text-lg dark:text-gray-300">
                         <h2 className="mb-8 text-black text-4xl font-extrabold tracking-tight leading-none md:text-4xl xl:text-5xl dark:text-white">Discover Personalized Financial Solutions with Paywind</h2>
                         <p className="mb-4 text-xl">
                             At Paywind, we understand that every financial journey is unique. That&apos;s why our platform is designed to identify and recommend the best financial solutions tailored to your individual needs. Whether you&apos;re exploring the benefits of a High-Yield Savings Account, considering the growth potential of Index Funds, or planning for retirement with a 401(k), Paywind is here to guide you. Our sophisticated algorithms analyze your financial profile and goals to suggest the most suitable options. With Paywind, you&apos;re not just investing; you&apos;re embarking on a path to financial wellbeing, armed with knowledge and tools tailored just for you. Embrace a smarter way to financial success with Paywind – your partner in personalized finance.</p>
-                    </div>  
+                    </div>
                     <div className="grid grid-cols-1 gap-4 mt-8">
                         <Image className="" src="investor.svg" alt="office content 1" width="2432" height="1442" />
                     </div>
                 </div>
             </section>
 
+   
 
-            <section className="bg-white dark:bg-gray-900 ">
+
+            {/* <section className="bg-white dark:bg-gray-900 ">
                 <div className="py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6">
                     <div className="max-w-screen-md mb-8 lg:mb-16">
                         <h2 className="mb-4 text-5xl tracking-tight font-extrabold text-gray-900 dark:text-white">Personal Finance, Tailored to You</h2>
@@ -109,7 +111,7 @@ export default function Body() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section> */}
             <div className="py-20"></div>
 
 

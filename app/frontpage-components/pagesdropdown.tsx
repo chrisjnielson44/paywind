@@ -73,15 +73,15 @@ export function PagesDropDown() {
                       Solutions
                     </div>
                     <p className="text-sm">Let Paywind tailor to your needs</p>
-                   
+      
                   </div>
                 </NavigationMenuLink>
               </li>
               <ListItem href="/docs" title="Individual Investing">
-                Re-usable components built using Radix UI and Tailwind CSS.
+                Use Paywind&apos;s robo advising to build your wealth.
               </ListItem>
               <ListItem href="/docs/installation" title="Paywind for Advisors">
-                How to install dependencies and structure your app.
+                Use Paywind&apos;s user-friendly interface to manage your clients.
               </ListItem>
             </ul>
           </NavigationMenuContent>

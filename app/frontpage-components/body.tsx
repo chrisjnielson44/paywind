@@ -16,6 +16,11 @@ export default function Body() {
                             <Link href="/requestdemo" className="w-full bg-black inline-flex items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg hover:bg-gray-800 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900  hover:transition duration-300 ease-in-out dark:ring-2 dark:ring-white md:text-xl ">
                                 Request a Demo
                             </Link>
+                            <Link href="/auth/signup" className="w-full bg-green-500 inline-flex items-center justify-center px-5 py-3 mr-3 text-lg font-bold text-center text-white rounded-lg hover:bg-green-600 focus:ring-4 focus:ring-primary-300 dark:focus:ring-primary-900  hover:transition duration-300 ease-in-out md:text-xl ">
+                                Sign Up
+                                <svg className="w-8 h-5 ml-1 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
+                            </Link>
+                            
                            
                         </div>
                     </div>
@@ -48,8 +53,10 @@ export default function Body() {
                     </div>
                     <div className="grid grid-cols-1 gap-4 mt-8">
                         <Image className="" src="investor.svg" alt="office content 1" width="2432" height="1442" />
+                        {/* <Image src="paywindadvisors.svg" className="h-20 w-auto dark:fill-white" alt="test" height={200} width={200}></Image> */}
                     </div>
                 </div>
+                
             </section>
 
 

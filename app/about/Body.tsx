@@ -1,4 +1,3 @@
-import Image from "next/image"
 import { JSX, SVGProps } from "react"
 
 

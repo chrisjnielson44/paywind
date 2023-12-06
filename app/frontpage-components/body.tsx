@@ -20,8 +20,8 @@ export default function Body() {
                                 Sign Up
                                 <svg className="w-8 h-5 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd"></path></svg>
                             </Link>
-                            
-                           
+
+
                         </div>
                     </div>
                     <div className="sm:invisible md:invisible lg:visible lg:mt-0 lg:col-span-5 lg:flex ">
@@ -56,9 +56,37 @@ export default function Body() {
                         {/* <Image src="paywindadvisors.svg" className="h-20 w-auto dark:fill-white" alt="test" height={200} width={200}></Image> */}
                     </div>
                 </div>
-                
+
             </section>
 
+            <section>
+                <div className="bg-white">
+                    <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
+                        <div className="mx-auto max-w-2xl text-center">
+                            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                                Boost your productivity.
+                                <br />
+                                Start using our app today.
+                            </h2>
+                            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-gray-600">
+                                Incididunt sint fugiat pariatur cupidatat consectetur sit cillum anim id veniam aliqua proident excepteur
+                                commodo do ea.
+                            </p>
+                            <div className="mt-10 flex items-center justify-center gap-x-6">
+                                <a
+                                    href="#"
+                                    className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                >
+                                    Get started
+                                </a>
+                                <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+                                    Learn more <span aria-hidden="true">→</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
 
 

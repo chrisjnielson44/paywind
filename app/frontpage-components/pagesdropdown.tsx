@@ -120,7 +120,7 @@ export function PagesDropDown() {
         <NavigationMenuItem>
           <NavigationMenuTrigger className="text-lg font-semibold dark:bg-gray-900 dark:hover:bg-gray-800">Investing</NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
               {investing.map((component) => (
                 <ListItem
                   key={component.title}
@@ -171,6 +171,7 @@ const ListItem = React.forwardRef<
           {...props}
         >
           <div className="text-sm font-medium leading-none">{title}</div>
+
           <p className="line-clamp-2 text-sm leading-snug text-muted-foreground">
             {children}
           </p>

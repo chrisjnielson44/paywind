@@ -1,4 +1,33 @@
+'use client'
+import { Slider } from '@/components/ui/slider'
 import { CheckIcon } from '@heroicons/react/20/solid'
+import PricingSlider from './slider'
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
+import * as React from 'react';
+import * as SliderPrimitive from '@radix-ui/react-slider';
+
+import { cn } from '@/lib/utils';
+
+const SliderComponent = React.forwardRef<
+  React.ElementRef<typeof SliderPrimitive.Root>,
+  React.ComponentPropsWithoutRef<typeof SliderPrimitive.Root>
+>(({ className, ...props }, ref) => (
+  <SliderPrimitive.Root
+    ref={ref}
+    className={cn(
+      "relative flex w-full touch-none select-none items-center",
+      className
+    )}
+    {...props}
+  >
+    <SliderPrimitive.Track className="relative h-2 w-full grow overflow-hidden rounded-full bg-secondary">
+      <SliderPrimitive.Range className="absolute h-full bg-primary" />
+    </SliderPrimitive.Track>
+    <SliderPrimitive.Thumb className="block h-5 w-5 rounded-full border-2 border-primary bg-background ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50" />
+  </SliderPrimitive.Root>
+));
+
+SliderComponent.displayName = SliderPrimitive.Root.displayName;
 
 const investing = [
   {
@@ -43,19 +72,20 @@ function classNames(...classes: string[]) {
 }
 
 export default function Example() {
-
+  const [investment, setInvestment] = React.useState(0);
+  const subscriptionFee = investment < 20000 ? 3 : ((investment * 0.0020) / 12).toFixed(2);
   return (
     <div className="bg-white dark:bg-gray-900 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mt-2 text-4xl font-bold tracking-tight text-black dark:text-white sm:text-5xl">
-          Simple, Flexible Pricing for Every Investor
+            Simple, Flexible Pricing for Every Investor
           </p>
         </div>
-        <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600 dark:text-gray-300">
-        Discover our straightforward and adaptable pricing options designed to fit every investor&apos; needs. Whether you&apos;re just starting out or are a seasoned investor, our plans are crafted to provide you with the tools and resources you need for effective financial management. With Paywind, you get transparent pricing with no hidden fees, ensuring you can focus on what&apos; important - growing your investments and achieving your financial goals
+        <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600 dark:text-gray-300 pb-20">
+          Discover our straightforward and adaptable pricing options designed to fit every investor&apos; needs. Whether you&apos;re just starting out or are a seasoned investor, our plans are crafted to provide you with the tools and resources you need for effective financial management. With Paywind, you get transparent pricing with no hidden fees, ensuring you can focus on what&apos; important - growing your investments and achieving your financial goals
         </p>
-     
+
         <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">
           {investing.map((tier) => (
             <div
@@ -87,7 +117,7 @@ export default function Example() {
                 <span className="text-4xl font-bold tracking-tight text-black dark:text-white">{tier.percent}<sup>1</sup></span>
                 <span className="text-sm font-semibold leading-6 text-gray-500 dark:text-gray-300">/ annual fee</span>
               </p>
-              
+
               <a
                 href={tier.href}
                 aria-describedby={tier.id}
@@ -113,7 +143,7 @@ export default function Example() {
               </p>
             </div>
           ))}
-           {crypto.map((tier) => (
+          {crypto.map((tier) => (
             <div
               key={tier.id}
               className={classNames(
@@ -136,7 +166,7 @@ export default function Example() {
                 <span className="text-4xl font-bold tracking-tight text-black dark:text-white">{tier.percent}</span>
                 <span className="text-sm font-semibold leading-6 text-gray-500 dark:text-gray-300">+ trading fees<sup>2</sup></span>
               </p>
-              
+
               <a
                 href={tier.href}
                 aria-describedby={tier.id}
@@ -162,7 +192,7 @@ export default function Example() {
               </p>
             </div>
           ))}
-           {student.map((tier) => (
+          {student.map((tier) => (
             <div
               key={tier.id}
               className={classNames(
@@ -184,7 +214,7 @@ export default function Example() {
               <p className="mt-6 flex items-baseline gap-x-1">
                 <span className="text-4xl font-bold tracking-tight text-black dark:text-white">{tier.price}</span>
               </p>
-              
+
               <a
                 href={tier.href}
                 aria-describedby={tier.id}
@@ -208,6 +238,38 @@ export default function Example() {
             </div>
           ))}
         </div>
+
+      </div>
+      <div className='mx-auto max-w-2xl my-40'>
+
+        <Card className='shadow-xl dark:bg-gray-900 dark:border-gray-600'>
+          <CardHeader>
+            <CardTitle className='text-center text-3xl py-10'>Estimated Cost</CardTitle>
+            <CardDescription className='text-center text-4xl text-black dark:text-white font-bold'>${subscriptionFee} <span className="text-sm font-semibold leading-6 text-gray-500 dark:text-gray-300"> / per month</span> </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div className="px-5 ">
+              <div className="text-center mt-4">
+                <span className="text-xl font-semibold">Initial Deposit ${investment}</span>
+                <div className="mt-1">
+                  <span className="text-lg">
+                  </span>
+                </div>
+              </div>
+              <div className='pt-10'>
+                <SliderComponent
+                  defaultValue={[0]}
+                  max={40000}
+                  step={2000}
+                  onValueChange={(value) => setInvestment(value[0])}
+                />
+              </div>
+            </div>
+          </CardContent>
+          <CardFooter>
+            <p className='text-center px-5 py-10'>The base price for investing accounts is $3/month. This automatically switches to an annual price of 0.20% when you have a Paywind balance of $20,000 or more across any investing accounts and crypto accounts</p>
+          </CardFooter>
+        </Card>
       </div>
     </div>
   )

@@ -53,7 +53,7 @@ export default function Example() {
           </p>
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600 dark:text-gray-300">
-        Discover our straightforward and adaptable pricing options designed to fit every investor's needs. Whether you're just starting out or are a seasoned investor, our plans are crafted to provide you with the tools and resources you need for effective financial management. With Paywind, you get transparent pricing with no hidden fees, ensuring you can focus on what's important - growing your investments and achieving your financial goals
+        Discover our straightforward and adaptable pricing options designed to fit every investor&apos; needs. Whether you're just starting out or are a seasoned investor, our plans are crafted to provide you with the tools and resources you need for effective financial management. With Paywind, you get transparent pricing with no hidden fees, ensuring you can focus on what&apos; important - growing your investments and achieving your financial goals
         </p>
      
         <div className="isolate mx-auto mt-10 grid max-w-md grid-cols-1 gap-8 lg:mx-0 lg:max-w-none lg:grid-cols-3">

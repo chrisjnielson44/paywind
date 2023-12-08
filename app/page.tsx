@@ -6,10 +6,10 @@ import TempPage from './TempPage'
 export default function Home() {
   return (
     <main className="">
-      {/* <Header/>
+      <Header/>
       <Body/>
-      <Footer/> */}
-      <TempPage/>
+      <Footer/>
+      {/* <TempPage/> */}
     </main>
   )
 }

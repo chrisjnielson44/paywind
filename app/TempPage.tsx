@@ -1,7 +1,7 @@
 
 export default function TempPage() {
     return (
-        <main className="h-screen" >
+        <main className="lg:h-screen bg-white" >
             <div className="relative isolate flex items-center gap-x-6 overflow-hidden bg-white px-6 py-4 sm:px-3.5 sm:before:flex-1 border-b border-1 border-gray-100">
 
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2">

@@ -13,7 +13,9 @@ export default function TempPage() {
                         Come track our progress as we get ready to launch the future of investing.
                     </p>
                     <a
-                        href="#"
+                        href="https://www.linkedin.com/company/paywind"
+                        target="_blank" 
+                        rel="noopener noreferrer"
                         className="flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
                     >
                         More Info <span aria-hidden="true">&rarr;</span>

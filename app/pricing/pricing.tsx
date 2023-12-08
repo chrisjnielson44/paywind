@@ -1,7 +1,5 @@
 'use client'
-import { Slider } from '@/components/ui/slider'
 import { CheckIcon } from '@heroicons/react/20/solid'
-import PricingSlider from './slider'
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card'
 import * as React from 'react';
 import * as SliderPrimitive from '@radix-ui/react-slider';
@@ -123,7 +121,7 @@ export default function Example() {
                 aria-describedby={tier.id}
                 className={classNames(
                   tier.mostPopular
-                    ? 'bg-green-500 text-white shadow-sm hover:bg-indigo-400 focus-visible:outline-green-500'
+                    ? 'bg-green-500 text-white shadow-sm hover:bg-green-600 focus-visible:outline-green-500'
                     : 'bg-white/10 text-white hover:bg-white/20 focus-visible:outline-white',
                   'mt-6 block rounded-md py-2 px-3 text-center text-sm font-semibold leading-6 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2'
                 )}

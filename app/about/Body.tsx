@@ -217,7 +217,7 @@ export default function Body() {
       </div>
 
       {/* Team Section */}
-      
+
     </main>
   )
 }

@@ -13,12 +13,12 @@ export default function TempPage() {
                         Come track our progress as we get ready to launch the future of investing.
                     </p>
                     <a
-                        href="https://www.linkedin.com/company/paywind"
+                        href="https://changelog.paywind.io"
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="my-4 md:my-4 lg:my-0 flex-none rounded-full bg-gray-900 px-3.5 py-1 text-sm font-semibold text-white shadow-sm hover:bg-gray-700 dark:bg-white dark:text-black dark:hover:bg-gray-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gray-900"
                     >
-                        Our LinkedIn Page <span aria-hidden="true">&rarr;</span>
+                        See What We&apos;re Up To <span aria-hidden="true">&rarr;</span>
                     </a>
                 </div>
                 <div className="flex flex-1 justify-end">

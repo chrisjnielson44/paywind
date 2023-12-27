@@ -3,7 +3,8 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { getServerSession } from 'next-auth';
 import { Analytics } from '@vercel/analytics/react';
-import  {ThemeProvider} from "./theme-provider";
+import  { ThemeProvider } from "./theme-provider";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -33,6 +34,7 @@ export default async function RootLayout({
           >        
           {children}
        <Analytics />
+       <SpeedInsights/>
        </ThemeProvider>
       </body>
     </html>

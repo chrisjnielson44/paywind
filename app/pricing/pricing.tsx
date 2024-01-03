@@ -29,7 +29,7 @@ SliderComponent.displayName = SliderPrimitive.Root.displayName;
 
 const investing = [
   {
-    name: 'Investing',
+    name: 'Personal Investing',
     id: 'tier-investing',
     href: '#',
     price: '$3',
@@ -94,7 +94,7 @@ export default function Example() {
               )}
             >
               <div className="flex items-center justify-between gap-x-4">
-                <h3 id={tier.id} className="text-2xl font-semibold leading-8 text-black dark:text-white">
+                <h3 id={tier.id} className="text-xl font-semibold leading-8 text-black dark:text-white">
                   {tier.name}
                 </h3>
                 {tier.mostPopular ? (
@@ -150,7 +150,7 @@ export default function Example() {
               )}
             >
               <div className="flex items-center justify-between gap-x-4">
-                <h3 id={tier.id} className="text-2xl font-semibold leading-8 text-black dark:text-white">
+                <h3 id={tier.id} className="text-xl font-semibold leading-8 text-black dark:text-white">
                   {tier.name}
                 </h3>
                 {tier.mostPopular ? (
@@ -199,7 +199,7 @@ export default function Example() {
               )}
             >
               <div className="flex items-center justify-between gap-x-4">
-                <h3 id={tier.id} className="text-2xl font-semibold leading-8 text-black dark:text-white">
+                <h3 id={tier.id} className="text-xl font-semibold leading-8 text-black dark:text-white">
                   {tier.name}
                 </h3>
                 {tier.mostPopular ? (

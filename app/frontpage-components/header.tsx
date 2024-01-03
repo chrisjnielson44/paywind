@@ -6,11 +6,16 @@ import Link from 'next/link'
 import { ModeToggle } from '../dashboard/components/DarkModeToggle'
 import { PagesDropDown } from './pagesdropdown'
 import { Button } from '@/components/ui/button'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 
 const solutions = [
-    { name: 'Individual Investing', description: 'Get a better understanding of your traffic', href: '#' },
-    { name: 'Advisor Investing', description: 'Speak directly to your customers', href: '#' },
+    { name: 'Customizable Dashboard', description: 'Get a better understanding of your traffic', href: '#' },
+    { name: 'Track External Accounts', description: 'Speak directly to your customers', href: '#' },
+    { name: 'Progressive Profiling', description: 'Speak directly to your customers', href: '#' },
+    { name: 'Loan Tracking', description: 'Speak directly to your customers', href: '#' },
+    { name: 'Automated Investment Adjustments', description: 'Speak directly to your customers', href: '#' },
+
+
+
 
 ]
 
@@ -60,7 +65,7 @@ export default function Header() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
     return (
-        <header className="bg-white dark:bg-gray-900">
+        <header className="sticky top-0 bg-white bg-opacity-50 backdrop-blur-md dark:backdrop-blur-sm border-black dark:bg-gray-900 z-50">
 
             <nav className="lg:px-6 px-4 py-4" aria-label="Global">
                 <div className='flex flex-wrap justify-between items-center mx-auto px-4 max-w-screen-xl'>
@@ -71,13 +76,11 @@ export default function Header() {
                     </div>
                     <div className="flex lg:hidden">
                         <div className='pr-3'>
-                        <Button asChild className='sm:text-sm md:text-md font-semibold'>
-                            <Link href="/auth/login">Log in</Link>
-                        </Button>
+                            <Button asChild className='sm:text-sm md:text-md font-semibold'>
+                                <Link href="/auth/login">Log in</Link>
+                            </Button>
                         </div>
-                        {/* <div className='pr-3'>
-                            <ModeToggle />
-                        </div> */}
+                    
                         <button
                             type="button"
                             className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700"
@@ -130,7 +133,7 @@ export default function Header() {
                                     {({ open }) => (
                                         <>
                                             <Disclosure.Button className="dark:text-white flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-gray-900 dark:hover:bg-gray-800">
-                                                Solutions
+                                                Features
                                                 <ChevronDownIcon
                                                     className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
                                                     aria-hidden="true"

@@ -46,7 +46,7 @@ const data = [
   
 ]
 
-const colors = ['green', 'white']; // Modify this line
+const colors = ['green', 'red']; // Modify this line
 
 
 const data01 = [

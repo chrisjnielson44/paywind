@@ -23,6 +23,7 @@ import TeamSwitcher from "./components/team-switcher"
 import { UserNav } from "./components/user-nav"
 import { Nav } from "./components/nav"
 import { PieGraph } from "./components/piechart"
+import { PlusCircleIcon, PlusIcon } from "lucide-react"
 
 export const metadata: Metadata = {
     title: "Dashboard",
@@ -33,7 +34,7 @@ export default function DashboardPage() {
     return (
         <>
             <div className="flex-col md:flex">
-                <Nav/>
+                <Nav />
                 <div className="flex-1 space-y-4 p-8 pt-6">
                     <div className="flex items-center justify-between space-y-2">
                         <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
@@ -54,7 +55,7 @@ export default function DashboardPage() {
                                             strokeLinecap="round"
                                             strokeLinejoin="round"
                                             strokeWidth="2"
-                                            className="h-4 w-4 text-muted-foreground"
+                                            className="h-4 w-4 text-primary"
                                         >
                                             <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
                                         </svg>
@@ -170,7 +171,7 @@ export default function DashboardPage() {
                                         <CardTitle>Line Graph</CardTitle>
                                     </CardHeader>
                                     <CardContent className="pl-2">
-                                        <LineGraph/>
+                                        <LineGraph />
                                     </CardContent>
                                 </Card>
                                 <Card className="col-span-2">
@@ -179,12 +180,21 @@ export default function DashboardPage() {
                                     </CardHeader>
 
                                     <CardContent className="pl-2">
-                                        <PieGraph/>
+                                        <PieGraph />
                                     </CardContent>
                                 </Card>
+
                             </div>
-                            
-                            
+                            <button
+                                type="button"
+                                className="bg-white dark:bg-card relative block w-full rounded-lg border-2 border-dashed border-gray-400 p-12 text-center hover:border-gray-400 focus:border-none  focus:ring-offset-2"
+                            >
+                                <PlusIcon className="mx-auto h-12 w-12 dark:text-white"/>
+
+                                <span className="mt-2 block text-sm  dark:text-white">Add Widget</span>
+                            </button>
+
+
                         </TabsContent>
                     </Tabs>
                 </div>

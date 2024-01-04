@@ -6,9 +6,15 @@ export default async function Settings() {
 
     return (
         <div className="mx-auto max-w-7xl lg:flex lg:gap-x-16 lg:px-8">
+            
             <SettingInterface/>
+            
             <main className="px-4 py-16 sm:px-6 lg:flex-auto lg:px-0 lg:py-20">
+            <div className="flex items-center justify-between pb-5">
+                        <h2 className="text-3xl font-bold tracking-tight">Settings</h2>
+                    </div>
                 <div className="mx-auto max-w-2xl space-y-16 sm:space-y-20 lg:mx-0 lg:max-w-none">
+                    
                     <div>
                         <h2 className="text-base font-semibold leading-7 text-gray-900 dark:text-gray-200">Profile</h2>
                         <p className="mt-1 text-sm leading-6 text-gray-500 dark:text-gray-200">

@@ -17,7 +17,6 @@ import {
 } from "@/components/ui/tabs"
 import { MainNav } from "../components/main-nav"
 import { Overview } from "../components/overview"
-import { RecentSales } from "../components/recent-sales"
 import { Search } from "../components/search"
 import TeamSwitcher from "../components/team-switcher"
 import { UserNav } from "../components/user-nav"

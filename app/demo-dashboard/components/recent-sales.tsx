@@ -1,66 +1,89 @@
 import {
-    Avatar,
-    AvatarFallback,
-    AvatarImage,
-  } from "@/components/ui/avatar"
-  
-  export function RecentSales() {
-    return (
-      <div className="space-y-8">
-        <div className="flex items-center">
-          <Avatar className="h-9 w-9">
-            <AvatarFallback>OM</AvatarFallback>
-          </Avatar>
-          <div className="ml-4 space-y-1">
-            <p className="text-sm font-medium leading-none">Olivia Martin</p>
-            <p className="text-sm text-muted-foreground">
-              olivia.martin@email.com
-            </p>
-          </div>
-          <div className="ml-auto font-medium">+$1,999.00</div>
-        </div>
-        <div className="flex items-center">
-          <Avatar className="flex h-9 w-9 items-center justify-center space-y-0 border">
-            <AvatarFallback>JL</AvatarFallback>
-          </Avatar>
-          <div className="ml-4 space-y-1">
-            <p className="text-sm font-medium leading-none">Jackson Lee</p>
-            <p className="text-sm text-muted-foreground">jackson.lee@email.com</p>
-          </div>
-          <div className="ml-auto font-medium">+$39.00</div>
-        </div>
-        <div className="flex items-center">
-          <Avatar className="h-9 w-9">
-            <AvatarFallback>IN</AvatarFallback>
-          </Avatar>
-          <div className="ml-4 space-y-1">
-            <p className="text-sm font-medium leading-none">Isabella Nguyen</p>
-            <p className="text-sm text-muted-foreground">
-              isabella.nguyen@email.com
-            </p>
-          </div>
-          <div className="ml-auto font-medium">+$299.00</div>
-        </div>
-        <div className="flex items-center">
-          <Avatar className="h-9 w-9">
-            <AvatarFallback>WK</AvatarFallback>
-          </Avatar>
-          <div className="ml-4 space-y-1">
-            <p className="text-sm font-medium leading-none">William Kim</p>
-            <p className="text-sm text-muted-foreground">will@email.com</p>
-          </div>
-          <div className="ml-auto font-medium">+$99.00</div>
-        </div>
-        <div className="flex items-center">
-          <Avatar className="h-9 w-9">
-            <AvatarFallback>SD</AvatarFallback>
-          </Avatar>
-          <div className="ml-4 space-y-1">
-            <p className="text-sm font-medium leading-none">Sofia Davis</p>
-            <p className="text-sm text-muted-foreground">sofia.davis@email.com</p>
-          </div>
-          <div className="ml-auto font-medium">+$39.00</div>
-        </div>
-      </div>
-    )
-  }
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableFooter,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
+
+interface Invoice {
+  invoice: string;
+  paymentStatus: string;
+  totalAmount: number;
+  paymentMethod: string;
+  transactionType: "purchase" | "receive";
+}
+
+// Sample function to generate random amounts
+const getRandomAmount = () => Math.floor(Math.random() * 1000) / 10;
+
+const invoices: Invoice[] = [
+  {
+    invoice: "INV001",
+    paymentStatus: "Paid",
+    totalAmount: getRandomAmount(),
+    paymentMethod: "Credit Card",
+    transactionType: "purchase",
+  },
+  {
+    invoice: "INV002",
+    paymentStatus: "Pending",
+    totalAmount: getRandomAmount(),
+    paymentMethod: "PayPal",
+    transactionType: "receive",
+  },
+  {
+    invoice: "INV003",
+    paymentStatus: "Unpaid",
+    totalAmount: getRandomAmount(),
+    paymentMethod: "Bank Transfer",
+    transactionType: "purchase",
+  },
+  {
+    invoice: "INV004",
+    paymentStatus: "Paid",
+    totalAmount: getRandomAmount(),
+    paymentMethod: "Credit Card",
+    transactionType: "receive",
+  },
+  {
+    invoice: "INV005",
+    paymentStatus: "Paid",
+    totalAmount: getRandomAmount(),
+    paymentMethod: "PayPal",
+    transactionType: "purchase",
+  },
+ 
+  // Add more as needed...
+];
+
+export function PlaidTransactions() {
+  return (
+    <Table>
+      <TableHeader>
+        <TableRow>
+          <TableHead className="w-[100px]">Invoice</TableHead>
+          <TableHead>Status</TableHead>
+          <TableHead>Method</TableHead>
+          <TableHead className="text-right">Amount</TableHead>
+        </TableRow>
+      </TableHeader>
+      <TableBody>
+        {invoices.map((invoice) => (
+          <TableRow key={invoice.invoice}>
+            <TableCell className="font-medium">{invoice.invoice}</TableCell>
+            <TableCell>{invoice.paymentStatus}</TableCell>
+            <TableCell>{invoice.paymentMethod}</TableCell>
+            <TableCell className={`text-right ${invoice.transactionType === 'purchase' ? 'text-red-500' : 'text-green-500'}`}>
+              {invoice.transactionType === 'purchase' ? `- $${invoice.totalAmount.toFixed(2)}` : `+ $${invoice.totalAmount.toFixed(2)}`}
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+
+    </Table>
+  )
+}

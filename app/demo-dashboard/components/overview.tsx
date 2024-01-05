@@ -1,5 +1,6 @@
 "use client"
 
+import { useTheme } from "next-themes";
 import { Bar, BarChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
 
 const data = [
@@ -81,6 +82,11 @@ const data01 = [
 ];
 
 export function Overview() {
+    const theme = useTheme().theme; // Extract the theme value from the useTheme hook
+    const isDarkMode = theme === 'dark'; // assuming theme can be 'dark' or 'light'
+    const tooltipStyle = {
+        color: isDarkMode ? 'white' : 'black',
+    };
     return (
             <ResponsiveContainer width="100%" height={350}>
                 <BarChart data={data}>
@@ -104,8 +110,8 @@ export function Overview() {
                         radius={[4, 4, 0, 0]}
                         className="fill-primary"
                         />
+               
                 </BarChart>
-
             </ResponsiveContainer>
     )
 }

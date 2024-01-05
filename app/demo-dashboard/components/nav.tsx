@@ -11,7 +11,9 @@ import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { usePathname } from "next/navigation";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { CommandLine } from "./command-line";
+import { ModeToggle } from '@/app/dashboard/components/DarkModeToggle'
+import { CommandMenu } from "./command-menu";
+
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(' ')
@@ -22,7 +24,7 @@ export function Nav() {
   const pathname = usePathname();
 
   return (
-    <Disclosure as="nav" className="bg-white shadow-xl dark:bg-background dark:border-b dark:border-zinc-700 sticky top-0 z-50">
+    <Disclosure as="nav" className="bg-white shadow-lg dark:shadow-none dark:bg-background dark:border-b dark:border-zinc-700 sticky top-0 z-50">
       {({ open }) => (
         <>
           <div className="mx-auto px-4 ">
@@ -43,30 +45,15 @@ export function Nav() {
                     <Link href="/demo-dashboard/crypto" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/demo-dashboard/crypto' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
                       Crypto
                     </Link>
-                    <Link href="/demo-dashboard/settings/general" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/demo-dashboard/settings/general' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
+                    <Link href="/demo-dashboard/settings" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/demo-dashboard/settings' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
                       Settings
                     </Link>
                   </div>
                 </div>
               </div>
-              <div className="flex flex-1 justify-center px-2 lg:ml-6 lg:justify-end">
-                <div className="w-full max-w-lg lg:max-w-xs">
-                  <label htmlFor="search" className="sr-only">
-                    Search
-                  </label>
-                  <div className="relative">
-                    <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-                      <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
-                    </div>
-                    <button
-                      id="search"
-                      name="search"
-                      className="block w-full rounded-md ring-1 ring-gray-300 dark:bg-zinc-800 py-1.5 pl-10 pr-3 text-gray-300 placeholder:text-gray-400 focus:bg-zinc-800 focus:text-gray-900  dark:text-white focus:ring-0 sm:text-sm sm:leading-63"
-                      placeholder="Search"
-                    >
-                      <CommandLine />
-                    </button>
-                  </div>
+              <div className="flex flex-1 justify-center px-2 lg:ml-2 lg:justify-end">
+                <div className="w-full max-w-lg md:max-w-xs lg:hidden">
+                    <CommandMenu />
                 </div>
               </div>
               <div className="flex lg:hidden">
@@ -81,8 +68,10 @@ export function Nav() {
                   )}
                 </Disclosure.Button>
               </div>
-              <div className="hidden lg:ml-4 lg:block">
-                <div className="flex items-center">
+              <div className="hidden lg:ml-4 lg:block ">
+                <div className="flex items-center space-x-3">
+                <CommandMenu />
+
                   <button
                     type="button"
                     className="relative flex-shrink-0 rounded-full  p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
@@ -91,6 +80,7 @@ export function Nav() {
                     <span className="sr-only">View notifications</span>
                     <BellIcon className="h-6 w-6" aria-hidden="true" />
                   </button>
+                  <ModeToggle/>
 
                   {/* Profile dropdown */}
                   <div className="mx-2">
@@ -127,7 +117,7 @@ export function Nav() {
               <Disclosure.Button
                 as={Link}
                 href="/demo-dashboard/settings/general"
-                className={`block rounded-md px-3 py-2 text-base font-medium text-black ${pathname === '/demo-dashboard/settings/general' ? 'bg-gray-200 dark:bg-zinc-800 ' : ' hover:bg-gray-200 dark:hover:bg-zinc-800'}`}>
+                className={`block rounded-md px-3 py-2 text-base font-medium text-black ${pathname === '/demo-dashboard/settings' ? 'bg-gray-200 dark:bg-zinc-800 ' : ' hover:bg-gray-200 dark:hover:bg-zinc-800'}`}>
 
                 Settings
               </Disclosure.Button>
@@ -156,14 +146,14 @@ export function Nav() {
                 <Disclosure.Button
                   as={Link}
                   href="#"
-                  className={`block rounded-md px-3 py-2 text-base font-medium text-black ${pathname === '/demo-dashboard/settings/general' ? 'bg-gray-200 dark:bg-zinc-800 ' : ' hover:bg-gray-200 dark:hover:bg-zinc-800'}`}>
+                  className={`block rounded-md px-3 py-2 text-base font-medium text-black ${pathname === '/demo-dashboard/settings' ? 'bg-gray-200 dark:bg-zinc-800 ' : ' hover:bg-gray-200 dark:hover:bg-zinc-800'}`}>
 
                   Your Profile
                 </Disclosure.Button>
                 <Disclosure.Button
                   as={Link}
                   href="/demo-dashboard/settings"
-                  className={`block rounded-md px-3 py-2 text-base font-medium text-black ${pathname === '/demo-dashboard/settings/general' ? 'bg-gray-200 dark:bg-zinc-800 ' : ' hover:bg-gray-200 dark:hover:bg-zinc-800'}`}>
+                  className={`block rounded-md px-3 py-2 text-base font-medium text-black ${pathname === '/demo-dashboard/settings' ? 'bg-gray-200 dark:bg-zinc-800 ' : ' hover:bg-gray-200 dark:hover:bg-zinc-800'}`}>
                   Settings
                 </Disclosure.Button>
                 <Disclosure.Button

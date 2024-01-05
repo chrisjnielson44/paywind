@@ -1,101 +1,75 @@
-"use client"
-
+'use client'
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { useTheme } from "next-themes"
 
+
+// Example portfolio data
 const data = [
     {
-        name: "Jan",
-        Total: Math.floor(Math.random() * 5000) + 1000,
+        name: "Stocks",
+        value: Math.floor(Math.random() * 5000) + 1000,
     },
     {
-        name: "Feb",
-        Total: Math.floor(Math.random() * 5000) + 1000,
+        name: "Funds",
+        value: Math.floor(Math.random() * 5000) + 1000,
     },
     {
-        name: "Mar",
-        Total: Math.floor(Math.random() * 5000) + 1000,
+        name: "Commodities",
+        value: Math.floor(Math.random() * 5000) + 1000,
     },
     {
-        name: "Apr",
-        Total: Math.floor(Math.random() * 5000) + 1000,
+        name: "Crypto",
+        value: Math.floor(Math.random() * 5000) + 1000,
     },
     {
-        name: "May",
-        Total: Math.floor(Math.random() * 5000) + 1000,
+        name: "Bonds",
+        value: Math.floor(Math.random() * 5000) + 1000,
     },
     {
-        name: "Jun",
-        Total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-        name: "Jul",
-        Total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-        name: "Aug",
-        Total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-        name: "Sep",
-        Total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-        name: "Oct",
-        Total: Math.floor(Math.random() * 5000) + 1000,
-    },
-  
-]
-
-const colors = ['green', 'red']; // Modify this line
-
-
-const data01 = [
-    {
-        "name": "Group A",
-        "value": 400
-    },
-    {
-        "name": "Group B",
-        "value": 300
-    },
-    {
-        "name": "Group C",
-        "value": 300
-    },
-    {
-        "name": "Group D",
-        "value": 200
-    },
-    {
-        "name": "Group E",
-        "value": 278
-    },
-    {
-        "name": "Group F",
-        "value": 189
+        name: "Real Estate",
+        value: Math.floor(Math.random() * 5000) + 1000,
     }
 ];
 
+
+// Calculate total value of all items
+const total = data.reduce((acc, item) => acc + item.value, 0);
+
 export function PieGraph() {
+// Colors for light mode (lighter shades of blue)
+const darkModeColors = ['#B3E5FC', '#81D4FA', '#4FC3F7', '#29B6F6', '#03A9F4', '#039BE5'];
+
+// Colors for dark mode (darker shades of blue)
+const lightModeColors = ['#0277BD', '#01579B', '#013F73', '#002860', '#001D3D', '#000E23'];
+;
+
+    const theme = useTheme().theme; // Extract the theme value from the useTheme hook
+    const colors = theme === 'dark' ? darkModeColors : lightModeColors;
+
+     // Define label style based on the theme
+     const labelStyle = {
+        fill: theme === 'dark' ? '#FFFFFF' : '#000000', // White for dark mode, black for light mode
+        fontSize: '0.8em'
+    };
+
     return (
         <ResponsiveContainer width="100%" height={400}>
             <PieChart>
                 <Pie
-                   data={data}
-                   cx="50%"
-                   cy="50%"
-                   outerRadius={150}
-                   fill="#8884d8"
-                   dataKey="Total"
-                   label={({ payload }) => ` $${payload.Total}`}
-
+                    data={data}
+                    cx="50%"
+                    cy="50%"
+                    outerRadius={150}
+                    fill="#8884d8"
+                    dataKey="value"
+                    label={({ name, value }) => `${name}: ${(value / total * 100).toFixed(2)}%`}
                 >
-                   {data.map((entry, index) => (
-                       <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
-                   ))}
+                    {data.map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={colors[index % colors.length]} />
+                    ))}
                 </Pie>
-                <Tooltip />
+                {/* <Tooltip formatter={(value) => `${(Number(value) / total * 100).toFixed(2)}%`} /> */}
             </PieChart>
         </ResponsiveContainer>
     );
- }
+}

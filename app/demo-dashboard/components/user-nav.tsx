@@ -22,7 +22,7 @@ import Link from "next/link"
         <DropdownMenuTrigger asChild>
           <Button variant="ghost" className="relative h-8 w-8 rounded-full">
             <Avatar className="h-8 w-8">
-              <AvatarFallback>JA</AvatarFallback>
+              <AvatarFallback className="bg-gray-300 dark:text-black">JA</AvatarFallback>
             </Avatar>
           </Button>
         </DropdownMenuTrigger>

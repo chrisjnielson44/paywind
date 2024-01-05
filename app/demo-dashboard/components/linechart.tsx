@@ -1,114 +1,80 @@
 "use client"
+import { useTheme } from "next-themes"
+
 
 import { CartesianGrid, Line, LineChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts";
 
-const data = [
-    {
-        name: "Jan",
-        Total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-        name: "Feb",
-        Total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-        name: "Mar",
-        Total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-        name: "Apr",
-        Total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-        name: "May",
-        Total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-        name: "Jun",
-        Total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-        name: "Jul",
-        Total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-        name: "Aug",
-        Total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-        name: "Sep",
-        Total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-        name: "Oct",
-        Total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-        name: "Nov",
-        Total: Math.floor(Math.random() * 5000) + 1000,
-    },
-    {
-        name: "Dec",
-        Total: Math.floor(Math.random() * 5000) + 1000,
-    },
-]
+// Function to generate less volatile data
+const generateData = () => {
+    let data = [];
+    let previousDayTotal = Math.floor(Math.random() * 5000) + 1000; // Initial value
 
-const data01 = [
-    {
-        "name": "Group A",
-        "value": 400
-    },
-    {
-        "name": "Group B",
-        "value": 300
-    },
-    {
-        "name": "Group C",
-        "value": 300
-    },
-    {
-        "name": "Group D",
-        "value": 200
-    },
-    {
-        "name": "Group E",
-        "value": 278
-    },
-    {
-        "name": "Group F",
-        "value": 189
+    for (let i = 1; i <= 30; i++) {
+        let randomChange = Math.floor(Math.random() * 2000) - 1000; // Change within -1000 to +1000
+        let newTotal = previousDayTotal + randomChange;
+
+        // Ensure newTotal stays within a reasonable range
+        if (newTotal < 1000) newTotal = 1000;
+        if (newTotal > 6000) newTotal = 6000;
+
+        data.push({ name: i, Total: newTotal });
+        previousDayTotal = newTotal; // Update previousDayTotal for the next iteration
     }
-];
+
+    return data;
+};
+
+
+const data = generateData();
 
 export function LineGraph() {
+    const theme = useTheme().theme; // Extract the theme value from the useTheme hook
+    const isDarkMode = theme === 'dark'; // assuming theme can be 'dark' or 'light'
+    const tooltipStyle = {
+        color: isDarkMode ? 'white' : 'black',
+        backgroundColor: isDarkMode ? '#5A5A5A' : 'white',
+    };
+
+    const customTickFormatter = (value: number) => {
+        if ( value === 15 || value === 30) {
+            return `${value}`;
+        }
+        return '';
+    };
+    
     return (
         <ResponsiveContainer width="100%" height={350}>
             <LineChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
-
+            {/* <CartesianGrid strokeDasharray="3 3" /> */}
                 <XAxis
-                   dataKey="name"
-                   stroke="#888888"
-                   fontSize={12}
-                   tickLine={false}
-                   axisLine={false}
+                    dataKey="name"
+                    stroke="#888888"
+                    fontSize={12}
+                    tickLine={false}
+                    axisLine={true}
+                    tickFormatter={customTickFormatter}
+
                 />
                 <YAxis
-                   stroke="#888888"
-                   fontSize={12}
-                   tickLine={false}
-                   axisLine={false}
-                   tickFormatter={(value) => `$${value}`}
+                    stroke="#888888"
+                    fontSize={12}
+                    tickLine={false}
+                    axisLine={true}
+                    tickFormatter={(value) => `$${value}`}
                 />
-                  <Tooltip labelClassName="darkLtex"/>
+                <Tooltip 
+                    contentStyle={tooltipStyle} // Set your desired color here
+                    formatter={(value) =>  `$${value}`}
 
+                />
                 <Line
-                   type="monotone"
-                   dataKey="Total"
-                   stroke="currentColor"
-                   dot={false}
+                    type="monotone"
+                    dataKey="Total"
+                    stroke="currentColor"
+                    dot={false}
+                    strokeWidth={2}
                 />
             </LineChart>
         </ResponsiveContainer>
     );
- }
+}

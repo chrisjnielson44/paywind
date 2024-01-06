@@ -6,7 +6,7 @@ import { ArrowDown } from 'lucide-react';
 
 const BitcoinPrice = () => {
     const [btcPrice, setBtcPrice] = useState<number | null>(null);
-    const [error, setError] = useState(null);
+    const [error, setError] = useState<Error | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -29,7 +29,7 @@ const BitcoinPrice = () => {
                 const marketPrice = parseFloat(response.data.data.price);
                 setBtcPrice(marketPrice);
             } catch (error) {
-                setError(error as SetStateAction<null>);
+                setError(error as Error);
             }
         };
 

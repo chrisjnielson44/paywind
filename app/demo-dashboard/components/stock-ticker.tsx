@@ -5,8 +5,8 @@ import axios from 'axios';
 import { ArrowUp } from 'lucide-react';
 
 const StockTicker = () => {
-    const [stockPrice, setStockPrice] = useState(null);
-    const [error, setError] = useState(null);
+    const [stockPrice, setStockPrice] = useState<number | null>(null);
+    const [error, setError] = useState<Error | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -24,7 +24,7 @@ const StockTicker = () => {
                 const marketPrice = response.data.price;
                 setStockPrice(marketPrice);
             } catch (error) {
-                setError(error as SetStateAction<null>);
+                setError(error as Error);
             }
         };
 
@@ -40,7 +40,7 @@ const StockTicker = () => {
     return (
         <div className="flex items-center space-x-2">
             <div className="text-2xl font-bold">
-                TSLA: ${typeof stockPrice === 'number' ? stockPrice.toFixed(2) : 'N/A'}
+            TSLA: ${stockPrice !== null ? stockPrice.toFixed(2) : 'N/A'}
             </div>
             <div>
                 <ArrowUp className='text-green-500' />

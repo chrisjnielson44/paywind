@@ -6,9 +6,9 @@ import axios from 'axios';
 import { ArrowDown, ArrowUp } from 'lucide-react';
 
 const SP500Card = () => {
-    const [changePercentage, setChangePercentage] = useState(null);
-    const [changePoint, setChangePoint] = useState(null);
-    const [error, setError] = useState(null);
+    const [changePercentage, setChangePercentage] = useState<number | null>(null);
+    const [changePoint, setChangePoint] = useState<number | null>(null);
+    const [error, setError] = useState<Error | null>(null);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -26,7 +26,7 @@ const SP500Card = () => {
                 setChangePercentage(response.data.change_percentage);
                 setChangePoint(response.data.change_point)
             } catch (error) {
-                setError(null as React.SetStateAction<null>);
+                setError(error as Error);
             }
         };
         fetchData();
@@ -50,7 +50,7 @@ const SP500Card = () => {
     return (
         <div className="flex items-center space-x-2">
             <div className="text-2xl font-bold">
-                <p>+{changePoint !== null ? changePoint.toFixed(2) : null} ({changePercentage !== null ? changePercentage.toFixed(2) : null})% </p>
+            <p>{changePoint !== null ? `${changePoint >= 0 ? '+' : ''}${changePoint?.toFixed(2)} (${changePercentage?.toFixed(2)}%)` : ''}</p>
                 </div>
             {renderChangeIndicator()}
         </div>

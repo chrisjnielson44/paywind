@@ -29,8 +29,10 @@ const SP500Card = () => {
                 setError(null as React.SetStateAction<null>);
             }
         };
-
         fetchData();
+        const interval = setInterval(fetchData, 600000); // Update every hour
+
+        return () => clearInterval(interval);
     }, []);
 
     const renderChangeIndicator = () => {

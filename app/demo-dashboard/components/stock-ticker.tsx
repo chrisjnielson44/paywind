@@ -29,7 +29,7 @@ const StockTicker = () => {
         };
 
         fetchData();
-        const interval = setInterval(fetchData, 60000); // Update every minute
+        const interval = setInterval(fetchData, 600000); // Update every minute
 
         return () => clearInterval(interval);
     }, []);

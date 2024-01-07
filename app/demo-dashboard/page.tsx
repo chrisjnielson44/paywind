@@ -291,7 +291,7 @@ export default function DashboardPage() {
                                     <CardContent>
                                         <div>
                                             <div className="spay-y-4 mb-5">
-                                                <p className="pb-1">We've noticed that you have a large sum of money in your traditional savings account.</p>
+                                                <p className="pb-1">We&apos;ve noticed that you have a large sum of money in your traditional savings account.</p>
                                                 <p className="pb-3">Consider moving your funds to a high-yield savings account to earn more interest.</p>
                                                 <ul className="list-disc ml-3">
                                                     <li>Higher interest rates than regular savings</li>

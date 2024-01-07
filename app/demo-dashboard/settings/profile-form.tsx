@@ -55,7 +55,7 @@ type ProfileFormValues = z.infer<typeof profileFormSchema>
 
 // This can come from your database or API.
 const defaultValues: Partial<ProfileFormValues> = {
-  bio: "I own a computer.",
+  bio: "I like to invest.",
   urls: [
     { value: "https://shadcn.com" },
     { value: "http://twitter.com/shadcn" },
@@ -95,7 +95,7 @@ export function ProfileForm() {
             <FormItem>
               <FormLabel>Username</FormLabel>
               <FormControl>
-                <Input placeholder="shadcn" {...field} />
+                <Input placeholder="Jhonny Appleseed" {...field} />
               </FormControl>
               <FormDescription>
                 This is your public display name. It can be your real name or a
@@ -118,9 +118,9 @@ export function ProfileForm() {
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
-                  <SelectItem value="m@example.com">m@example.com</SelectItem>
-                  <SelectItem value="m@google.com">m@google.com</SelectItem>
-                  <SelectItem value="m@support.com">m@support.com</SelectItem>
+                  <SelectItem value="m@example.com">jhonnyappleseed@example.com</SelectItem>
+                  <SelectItem value="m@google.com">jhonnyappleseed@google.com</SelectItem>
+                  <SelectItem value="m@support.com">jhonnyappleseed@support.com</SelectItem>
                 </SelectContent>
               </Select>
               <FormDescription>
@@ -152,7 +152,7 @@ export function ProfileForm() {
             </FormItem>
           )}
         />
-        <div>
+        {/* <div>
           {fields.map((field, index) => (
             <FormField
               control={form.control}
@@ -183,7 +183,7 @@ export function ProfileForm() {
           >
             Add URL
           </Button>
-        </div>
+        </div> */}
         <Button type="submit">Update profile</Button>
       </form>
     </Form>

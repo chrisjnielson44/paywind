@@ -113,16 +113,17 @@ export function CommandMenu({ ...props }: DialogProps) {
                                 <CommandShortcut>⌘P</CommandShortcut>
                             </CommandItem>
                             <CommandItem>
-                                <CreditCard className="mr-2 h-4 w-4" />
+                                <LineChartIcon className="mr-2 h-4 w-4" />
                                 <span>Stocks</span>
                                 <CommandShortcut>⌘B</CommandShortcut>
                             </CommandItem>
                             <CommandItem>
-                                <Settings className="mr-2 h-4 w-4" />
+                                <CoinsIcon className="mr-2 h-4 w-4" />
                                 <span>Crypto</span>
-                                <CommandShortcut>⌘S</CommandShortcut>
+                                <CommandShortcut>⌘H</CommandShortcut>
 
                             </CommandItem>
+                         
                         </CommandGroup>
 
                         <CommandSeparator />

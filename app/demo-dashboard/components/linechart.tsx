@@ -45,7 +45,7 @@ export function LineGraph() {
     return (
         <ResponsiveContainer width="100%" height={350}>
             <LineChart data={data}>
-            {/* <CartesianGrid strokeDasharray="3 3" /> */}
+            {/* <CartesianGrid strokeDasharray="4 4" /> */}
                 <XAxis
                     dataKey="name"
                     stroke="#888888"
@@ -62,11 +62,35 @@ export function LineGraph() {
                     axisLine={true}
                     tickFormatter={(value) => `$${value}`}
                 />
-                <Tooltip 
-                    contentStyle={tooltipStyle} // Set your desired color here
-                    formatter={(value) =>  `$${value}`}
-
-                />
+                <Tooltip
+                content={({ active, payload }) => {
+                    if (active && payload && payload.length) {
+                      return (
+                        <div className="rounded-lg border bg-background p-2 shadow-sm">
+                        <div className="grid grid-cols-2 gap-2">
+                            <div className="flex flex-col">
+                              <span className="text-[0.70rem] uppercase text-muted-foreground" style={{ color: tooltipStyle.color }}>
+                                Day
+                              </span>
+                              <span className="font-bold" style={{ color: tooltipStyle.color }}>
+                                {payload[0].payload.name}
+                              </span>
+                            </div>
+                            <div className="flex flex-col">
+                              <span className="text-[0.70rem] uppercase text-muted-foreground" style={{ color: tooltipStyle.color }}>
+                                Total
+                              </span>
+                              <span className="font-bold" style={{ color: tooltipStyle.color }}>
+                              {`$${payload[0].value}`}
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      );
+                    }
+                    return null;
+                  }}
+              />
                 <Line
                     type="monotone"
                     dataKey="Total"

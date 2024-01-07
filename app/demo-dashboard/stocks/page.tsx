@@ -22,6 +22,9 @@ import TeamSwitcher from "../components/team-switcher"
 import { UserNav } from "../components/user-nav"
 import { Nav } from "../components/nav"
 import { PieGraph } from "../components/piechart"
+import { TopPositions } from "./components/table"
+import TradingViewWidget from "./components/applestockl"
+import { Orders } from "./components/orders"
 
 export const metadata: Metadata = {
     title: "Dashboard",
@@ -37,42 +40,65 @@ export default function Stocks() {
                     <div className="flex items-center justify-between space-y-2">
                         <h2 className="text-3xl font-bold tracking-tight">Stocks</h2>
                     </div>
-                    <Tabs defaultValue="commonstock" className="space-y-4">
-                        <TabsList className="grid w-fit grid-cols-4">
-                            <TabsTrigger value="commonstock">Common Stock</TabsTrigger>
-                            <TabsTrigger value="indexfunds">Index Funds</TabsTrigger>
-                            <TabsTrigger value="mutualfunds">Mutual Funds</TabsTrigger>
-                            <TabsTrigger value="futures">Futures</TabsTrigger>
+                    <Tabs defaultValue="trade" className="space-y-4">
+                        <TabsList className="grid w-fit grid-cols-2">
+                            <TabsTrigger value="trade">Trade</TabsTrigger>
+                            <TabsTrigger value="orders">Orders</TabsTrigger>
 
                         </TabsList>
-                        <TabsContent value="commonstock" className="space-y-4">
-                            <Card className="">
-                                <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                                    <CardTitle className="text-sm font-medium">
-                                        Balance
-                                    </CardTitle>
-                                    {/* <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        stroke="currentColor"
-                                        strokeLinecap="round"
-                                        strokeLinejoin="round"
-                                        strokeWidth="2"
-                                        className="h-4 w-4 text-primary"
-                                    >
-                                        <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
-                                    </svg> */}
+                        <TabsContent value="trade" className="space-y-4">
+                            <Card className="col-span-2">
+                                <CardHeader>
+                                    <CardTitle>Allocations</CardTitle>
+                                </CardHeader>
+
+                                <CardContent>
+                                    <h1 className="text-xl pb-5 font-medium">Your Top Positions</h1>
+                                    <TopPositions />
+                                </CardContent>
+
+                            </Card>
+
+                            <Card className="col-span-2">
+                                <CardHeader>
+                                    <CardTitle>Trade</CardTitle>
                                 </CardHeader>
                                 <CardContent>
-                                    <div className="text-2xl font-bold">$45,231.89</div>
-                                    <p className="text-xs text-muted-foreground">
-                                        +20.1% from last month
-                                    </p>
+                                    <h1 className="text-xl pb-5 font-medium">Apple Inc. (AAPL)</h1>
+                                    <div className="flex flex-col md:flex-row items-start md:items-center">
+                                        <div className="flex-grow">
+                                            <TradingViewWidget />
+                                        </div>
+                                        <div className="flex flex-row md:flex-col space-x-2 md:space-x-0 md:space-y-2 mt-4 md:mt-0 md:ml-4">
+                                            {/* Buy Button */}
+                                            <button className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">
+                                                Buy
+                                            </button>
+                                            {/* Sell Button */}
+                                            <button className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded">
+                                                Sell
+                                            </button>
+                                        </div>
+                                    </div>
                                 </CardContent>
                             </Card>
 
                         </TabsContent>
+                        <TabsContent value="orders" className="space-y-4">
+                            <Card className="col-span-2">
+                                <CardHeader>
+                                    <CardTitle>Orders</CardTitle>
+                                </CardHeader>
+
+                                <CardContent>
+                                    <h1 className="text-xl pb-5 font-medium">Your Orders</h1>
+                                    <Orders />
+                                </CardContent>
+
+                            </Card>
+
+                            </TabsContent>
+
                     </Tabs>
                 </div>
             </div>

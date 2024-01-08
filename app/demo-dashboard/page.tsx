@@ -36,6 +36,7 @@ import CreditScoreGauge from "./components/creditscore"
 import { Button } from "@/components/ui/button"
 import { DatePickerWithRange } from "./date-picker"
 import { TeslaTicker } from "./components/stock-ticker"
+import { PlusSmallIcon } from "@heroicons/react/24/outline"
 
 
 export const metadata: Metadata = {
@@ -54,11 +55,11 @@ export default function DashboardPage() {
                     <div className="flex items-center justify-between space-y-2">
                         <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
                         <div>
-                        <Button variant="outline">Open</Button>
-                         <SelectDashboard />
-                            
+                            {/* <Button variant="outline"><PlusIcon className="h-4 w-4 fill-currentColor" /></Button> */}
+                            <SelectDashboard />
+
                         </div>
-                        
+
                     </div>
                     <Tabs defaultValue="overview" className="space-y-4">
                         <TabsContent value="overview" className="space-y-4">
@@ -66,7 +67,7 @@ export default function DashboardPage() {
                                 <Card className="col-span-1">
                                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                                         <CardTitle className="text-md  font-medium">
-                                           Paywind Balance
+                                            Paywind Balance
                                         </CardTitle>
                                         <svg
                                             xmlns="http://www.w3.org/2000/svg"
@@ -170,16 +171,16 @@ export default function DashboardPage() {
                                 </Card>
                                 <Card className="col-span-2">
                                     <CardHeader className="flex flex-row items-center justify-between space-y-0">
-                                            <CardTitle className="text-md font-medium">Budgeting</CardTitle>
-                                            <BanknoteIcon className="h-4 w-4 fill-currentColor" />
+                                        <CardTitle className="text-md font-medium">Budgeting</CardTitle>
+                                        <BanknoteIcon className="h-4 w-4 fill-currentColor" />
                                     </CardHeader>
                                     <CardContent>
-                                            <div>
-                                                <h1 className="text-sm font-semibold pb-2">Car Payment</h1>
-                                                <StudentLoans1 />
-                                                <p className="text-sm pt-2 font-light">$12,000 out of $20,000</p>
-                                            </div>
-                                        
+                                        <div>
+                                            <h1 className="text-sm font-semibold pb-2">Car Payment</h1>
+                                            <StudentLoans1 />
+                                            <p className="text-sm pt-2 font-light">$12,000 out of $20,000</p>
+                                        </div>
+
                                     </CardContent>
                                 </Card>
 
@@ -205,7 +206,7 @@ export default function DashboardPage() {
                                         <div className="flex flex-row items-center justify-between space-y-0">
 
                                             <CardTitle>Performance</CardTitle>
-                                            
+
                                             <LineChartIcon className="h-4 w-4 fill-currentColor" />
                                         </div>
                                         <CardDescription>

@@ -49,7 +49,7 @@ const SP500Card = () => {
 
     return (
         <div className="flex items-center space-x-2">
-            <div className="text-2xl font-bold">
+            <div className="text-md md:text-lg lg:text-xl font-bold">
             <p>{changePoint !== null ? `${changePoint >= 0 ? '+' : ''}${changePoint?.toFixed(2)} (${changePercentage?.toFixed(2)}%)` : ''}</p>
                 </div>
             {renderChangeIndicator()}

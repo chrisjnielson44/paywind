@@ -9,7 +9,7 @@ const generateData = () => {
     let data = [];
     let previousDayTotal = Math.floor(Math.random() * 5000) + 1000; // Initial value
 
-    for (let i = 1; i <= 30; i++) {
+    for (let i = 1; i <= 7; i++) {
         let randomChange = Math.floor(Math.random() * 2000) - 1000; // Change within -1000 to +1000
         let newTotal = previousDayTotal + randomChange;
 
@@ -27,7 +27,7 @@ const generateData = () => {
 
 const data = generateData();
 
-export function LineGraph() {
+export function AccountSummary() {
     const theme = useTheme().theme; // Extract the theme value from the useTheme hook
     const isDarkMode = theme === 'dark'; // assuming theme can be 'dark' or 'light'
     const tooltipStyle = {
@@ -43,16 +43,14 @@ export function LineGraph() {
     };
     
     return (
-        <ResponsiveContainer width="100%" height={350}>
+        <ResponsiveContainer width="100%" height={175}>
             <LineChart data={data}>
             {/* <CartesianGrid strokeDasharray="3 3" stroke=""/> */}
-                <XAxis
-                    dataKey="name"
+                {/* <XAxis
                     stroke="#888888"
                     fontSize={12}
                     tickLine={false}
                     axisLine={true}
-                    tickFormatter={customTickFormatter}
 
                 />
                 <YAxis
@@ -61,7 +59,7 @@ export function LineGraph() {
                     tickLine={false}
                     axisLine={true}
                     tickFormatter={(value) => `$${value}`}
-                />
+                /> */}
                 <Tooltip
                 content={({ active, payload }) => {
                     if (active && payload && payload.length) {
@@ -95,7 +93,7 @@ export function LineGraph() {
                     type="monotone"
                     dataKey="Total"
                     stroke="currentColor"
-                    dot={false}
+                    dot={true}
                     strokeWidth={2}
                 />
             </LineChart>

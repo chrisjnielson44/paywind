@@ -13,6 +13,7 @@ import { usePathname } from "next/navigation";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { ModeToggle } from '@/app/dashboard/components/DarkModeToggle'
 import { CommandMenu } from "./command-menu";
+import { Notifications } from "./notifications";
 
 
 function classNames(...classes: string[]) {
@@ -72,14 +73,15 @@ export function Nav() {
                 <div className="flex items-center space-x-3">
                 <CommandMenu />
 
-                  <button
+                  {/* <button
                     type="button"
                     className="relative flex-shrink-0 rounded-full  p-1 text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                   >
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">View notifications</span>
-                    <BellIcon className="h-6 w-6" aria-hidden="true" />
-                  </button>
+                  </button> */}
+                  <Notifications/>
+
                   <ModeToggle/>
 
                   {/* Profile dropdown */}
@@ -130,17 +132,20 @@ export function Nav() {
                   </Avatar>
                 </div>
                 <div className="ml-3">
-                  <div className="text-base font-medium text-black">Jhonny Appleseed</div>
-                  <div className="text-sm font-medium text-gray-600">johnnyappleseed@example.com</div>
+                  <div className="text-base font-medium">Jhonny Appleseed</div>
+                  <div className="text-sm font-medium text-gray-600 dark:text-gray-300">johnnyappleseed@example.com</div>
                 </div>
-                <button
+                {/* <button
                   type="button"
                   className="relative ml-auto flex-shrink-0 rounded-full  p-1 text-gray-200 hover:text-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
                 >
                   <span className="absolute -inset-1.5" />
                   <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
+                </button> */}
+                <div>
+                <Notifications/>
+                </div>
+
               </div>
               <div className="mt-3 space-y-1 px-2">
                 <Disclosure.Button

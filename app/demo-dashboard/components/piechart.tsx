@@ -1,6 +1,7 @@
 'use client'
 import { PieChart, Pie, Cell, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { useTheme } from "next-themes"
+import { useEffect, useState } from 'react';
 
 
 // Example portfolio data
@@ -37,20 +38,10 @@ const total = data.reduce((acc, item) => acc + item.value, 0);
 
 export function PieGraph() {
 // Colors for light mode (lighter shades of blue)
-const darkModeColors = ['#B3E5FC', '#81D4FA', '#4FC3F7', '#29B6F6', '#03A9F4', '#039BE5'];
+const colors = ['#B3E5FC', '#81D4FA', '#4FC3F7', '#29B6F6', '#03A9F4', '#039BE5'];
 
 // Colors for dark mode (darker shades of blue)
-const lightModeColors = ['#0277BD', '#01579B', '#013F73', '#002860', '#001D3D', '#000E23'];
 ;
-
-    const theme = useTheme().theme; // Extract the theme value from the useTheme hook
-    const colors = theme === 'dark' ? darkModeColors : lightModeColors;
-
-     // Define label style based on the theme
-     const labelStyle = {
-        fill: theme === 'dark' ? '#FFFFFF' : '#000000', // White for dark mode, black for light mode
-        fontSize: '0.8em'
-    };
 
     return (
         <ResponsiveContainer width="100%" height={400}>

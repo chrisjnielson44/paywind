@@ -23,7 +23,7 @@ import TeamSwitcher from "./components/team-switcher"
 import { UserNav } from "./components/user-nav"
 import { Nav } from "./components/nav"
 import { PieGraph } from "./components/piechart"
-import { BanknoteIcon, CandlestickChart, CandlestickChartIcon, CoinsIcon, CreditCardIcon, DollarSign, InfoIcon, LandmarkIcon, LineChart, LineChartIcon, NewspaperIcon, Percent, PieChart, PieChartIcon, PiggyBankIcon, PlusCircleIcon, PlusIcon, Wallet } from "lucide-react"
+import { BanknoteIcon, CandlestickChart, CandlestickChartIcon, CoinsIcon, CreditCardIcon, DollarSign, InfoIcon, LandmarkIcon, LineChart, LineChartIcon, NewspaperIcon, Percent, PieChart, PieChartIcon, PiggyBankIcon, Plus, PlusCircleIcon, PlusIcon, Wallet } from "lucide-react"
 import { Accounts } from "./components/combo-box"
 import { AppleTicker } from "./components/stock-ticker"
 import SP500Card from "./components/spindex"
@@ -54,10 +54,10 @@ export default function DashboardPage() {
                 <div className="flex-1 space-y-4 p-8 pt-6">
                     <div className="flex items-center justify-between space-y-2">
                         <h2 className="text-3xl font-bold tracking-tight">Dashboard</h2>
-                        <div>
+                        <div className="flex">
                             {/* <Button variant="outline"><PlusIcon className="h-4 w-4 fill-currentColor" /></Button> */}
+                            <Button variant={"outline"} className="mr-2"><Plus className="h-4 w-4"></Plus></Button>
                             <SelectDashboard />
-
                         </div>
 
                     </div>
@@ -328,7 +328,7 @@ export default function DashboardPage() {
                                     <CardHeader>
                                         <div className="flex flex-row items-center justify-between space-y-0">
                                             <CardTitle>Student Loans</CardTitle>
-                                            <BanknoteIcon className="h-4 w-4 text-white" />
+                                            <BanknoteIcon className="h-4 w-4 fill-currentColor" />
                                         </div>
                                         <CardDescription>Loan Balances</CardDescription>
                                     </CardHeader>

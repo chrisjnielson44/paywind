@@ -68,7 +68,7 @@ export default function Features() {
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <img
               className="mb-[-12%] rounded-xl shadow-2xl ring-1 ring-gray-900/10"
-              src="https://tailwindui.com/img/component-images/project-app-screenshot.png"
+              src="/dashboard.png"
               alt=""
             />
             <div className="relative" aria-hidden="true">

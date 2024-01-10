@@ -63,7 +63,7 @@ export default function Header() {
 
     return (
 
-            <header className="sticky top-0 bg-white bg-opacity-50 backdrop-blur-lg dark:backdrop-blur-sm dark:bg-gray-900  z-50">
+            <header className=" bg-white bg-opacity-50 backdrop-blur-lg dark:backdrop-blur-sm dark:bg-gray-900 ">
 
                 <nav className="lg:px-6 px-4 py-4" aria-label="Global">
                     <div className='flex flex-wrap justify-between items-center mx-auto px-4 max-w-screen-xl'>

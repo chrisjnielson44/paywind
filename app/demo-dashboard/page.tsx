@@ -63,7 +63,7 @@ export default function DashboardPage() {
                     </div>
                     <Tabs defaultValue="overview" className="space-y-4">
                         <TabsContent value="overview" className="space-y-4">
-                            <div className="grid gap-4 grid-cols-2 md:grid-cols-2 lg:grid-cols-8 xl:grid-cols-8">
+                            <div className="grid gap-4 grid-cols-2 md:grid-cols-2 lg:grid-cols-7 xl:grid-cols-7">
                                 <Card className="col-span-1">
                                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                                         <CardTitle className="text-md  font-medium">
@@ -83,10 +83,42 @@ export default function DashboardPage() {
                                         </svg>
                                     </CardHeader>
                                     <CardContent className="justify-center ">
-                                        <div className="text-md md:text-lg lg:text-xl font-bold">$45,231.89</div>
-                                        <p className="text-xs fill-currentColor">
+                                        <div className="text-md md:text-lg lg:text-2xl font-bold">$12,231.89</div>
+                                        <p className="text-xs text-green-500">
                                             +20.1% from last month
                                         </p>
+                                    </CardContent>
+                                </Card>
+                                <Card className="col-span-1">
+                                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                                        <CardTitle className="text-md  font-medium">
+                                            Chase Savings 001
+                                        </CardTitle>
+                                        <LandmarkIcon className="h-4 w-4 fill-currentColor" />
+                                        {/* <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            stroke="currentColor"
+                                            strokeLinecap="round"
+                                            strokeLinejoin="round"
+                                            strokeWidth="2"
+                                            className="h-4 w-4 fill-currentColor"
+                                        >
+                                            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+                                        </svg> */}
+                                    </CardHeader>
+                                    <CardContent className="justify-center ">
+                                        <div className="flex items-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 mr-2 text-blue-500" viewBox="0 0 50 50">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="M46,15H19V5c0-0.552,0.448-1,1-1h13.464L46,15z" fill="currentColor"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="M35,46V19h10c0.552,0,1,0.448,1,1v13.464L35,46z" fill="currentColor"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="M4,35h27v10c0,0.552-0.448,1-1,1H16.536L4,35z" fill="currentColor"></path>
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="M15,4v27H5c-0.552,0-1-0.448-1-1V16.536L15,4z" fill="currentColor"></path>
+                                            </svg>
+                                            <div className="text-md md:text-lg lg:text-2xl font-bold">$20,500.00</div>
+                                        </div>
+
                                     </CardContent>
                                 </Card>
                                 {/* <Card className="col-span-1">
@@ -158,7 +190,7 @@ export default function DashboardPage() {
                                     </CardContent>
                                 </Card>
 
-                                <Card className="col-span-1">
+                                <Card className="col-span-2 md:col-span-1">
                                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                                         <CardTitle className="text-md font-medium">
                                             S&P 500
@@ -169,7 +201,7 @@ export default function DashboardPage() {
                                         <SP500Card />
                                     </CardContent>
                                 </Card>
-                                <Card className="col-span-2">
+                                {/* <Card className="col-span-2">
                                     <CardHeader className="flex flex-row items-center justify-between space-y-0">
                                         <CardTitle className="text-md font-medium">Budgeting</CardTitle>
                                         <BanknoteIcon className="h-4 w-4 fill-currentColor" />
@@ -182,7 +214,7 @@ export default function DashboardPage() {
                                         </div>
 
                                     </CardContent>
-                                </Card>
+                                </Card> */}
 
                             </div>
 

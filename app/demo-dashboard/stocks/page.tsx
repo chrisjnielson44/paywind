@@ -119,8 +119,8 @@ export default function Stocks() {
                                             <div className="pb-3">
                                                 <h1 className="text-lg font-semibold">Stocks/ETF</h1>
                                             </div>
-                                            <div className="flex flex-grow space-x-4 mb-4">
-                                                <Button className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 w-full">Buy</Button>
+                                            <div className="flex flex-grow space-x-4 mb-4 justify-center">
+                                                <Button className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600 w-full ">Buy</Button>
                                                 <Button className="px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600 w-full">Sell</Button>
                                             </div>
 

@@ -51,7 +51,7 @@ export default function Stocks() {
                         <h2 className="text-3xl font-bold tracking-tight">Stocks</h2>
                     </div>
                     <Tabs defaultValue="trade" className="space-y-4">
-                    <TabsList className="grid sm:width-full lg:w-fit grid-cols-2">
+                        <TabsList className="grid sm:width-full lg:w-fit grid-cols-2">
                             <TabsTrigger value="trade">Trade</TabsTrigger>
                             <TabsTrigger value="orders">Orders</TabsTrigger>
 

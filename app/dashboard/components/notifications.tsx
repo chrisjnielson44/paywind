@@ -17,12 +17,13 @@ import {
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu";
 import { Check, XIcon } from "lucide-react";
+import { Button } from "@/components/ui/button";
   
   export function Notifications() {
     return (
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <BellIcon className="h-6 w-6 fill-currentColor" /> 
+          <Button variant={"outline"} size={"icon"}><BellIcon className="h-6 w-6 fill-currentColor" /> </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent className="w-56">
           <DropdownMenuLabel>Notifications</DropdownMenuLabel>

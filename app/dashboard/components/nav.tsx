@@ -8,12 +8,14 @@ import Image from "next/image";
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
-import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
+import { Bars3Icon, BellIcon, InboxIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { usePathname } from "next/navigation";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { ModeToggle } from '@/app/dashboard/components/DarkModeToggle'
+import { ModeToggle } from '@/app/old-dashboard/components/DarkModeToggle'
 import { CommandMenu } from "./command-menu";
 import { Notifications } from "./notifications";
+import { Button } from "@/components/ui/button";
+import { Inbox } from "./inbox";
 
 
 function classNames(...classes: string[]) {
@@ -37,17 +39,32 @@ export function Nav() {
                 <div className="hidden lg:ml-6 lg:block">
                   <div className="flex space-x-4">
                     {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
-                    <Link href="/demo-dashboard" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/demo-dashboard' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
+                    <Link href="/dashboard" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
                       Overview
                     </Link>
-                    <Link href="/demo-dashboard/stocks" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/demo-dashboard/stocks' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
-                      Stocks
+                    <Link href="/dashboard/stocks" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/stocks' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
+                      Investments
                     </Link>
-                    <Link href="/demo-dashboard/crypto" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/demo-dashboard/crypto' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
+                    <Link href="/dashboard/crypto" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/crypto' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
                       Crypto
                     </Link>
-                    <Link href="/demo-dashboard/settings" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/demo-dashboard/settings' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
-                      Settings
+                    <Link href="/dashboard/crypto" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/crypto' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
+                      Retirement
+                    </Link>
+                    <Link href="/dashboard/crypto" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/crypto' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
+                      Insurance
+                    </Link>
+                    <Link href="/dashboard/crypto" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/crypto' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
+                      Education
+                    </Link>
+                    <Link href="/dashboard/crypto" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/crypto' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
+                      Tax
+                    </Link>
+                    <Link href="/dashboard/crypto" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/crypto' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
+                      Estate
+                    </Link>
+                    <Link href="/dashboard/settings" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/settings' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
+                      Profile
                     </Link>
                   </div>
                 </div>
@@ -81,7 +98,7 @@ export function Nav() {
                     <span className="sr-only">View notifications</span>
                   </button> */}
                   <Notifications/>
-
+                  <Inbox/>
                   <ModeToggle/>
 
                   {/* Profile dropdown */}
@@ -98,28 +115,28 @@ export function Nav() {
               {/* Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" */}
               <Disclosure.Button
                 as={Link}
-                href="/demo-dashboard"
-                className={`block rounded-md px-3 py-2 font-medium ${pathname === '/demo-dashboard' ? 'bg-gray-200 dark:bg-zinc-800 ' : 'hover:bg-gray-200 dark:hover:bg-zinc-800 '}`}>
+                href="/dashboard"
+                className={`block rounded-md px-3 py-2 font-medium ${pathname === '/dashboard' ? 'bg-gray-200 dark:bg-zinc-800 ' : 'hover:bg-gray-200 dark:hover:bg-zinc-800 '}`}>
                 Overview
               </Disclosure.Button>
               <Disclosure.Button
                 as={Link}
-                href="/demo-dashboard/stocks"
-                className={`block rounded-md px-3 py-2 text-base font-medium  ${pathname === '/demo-dashboard/stocks' ? 'bg-gray-200 dark:bg-zinc-800 ' : 'hover:bg-gray-200 dark:hover:bg-zinc-800 '}`}>
+                href="/dashboard/stocks"
+                className={`block rounded-md px-3 py-2 text-base font-medium  ${pathname === '/dashboard/stocks' ? 'bg-gray-200 dark:bg-zinc-800 ' : 'hover:bg-gray-200 dark:hover:bg-zinc-800 '}`}>
 
                 Stocks
               </Disclosure.Button>
               <Disclosure.Button
                 as={Link}
-                href="/demo-dashboard/crypto"
-                className={`block rounded-md px-3 py-2 text-base font-medium ${pathname === '/demo-dashboard/crypto' ? 'bg-gray-200 dark:bg-zinc-800 ' : ' hover:bg-gray-200 dark:hover:bg-zinc-800'}`}>
+                href="/dashboard/crypto"
+                className={`block rounded-md px-3 py-2 text-base font-medium ${pathname === '/dashboard/crypto' ? 'bg-gray-200 dark:bg-zinc-800 ' : ' hover:bg-gray-200 dark:hover:bg-zinc-800'}`}>
 
                 Crypto
               </Disclosure.Button>
               <Disclosure.Button
                 as={Link}
-                href="/demo-dashboard/settings"
-                className={`block rounded-md px-3 py-2 text-base font-medium ${pathname === '/demo-dashboard/settings' ? 'bg-gray-200 dark:bg-zinc-800 ' : ' hover:bg-gray-200 dark:hover:bg-zinc-800'}`}>
+                href="/dashboard/settings"
+                className={`block rounded-md px-3 py-2 text-base font-medium ${pathname === '/dashboard/settings' ? 'bg-gray-200 dark:bg-zinc-800 ' : ' hover:bg-gray-200 dark:hover:bg-zinc-800'}`}>
 
                 Settings
               </Disclosure.Button>
@@ -145,20 +162,21 @@ export function Nav() {
                 <div>
                 <Notifications/>
                 </div>
+              
 
               </div>
               <div className="mt-3 space-y-1 px-2">
                 <Disclosure.Button
                   as={Link}
                   href="#"
-                  className={`block rounded-md px-3 py-2 text-base font-medium ${pathname === '/demo-dashboard/settings' ? 'bg-gray-200 dark:bg-zinc-800 ' : ' hover:bg-gray-200 dark:hover:bg-zinc-800'}`}>
+                  className={`block rounded-md px-3 py-2 text-base font-medium ${pathname === '/dashboard/settings' ? 'bg-gray-200 dark:bg-zinc-800 ' : ' hover:bg-gray-200 dark:hover:bg-zinc-800'}`}>
 
                   Your Profile
                 </Disclosure.Button>
                 <Disclosure.Button
                   as={Link}
-                  href="/demo-dashboard/settings"
-                  className={`block rounded-md px-3 py-2 text-base font-medium ${pathname === '/demo-dashboard/settings' ? 'bg-gray-200 dark:bg-zinc-800 ' : ' hover:bg-gray-200 dark:hover:bg-zinc-800'}`}>
+                  href="/dashboard/settings"
+                  className={`block rounded-md px-3 py-2 text-base font-medium ${pathname === '/dashboard/settings' ? 'bg-gray-200 dark:bg-zinc-800 ' : ' hover:bg-gray-200 dark:hover:bg-zinc-800'}`}>
                   Settings
                 </Disclosure.Button>
                 <Disclosure.Button

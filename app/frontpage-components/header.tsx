@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { Dialog, Disclosure } from '@headlessui/react'
 import { Bars3Icon, ChevronDownIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import Link from 'next/link'
-import { ModeToggle } from '../dashboard/components/DarkModeToggle'
+import { ModeToggle } from '../old-dashboard/components/DarkModeToggle'
 import { PagesDropDown } from './pagesdropdown'
 import { Button } from '@/components/ui/button'
 
@@ -63,7 +63,7 @@ export default function Header() {
 
     return (
 
-            <header className=" bg-white bg-opacity-50 backdrop-blur-lg dark:backdrop-blur-sm dark:bg-gray-900 ">
+            <header className=" bg-white bg-opacity-50 backdrop-blur-lg dark:backdrop-blur-sm dark:bg-gray-900 z-50">
 
                 <nav className="lg:px-6 px-4 py-4" aria-label="Global">
                     <div className='flex flex-wrap justify-between items-center mx-auto px-4 max-w-screen-xl'>

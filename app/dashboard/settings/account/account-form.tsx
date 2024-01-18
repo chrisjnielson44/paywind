@@ -45,6 +45,10 @@ const languages = [
   { label: "Chinese", value: "zh" },
 ] as const
 
+import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions"
+import { getServerSession } from 'next-auth/next';
+
+
 const accountFormSchema = z.object({
   name: z
     .string()
@@ -76,6 +80,9 @@ export function AccountForm() {
     defaultValues,
   })
 
+  // const session = await getServerSession(authOptions);
+
+
   function onSubmit(data: AccountFormValues) {
     toast({
       title: "You submitted the following values:",
@@ -97,7 +104,8 @@ export function AccountForm() {
             <FormItem>
               <FormLabel>Name</FormLabel>
               <FormControl>
-                <Input placeholder="Your name" {...field} />
+                {/* <Input placeholder="Your name" {...field} /> */}
+                {/* <p className="text-lg">{session?.user.name}</p> */}
               </FormControl>
               <FormDescription>
                 This is the name that will be displayed on your profile and in

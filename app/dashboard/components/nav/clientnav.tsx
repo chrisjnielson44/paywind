@@ -54,26 +54,37 @@ const groups = [
       {
         label: "John Doe",
         value: "john-doe",
+        image: "JD",
       },
       {
         label: "Jane Smith",
         value: "jane-smith",
+        image: "JS",
+
       },
       {
         label: "Michael Johnson",
         value: "michael-johnson",
+        image: "MJ",
+
       },
       {
         label: "Emily Davis",
         value: "emily-davis",
+        image: "ED",
+
       },
       {
         label: "David Brown",
         value: "david-brown",
+        image: "DB",
+
       },
       {
         label: "Sarah Wilson",
         value: "sarah-wilson",
+        image: "SW",
+
       },
     ],
   },
@@ -107,9 +118,9 @@ export default function ClientSwitcher({ className }: TeamSwitcherProps) {
               <AvatarImage
                 src={`https://avatar.vercel.sh/${selectedTeam.value}.png`}
                 alt={selectedTeam.label}
-                className="grayscale"
+                // className="grayscale"
               />
-              <AvatarFallback>SC</AvatarFallback>
+              <AvatarFallback className="text-xs bg-gray-300 dark:text-black">{selectedTeam.image}</AvatarFallback>
             </Avatar>
             {selectedTeam.label}
             <CaretSortIcon className="ml-auto h-4 w-4 shrink-0 opacity-50" />
@@ -135,9 +146,9 @@ export default function ClientSwitcher({ className }: TeamSwitcherProps) {
                         <AvatarImage
                           src={`https://avatar.vercel.sh/${team.value}.png`}
                           alt={team.label}
-                          className="grayscale"
+                          // className="grayscale"
                         />
-                        <AvatarFallback>SC</AvatarFallback>
+                        <AvatarFallback className="text-xs bg-gray-300 dark:text-black">{team.image}</AvatarFallback>
                       </Avatar>
                       {team.label}
                       <CheckIcon

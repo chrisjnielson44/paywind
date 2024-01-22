@@ -64,7 +64,7 @@ export function Mail({
             sizes
           )}`
         }}
-        className="h-screen h-max-screen items-stretch"
+        className="h-full h-max-full items-stretch"
       >
         <ResizablePanel
           defaultSize={defaultLayout[0]}

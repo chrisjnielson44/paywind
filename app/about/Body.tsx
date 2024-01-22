@@ -65,7 +65,7 @@ const people = [
 
 export default function Body() {
   return (
-    <main className="isolate pb-40 dark:bg-gray-900">
+    <main className="isolate pb-40 dark:bg-background">
       {/* Hero section */}
       <div className="relative isolate -z-10">
         <svg

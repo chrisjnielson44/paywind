@@ -63,7 +63,7 @@ export default function Header() {
 
     return (
 
-            <header className=" bg-white bg-opacity-50 backdrop-blur-lg dark:backdrop-blur-sm dark:bg-gray-900 z-50">
+            <header className=" bg-white bg-opacity-50 backdrop-blur-lg dark:backdrop-blur-sm dark:bg-background z-50">
 
                 <nav className="lg:px-6 px-4 py-4" aria-label="Global">
                     <div className='flex flex-wrap justify-between items-center mx-auto px-4 max-w-screen-xl'>
@@ -107,7 +107,7 @@ export default function Header() {
 
                 <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
                     <div className="fixed inset-0 z-10" />
-                    <Dialog.Panel className="dark:bg-gray-900 fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 dark:sm:ring-gray-600 sm:ring-gray-900/10 bg-opacity-50 backdrop-blur-xl">
+                    <Dialog.Panel className="dark:bg-background fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 dark:sm:ring-gray-600 sm:ring-gray-900/10 bg-opacity-50 backdrop-blur-xl">
                         <div className="flex items-center justify-between">
                             <div className="-m-1.5 p-1.5">
                                 <span className="sr-only">Your Company</span>

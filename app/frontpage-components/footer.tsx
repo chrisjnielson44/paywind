@@ -3,7 +3,6 @@ import { JSX, SVGProps } from "react"
 
 const navigation = {
     solutions: [
-        { name: 'Individual Investing', href: '#' },
         { name: 'Paywind for Advisors', href: '#' },
     ],
     support: [
@@ -64,7 +63,7 @@ const navigation = {
 
 export default function Footer() {
     return (
-        <footer className="bg-white dark:bg-gray-900" aria-labelledby="footer-heading">
+        <footer className="bg-white dark:bg-background" aria-labelledby="footer-heading">
             <h2 id="footer-heading" className="sr-only">
                 Footer
             </h2>
@@ -88,7 +87,7 @@ export default function Footer() {
                                 </ul>
                             </div>
                             <div className="mt-10 md:mt-0">
-                                <h3 className="text-sm font-semibold leading-6 text-black dark:text-white">Support</h3>
+                                <h3 className="text-sm font-semibold leading-6 text-black dark:text-white">Resources</h3>
                                 <ul role="list" className="mt-6 space-y-4">
                                     {navigation.support.map((item) => (
                                         <li key={item.name}>
@@ -99,6 +98,7 @@ export default function Footer() {
                                     ))}
                                 </ul>
                             </div>
+                            
                         </div>
                         <div className="md:grid md:grid-cols-2 md:gap-8">
                             <div>
@@ -168,7 +168,7 @@ export default function Footer() {
                         ))}
                     </div>
                     <p className="mt-8 text-sm leading-5 text-gray-400 md:order-1 md:mt-0">
-                        &copy; Paywind. All rights reserved.
+                        &copy; Paywind LLC. All rights reserved.
                     </p>
                 </div>
             </div>

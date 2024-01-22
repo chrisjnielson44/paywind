@@ -73,7 +73,7 @@ export default function Example() {
   const [investment, setInvestment] = React.useState(0);
   const subscriptionFee = investment < 20000 ? 3 : ((investment * 0.0020) / 12).toFixed(2);
   return (
-    <div className="bg-white dark:bg-gray-900 py-24 sm:py-32">
+    <div className="bg-white dark:bg-background py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mt-2 text-4xl font-bold tracking-tight text-black dark:text-white sm:text-5xl">
@@ -240,7 +240,7 @@ export default function Example() {
       </div>
       <div className='mx-auto max-w-2xl my-40'>
 
-        <Card className='shadow-xl dark:bg-gray-900 dark:border-gray-600'>
+        <Card className='shadow-xl dark:bg-background dark:border-gray-600'>
           <CardHeader>
             <CardTitle className='text-center text-3xl py-10'>Estimated Cost</CardTitle>
             <CardDescription className='text-center text-4xl text-black dark:text-white font-bold'>${subscriptionFee} <span className="text-sm font-semibold leading-6 text-gray-500 dark:text-gray-300"> / per month</span> </CardDescription>

@@ -20,6 +20,7 @@ export default function MailPage() {
   return (
     <>
       <FullNav/>
+      <div className="h-screen">
         <Mail
           accounts={accounts}
           mails={mails}
@@ -27,6 +28,7 @@ export default function MailPage() {
           // defaultCollapsed={defaultCollapsed}
           navCollapsedSize={4}
         />
+        </div>
     </>
   )
 }

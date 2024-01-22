@@ -3,7 +3,7 @@ import Image from "next/image"
 
 import { Separator } from "@/components/ui/separator"
 import { SidebarNav } from "./components/sidebar-nav"
-import { Nav } from "../components/nav"
+import { FullNav } from "../components/nav/full-nav"
 
 export const metadata: Metadata = {
   title: "Settings",
@@ -13,23 +13,23 @@ export const metadata: Metadata = {
 const sidebarNavItems = [
   {
     title: "Profile",
-    href: "/demo-dashboard/settings",
+    href: "/dashboard/settings",
   },
   {
     title: "Account",
-    href: "/demo-dashboard/settings/account",
+    href: "/dashboard/settings/account",
   },
   {
     title: "Appearance",
-    href: "/demo-dashboard/settings/appearance",
+    href: "/dashboard/settings/appearance",
   },
   {
     title: "Notifications",
-    href: "/demo-dashboard/settings/notifications",
+    href: "/dashboard/settings/notifications",
   },
   {
     title: "Display",
-    href: "/demo-dashboard/settings/display",
+    href: "/dashboard/settings/display",
   },
 ]
 
@@ -40,7 +40,7 @@ interface SettingsLayoutProps {
 export default function SettingsLayout({ children }: SettingsLayoutProps) {
   return (
     <>
-      <Nav />
+      <FullNav />
       <div className=" space-y-4 p-8 pb-16 ">
         <div className="space-y-0.5">
           <h2 className="text-3xl font-bold tracking-tight">Settings</h2>

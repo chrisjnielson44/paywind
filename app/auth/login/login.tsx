@@ -4,6 +4,8 @@ import { signIn } from 'next-auth/react'
 import { useRouter } from 'next/navigation'
 import Link from "next/link";
 import toast, {Toaster} from 'react-hot-toast'
+import { Button } from "@/components/ui/button";
+import React from "react";
 
 export default async function Login() {
 
@@ -26,8 +28,10 @@ export default async function Login() {
         }
     };
 
+    const [isLoading, setIsLoading] = React.useState<boolean>(false)
+
     return (
-        <div className="bg-white dark:bg-gray-900 h-screen ">
+        <div className="bg-white dark:bg-background h-screen ">
             <div><Toaster/></div>
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
                 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -82,12 +86,13 @@ export default async function Login() {
                             </div>
                         </div>
                         <div>
-                            <button
+                            <Button
                                 type="submit"
                                 className="flex w-full justify-center rounded-md bg-green-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                             >
+                          
                                 Sign in
-                            </button>
+                            </Button>
                         </div>
                     </form>
                     <div className="pt-8">
@@ -96,7 +101,7 @@ export default async function Login() {
                                 <div className="w-full border-t border-gray-200 dark:border-gray-600" />
                             </div>
                             <div className="relative flex justify-center text-sm font-medium leading-6">
-                                <span className="bg-white dark:bg-gray-900 px-6 text-gray-900 dark:text-white">Or Log In with</span>
+                                <span className="bg-white dark:bg-background px-6 text-gray-900 dark:text-white">Or Log In with</span>
                             </div>
                         </div>
                         <button type="button" className="text-white w-full  bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-between dark:focus:ring-[#4285F4]/55 mr-2 "

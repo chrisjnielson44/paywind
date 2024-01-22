@@ -1,21 +1,25 @@
 'use client'
 import Link from "next/link";
 import { MainNav } from "./main-nav";
-import { Search } from "./search";
+import { Search } from "../search";
 import { UserNav } from "./user-nav";
+// import { signOut } from 'next-auth/react'
+
 import Image from "next/image";
 
 import { Fragment } from 'react'
 import { Disclosure, Menu, Transition } from '@headlessui/react'
 import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { Bars3Icon, BellIcon, InboxIcon, XMarkIcon } from '@heroicons/react/24/outline'
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { ModeToggle } from '@/app/old-dashboard/components/DarkModeToggle'
-import { CommandMenu } from "./command-menu";
-import { Notifications } from "./notifications";
+import { CommandMenu } from "../command-menu";
+import { Notifications } from "../notifications";
 import { Button } from "@/components/ui/button";
-import { Inbox } from "./inbox";
+import { Inbox } from "../inbox";
+import React from "react";
+import ClientSwitcher from "./clientnav";
 
 
 function classNames(...classes: string[]) {
@@ -23,8 +27,23 @@ function classNames(...classes: string[]) {
 }
 
 
-export function Nav() {
+export function Nav({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const router = useRouter();
+
+  React.useEffect(() => {
+    const down = (e: KeyboardEvent) => {
+      if (e.key === "s" && (e.metaKey || e.ctrlKey)) {
+        e.preventDefault();
+
+        // Navigate to the settings page
+        router.push('/demo-dashboard/settings');
+      }
+    }
+
+    document.addEventListener("keydown", down);
+    return () => document.removeEventListener("keydown", down);
+  }, [router]);
 
   return (
     <Disclosure as="nav" className="bg-white shadow-lg dark:shadow-none dark:bg-background dark:border-b dark:border-zinc-700 sticky top-0 z-50">
@@ -42,36 +61,41 @@ export function Nav() {
                     <Link href="/dashboard" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
                       Overview
                     </Link>
-                    <Link href="/dashboard/stocks" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/stocks' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
+                    <Link href="/dashboard/budgeting" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/budgeting' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
+                      Budgeting
+                    </Link>
+                    <Link href="/dashboard/investments" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/investments' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
                       Investments
                     </Link>
                     <Link href="/dashboard/crypto" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/crypto' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
                       Crypto
                     </Link>
-                    <Link href="/dashboard/crypto" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/crypto' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
+                    <Link href="/dashboard/retirement" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/retirement' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
                       Retirement
                     </Link>
-                    <Link href="/dashboard/crypto" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/crypto' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
+                    <Link href="/dashboard/insurance" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/insurance' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
                       Insurance
                     </Link>
-                    <Link href="/dashboard/crypto" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/crypto' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
+                    <Link href="/dashboard/education" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/education' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
                       Education
                     </Link>
-                    <Link href="/dashboard/crypto" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/crypto' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
+                    <Link href="/dashboard/tax" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/tax' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
                       Tax
                     </Link>
-                    <Link href="/dashboard/crypto" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/crypto' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
+                    <Link href="/dashboard/estate" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/estate' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
                       Estate
                     </Link>
-                    <Link href="/dashboard/settings" className={`rounded-md px-3 py-2 text-sm font-medium ${pathname === '/dashboard/settings' ? 'bg-zinc-200 dark:bg-zinc-800 text-black dark:text-white' : 'text-black dark:text-gray-300 hover:bg-zinc-200 dark:hover:bg-zinc-800 dark:hover:text-white'}`}>
-                      Profile
-                    </Link>
+                 
+                    {/* <button onClick={() => {
+                      signOut();
+                    }} className='font-semibold text-gray-700 block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 hover:text-gray-800  dark:text-gray-200'>Logout
+                    </button> */}
                   </div>
                 </div>
               </div>
               <div className="flex flex-1 justify-center px-2 lg:ml-2 lg:justify-end">
                 <div className="w-full max-w-lg md:max-w-xs lg:hidden">
-                    <CommandMenu />
+                  <CommandMenu />
                 </div>
               </div>
               <div className="flex lg:hidden">
@@ -88,7 +112,8 @@ export function Nav() {
               </div>
               <div className="hidden lg:ml-4 lg:block ">
                 <div className="flex items-center space-x-3">
-                <CommandMenu />
+                  <ClientSwitcher />
+                  <CommandMenu />
 
                   {/* <button
                     type="button"
@@ -97,13 +122,13 @@ export function Nav() {
                     <span className="absolute -inset-1.5" />
                     <span className="sr-only">View notifications</span>
                   </button> */}
-                  <Notifications/>
-                  <Inbox/>
-                  <ModeToggle/>
+                  <Notifications />
+                  <Inbox />
+                  <ModeToggle />
 
                   {/* Profile dropdown */}
                   <div className="mx-2">
-                    <UserNav />
+                    {children}
                   </div>
                 </div>
               </div>
@@ -145,7 +170,7 @@ export function Nav() {
               <div className="flex items-center px-5">
                 <div className="flex-shrink-0">
                   <Avatar className="h-8 w-8">
-                    <AvatarFallback>JA</AvatarFallback>
+                    <AvatarFallback>CN</AvatarFallback>
                   </Avatar>
                 </div>
                 <div className="ml-3">
@@ -160,9 +185,9 @@ export function Nav() {
                   <span className="sr-only">View notifications</span>
                 </button> */}
                 <div>
-                <Notifications/>
+                  <Notifications />
                 </div>
-              
+
 
               </div>
               <div className="mt-3 space-y-1 px-2">

@@ -13,6 +13,7 @@ import {
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu";
   import { Button } from "@/components/ui/button";
+import Link from "next/link";
   
   export function Inbox() {
     return (
@@ -49,7 +50,7 @@ import {
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <DropdownMenuItem>
-          <span>See all messages</span>
+          <Link href='/dashboard/inbox'>See all messages</Link>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

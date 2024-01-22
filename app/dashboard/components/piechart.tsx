@@ -86,8 +86,13 @@ const CenteredMetric = ({ centerX, centerY }: { centerX: number, centerY: number
 
 export function PieGraph() {
     // Colors for light mode (lighter shades of blue)
-    const colors = ['#B3E5FC', '#81D4FA', '#4FC3F7', '#29B6F6', '#03A9F4', '#039BE5'];
-
+    const monochromeColors = [
+        'hsl(123, 39%, 70%)', // Lighter green
+        'hsl(123, 39%, 60%)', // Light green
+        'hsl(123, 39%, 50%)', // Mid green
+        'hsl(123, 39%, 40%)', // Dark green
+        'hsl(123, 39%, 30%)'  // Darker green
+    ];
     // Colors for dark mode (darker shades of blue)
     ;
 

@@ -66,13 +66,18 @@ export const authOptions : NextAuthOptions = {
         const user = response.rows[0];
 
         if (user) {
+          const firstLetterFirstName = user.first_name.charAt(0);
+          const firstLetterLastName = user.family_name.charAt(0);
+
           session.user.name = `${user.first_name} ${user.family_name}`;
-          session.user.image = `https://ui-avatars.com/api/?name=${user.first_name}+${user.family_name}`;
           session.user.email = user.email;
           session.user.phonenumber = user.phone;
           session.user.userid = token.sub;
           session.user.first_name = user.first_name;
           session.user.last_name = user.family_name;
+          session.user.first_letter_first_name = firstLetterFirstName;
+          session.user.first_letter_last_name = firstLetterLastName;
+
         }
       }
       return session;

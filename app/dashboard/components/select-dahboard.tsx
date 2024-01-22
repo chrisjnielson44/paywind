@@ -71,7 +71,7 @@ export function SelectDashboard() {
                   setValue(currentValue === value ? "" : currentValue)
                   setOpen(false)
                 }}
-                className="text-x md:text-base"
+                className="md:text-sm"
               >
                 <Check
                   className={cn(

@@ -15,12 +15,12 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
-import { MainNav } from "../components/main-nav"
+import { MainNav } from "../components/nav/main-nav"
 import { Overview } from "../components/overview"
 import { Search } from "../components/search"
 import TeamSwitcher from "../components/team-switcher"
-import { UserNav } from "../components/user-nav"
-import { Nav } from "../components/nav"
+import { UserNav } from "../components/nav/user-nav"
+import { Nav } from "../components/nav/nav"
 import { PieGraph } from "../components/piechart"
 import { TopCryptoPositions } from "./components/table"
 import Bitcoin from "./components/bitcoin"
@@ -32,17 +32,17 @@ import { StockOption } from "../stocks/components/dropdown"
 import { BTCPrice } from "../components/btc-card"
 import { ConnectedWallets } from "./components/connectedwallets"
 import { AccountSummary } from "../stocks/components/account-summary"
+import { FullNav } from "../components/nav/full-nav"
 
 export const metadata: Metadata = {
-    title: "Dashboard",
-    description: "Example dashboard app built using the components.",
+    title: "Crypto",
 }
 
 export default function Stocks() {
     return (
         <>
             <div className="flex-col md:flex">
-                <Nav />
+                <FullNav />
                 <div className="flex-1 space-y-4 p-8 pt-6">
                     <div className="flex items-center justify-between space-y-2">
                         <h2 className="text-3xl font-bold tracking-tight">Crypto</h2>

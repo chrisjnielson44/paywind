@@ -15,13 +15,7 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
-import { MainNav } from "../components/main-nav"
-import { Overview } from "../components/overview"
-import { Search } from "../components/search"
-import TeamSwitcher from "../components/team-switcher"
-import { UserNav } from "../components/user-nav"
-import { Nav } from "../components/nav"
-import { PieGraph } from "../components/piechart"
+
 import { TopPositions } from "./components/stockallocations"
 import TradingViewWidget from "./components/applestockl"
 import { Orders } from "./components/orders"
@@ -35,6 +29,7 @@ import Applestockl from "./components/applestockl"
 import AppleTicker from "../components/stock-ticker"
 import { AccountSummary } from "./components/account-summary"
 import { TopAccounts } from "./components/accounts"
+import { FullNav } from "../components/nav/full-nav"
 
 export const metadata: Metadata = {
     title: "Dashboard",
@@ -45,7 +40,7 @@ export default function Stocks() {
     return (
         <>
             <div className="flex-col md:flex">
-                <Nav />
+                <FullNav />
                 <div className="flex-1 space-y-4 p-8 pt-6">
                     <div className="flex items-center justify-between space-y-2">
                         <h2 className="text-3xl font-bold tracking-tight">Stocks</h2>

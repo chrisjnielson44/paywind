@@ -106,7 +106,7 @@ export default function SignUp() {
     };
     return (
 
-        <div className="bg-white dark:bg-gray-900 md:h-screen ">
+        <div className="bg-white dark:bg-background md:h-screen ">
 
             <Toaster />
             <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
@@ -253,7 +253,7 @@ export default function SignUp() {
                                 <div className="w-full border-t border-gray-200 dark:border-gray-600" />
                             </div>
                             <div className="relative flex justify-center text-sm font-medium leading-6">
-                                <span className="bg-white dark:bg-gray-900 px-6 text-gray-900 dark:text-white">Or Sign Up with</span>
+                                <span className="bg-white dark:bg-background px-6 text-gray-900 dark:text-white">Or Sign Up with</span>
                             </div>
                         </div>
 

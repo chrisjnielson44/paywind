@@ -1,6 +1,4 @@
-import { Metadata } from "next"
-import Image from "next/image"
-import { LineGraph } from "./components/linechart"
+import { LineGraph } from "../components/linechart"
 
 import {
     Card,
@@ -15,41 +13,35 @@ import {
     TabsList,
     TabsTrigger,
 } from "@/components/ui/tabs"
-import { MainNav } from "./components/nav/main-nav"
-import { Overview } from "./components/overview"
-import { PlaidTransactions } from "./components/recent-sales"
-import { Search } from "./components/search"
-import TeamSwitcher from "./components/team-switcher"
-import { UserNav } from "./components/nav/user-nav"
-import { Nav } from "./components/nav/nav"
-import { PieGraph } from "./components/piechart"
+import { MainNav } from "../components/nav/main-nav"
+import { Overview } from "../components/overview"
+import { PlaidTransactions } from "../components/recent-sales"
+import { Search } from "../components/search"
+import TeamSwitcher from "../components/team-switcher"
+import { UserNav } from "../components/nav/user-nav"
+import { Nav } from "../components/nav/nav"
+import { PieGraph } from "../components/piechart"
 import { BanknoteIcon, CandlestickChart, CandlestickChartIcon, CoinsIcon, CreditCardIcon, DollarSign, InfoIcon, LandmarkIcon, LineChart, LineChartIcon, NewspaperIcon, Percent, PieChart, PieChartIcon, PiggyBankIcon, Plus, PlusCircleIcon, PlusIcon, Wallet } from "lucide-react"
-import { Accounts } from "./components/combo-box"
-import { AppleTicker } from "./components/stock-ticker"
-import SP500Card from "./components/spindex"
-import { BTCPrice, ETHPrice } from "./components/btc-card"
-import { StudentLoans1, StudentLoans2 } from "./components/studentloan"
-import { UpcomingSubscriptions } from "./components/subscriptions"
-import { SelectDashboard } from "./components/select-dahboard"
+import { Accounts } from "../components/combo-box"
+import { AppleTicker } from "../components/stock-ticker"
+import SP500Card from "../components/spindex"
+import { BTCPrice, ETHPrice } from "../components/btc-card"
+import { StudentLoans1, StudentLoans2 } from "../components/studentloan"
+import { UpcomingSubscriptions } from "../components/subscriptions"
+import { SelectDashboard } from "../components/select-dahboard"
 
-import CreditScoreGauge from "./components/creditscore"
+import CreditScoreGauge from "../components/creditscore"
 import { Button } from "@/components/ui/button"
-import { DatePickerWithRange } from "./date-picker"
-import { TeslaTicker } from "./components/stock-ticker"
+import { DatePickerWithRange } from "../date-picker"
+import { TeslaTicker } from "../components/stock-ticker"
 import { PlusSmallIcon } from "@heroicons/react/24/outline"
-import { DashboardNav } from "./components/dashboard-nav"
-import { FullNav } from "./components/nav/full-nav"
-import ClientSwitcher from "./components/nav/clientnav"
-import { AddWidget } from "./components/addwidget"
+import { DashboardNav } from "../components/dashboard-nav"
+import { FullNav } from "../components/nav/full-nav"
+import ClientSwitcher from "../components/nav/clientnav"
 
-import  Progress  from "./components/porfoliosucess"
 
-export const metadata: Metadata = {
-    title: "Dashboard",
-    description: "Example dashboard app built using the components.",
-}
 
-export default async function DashboardPage() {
+export default async function Estate() {
     return (
         <>
             <div className="flex-col md:flex">
@@ -65,12 +57,10 @@ export default async function DashboardPage() {
                     {/* <DashboardNav/> */}
 
                     <div className="flex items-center justify-between space-y-2">
-                        <h2 className="text-3xl font-bold tracking-tight">Advisor Dashboard</h2>
-
-                        <div className="flex space-x-2">
+                    <h2 className="text-3xl font-bold tracking-tight">Estate</h2>
+                        <div className="flex">
                             {/* <Button variant="outline"><PlusIcon className="h-4 w-4 fill-currentColor" /></Button> */}
-                            {/* <Button variant={"outline"} className=""><Plus className="h-4 w-4"></Plus>Add Widget</Button> */}
-                            <AddWidget />
+                            <Button variant={"outline"} size={"icon"} className="mr-2"><Plus className="h-4 w-4"></Plus></Button>
                             <SelectDashboard />
                         </div>
 
@@ -79,7 +69,7 @@ export default async function DashboardPage() {
                         <TabsContent value="overview" className="space-y-4">
                             <div className="grid gap-4 grid-cols-2 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4">
                                 <Card className="col-span-1">
-                                    {/* <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+                                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
                                         <CardTitle className="text-md  font-medium">
                                             Paywind Balance
                                         </CardTitle>
@@ -101,18 +91,7 @@ export default async function DashboardPage() {
                                         <p className="text-xs text-green-500">
                                             +20.1% from last month
                                         </p>
-                                    </CardContent> */}
-                                    <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
-                                        <CardTitle>
-                                            Portfolio Success
-                                        </CardTitle>
-                                    </CardHeader>
-                                    <CardContent>
-                                        <div className="flex items-center justify-center pt-2">
-                                        <Progress />
-                                        </div>
                                     </CardContent>
-
                                 </Card>
                                 <Card className="col-span-1">
                                     <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
@@ -430,14 +409,14 @@ export default async function DashboardPage() {
 
                             </div>
 
-                            {/* <button
+                            <button
                                 type="button"
                                 className="bg-white dark:bg-card relative block w-full rounded-lg border-2 border-dashed border-gray-400 dark:border-zinc-600 p-12 text-center hover:border-gray-400 focus:border-none  focus:ring-offset-2"
                             >
                                 <PlusIcon className="mx-auto h-12 w-12 dark:text-white" />
 
                                 <span className="mt-2 block text-sm  dark:text-white">Add Widget</span>
-                            </button> */}
+                            </button>
 
 
                         </TabsContent>

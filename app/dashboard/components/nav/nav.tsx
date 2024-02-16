@@ -13,7 +13,7 @@ import { MagnifyingGlassIcon } from '@heroicons/react/20/solid'
 import { Bars3Icon, BellIcon, InboxIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { usePathname, useRouter } from "next/navigation";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
-import { ModeToggle } from '@/app/old-dashboard/components/DarkModeToggle'
+import { ModeToggle } from '@/app/frontpage-components/DarkModeToggle'
 import { CommandMenu } from "../command-menu";
 import { Notifications } from "../notifications";
 import { Button } from "@/components/ui/button";

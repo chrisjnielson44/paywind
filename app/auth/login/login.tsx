@@ -27,9 +27,7 @@ export default async function Login() {
             router.push('/dashboard');
         }
     };
-
-    const [isLoading, setIsLoading] = React.useState<boolean>(false)
-
+    
     return (
         <div className="bg-white dark:bg-background h-screen ">
             <div><Toaster/></div>

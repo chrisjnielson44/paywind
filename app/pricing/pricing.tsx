@@ -74,7 +74,7 @@ export default function Example() {
   const subscriptionFee = investment < 20000 ? 3 : ((investment * 0.0020) / 12).toFixed(2);
   return (
     <div className="bg-white dark:bg-background py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl xl:max-w-screen-2xl px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
           <p className="mt-2 text-4xl font-bold tracking-tight text-black dark:text-white sm:text-5xl">
             Simple, Flexible Pricing for Every Investor
@@ -89,7 +89,7 @@ export default function Example() {
             <div
               key={tier.id}
               className={classNames(
-                tier.mostPopular ? 'bg-white/5 ring-2 ring-green-500 shadow-xl' : 'ring-1 ring-white/10',
+                tier.mostPopular ? 'bg-white/5 ring-2 ring-green-500 shadow-xl' : 'ring-1 ring-white/5',
                 'rounded-3xl p-8 xl:p-10 '
               )}
             >
@@ -145,7 +145,7 @@ export default function Example() {
             <div
               key={tier.id}
               className={classNames(
-                tier.mostPopular ? 'bg-white/5 ring-2 ring-green-500' : 'ring-1 ring-gray-200 dark:ring-white/10',
+                tier.mostPopular ? 'bg-white/5 ring-2 ring-green-500' : 'ring-1 ring-gray-200 dark:ring-white/5',
                 'rounded-3xl p-8 xl:p-10 shadow-xl'
               )}
             >
@@ -194,7 +194,7 @@ export default function Example() {
             <div
               key={tier.id}
               className={classNames(
-                tier.mostPopular ? 'bg-white/5 ring-2 ring-green-500' : 'ring-1 ring-gray-200 dark:ring-white/10',
+                tier.mostPopular ? 'bg-white/5 ring-2 ring-green-500' : 'ring-1 ring-gray-200 dark:ring-white/5',
                 'rounded-3xl p-8 xl:p-10 shadow-xl'
               )}
             >
@@ -238,7 +238,7 @@ export default function Example() {
         </div>
 
       </div>
-      <div className='mx-auto max-w-2xl my-40'>
+      {/* <div className='mx-auto max-w-2xl my-40'>
 
         <Card className='shadow-xl dark:bg-background dark:border-gray-600'>
           <CardHeader>
@@ -268,7 +268,8 @@ export default function Example() {
             <p className='text-center px-5 py-10'>The base price for investing accounts is $3/month. This automatically switches to an annual price of 0.20% when you have a Paywind balance of $20,000 or more across any investing accounts and crypto accounts</p>
           </CardFooter>
         </Card>
-      </div>
+      </div> */}
+      <div className='py-20'/>
     </div>
   )
 }

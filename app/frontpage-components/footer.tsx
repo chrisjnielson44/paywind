@@ -6,8 +6,10 @@ const navigation = {
         { name: 'Paywind for Advisors', href: '#' },
     ],
     support: [
+        { name: 'Resources', href: 'https://info.paywind.io' },
+        { name: 'Changelog', href: 'https://changelog.paywind.io' },
+        { name: 'Integrations', href: '#' },
         { name: 'Pricing', href: '/pricing' },
-        { name: 'Documentation', href: '#' },
 
     ],
     company: [
@@ -49,15 +51,7 @@ const navigation = {
                 </svg>
             ),
         },
-        {
-            name: 'Twitter',
-            href: '#',
-            icon: (props: JSX.IntrinsicAttributes & SVGProps<SVGSVGElement>) => (
-                <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
-                    <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                </svg>
-            ),
-        },
+       
     ],
 }
 
@@ -67,19 +61,19 @@ export default function Footer() {
             <h2 id="footer-heading" className="sr-only">
                 Footer
             </h2>
-            <div className="mx-auto max-w-7xl px-6 pb-8 lg:px-8 ">
+            <div className="mx-auto max-w-screen-2xl px-6 pb-8 lg:px-4 ">
                 <div className="xl:grid xl:grid-cols-3 xl:gap-8">
                     <Link href="/">
                         <svg className="h-10 w-auto fill-green-500 dark:fill-white" viewBox="0 0 350.00000000000006 110.0053045131987"><defs id="SvgjsDefs1024"></defs><g id="SvgjsG1025" transform="matrix(4.640678977689433,0,0,4.640678977689433,-2.5987810683883894,0.7637259811136552)"><path d="M6.1 12.16 c-1.6 0 -2.8 1.22 -2.8 2.76 c0 1.52 1.24 2.76 2.8 2.76 c1.52 0 2.7 -1.24 2.7 -2.76 c0 -1.54 -1.18 -2.76 -2.7 -2.76 z M6.34 20.14 c-1.16 0 -2.28 -0.36 -3 -0.92 l0 4.3 l-2.78 0 l0 -13.78 l2.78 0 l0 0.8 c0.72 -0.56 1.84 -0.9 3 -0.9 c2.8 0 5.18 2.26 5.18 5.22 s-2.38 5.28 -5.18 5.28 z M17.7 12.16 c-1.52 0 -2.7 1.24 -2.7 2.76 c0 1.54 1.18 2.76 2.7 2.76 c1.6 0 2.8 -1.22 2.8 -2.76 c0 -1.52 -1.24 -2.76 -2.8 -2.76 z M20.46 20 l0 -0.76 c-0.72 0.56 -1.84 0.9 -3 0.9 c-2.8 0 -5.18 -2.26 -5.18 -5.22 s2.38 -5.28 5.18 -5.28 c1.16 0 2.28 0.36 3 0.92 l0 -0.82 l2.78 0 l0 10.26 l-2.78 0 z M34.22 9.74 l-3.44 9.9 c-0.96 2.74 -2.2 3.9 -4.72 3.9 l-1 0 l0 -2.5 l0.84 0 c0.92 0 1.52 -0.52 1.9 -1.32 l-3.82 -9.98 l3.18 0 l2.1 6.32 l2.08 -6.32 l2.88 0 z M43.54 20 l-1.4 -5.86 l-1.4 5.86 l-3.52 0 l-2.62 -10.26 l2.8 0 l1.68 7.06 l1.74 -7.06 l2.8 0 l1.72 7.1 l1.7 -7.1 l2.7 0 l-2.64 10.26 l-3.56 0 z M53.28 8.86 l-2.78 0 l0 -2.56 l2.78 0 l0 2.56 z M53.28 20 l-2.78 0 l0 -10.26 l2.78 0 l0 10.26 z M57.13999999999999 9.74 l0 1.04 c0.5 -0.58 1.56 -1.22 2.98 -1.22 c2.4 0 3.96 1.66 3.96 4.14 l0 6.3 l-2.76 0 l0 -5.82 c0 -1.22 -0.7 -2.06 -1.88 -2.06 c-1.36 0 -2.26 0.86 -2.26 2.28 l0 5.6 l-2.78 0 l0 -10.26 l2.74 0 z M70.44 17.68 c1.6 0 2.8 -1.22 2.8 -2.76 c0 -1.52 -1.24 -2.76 -2.8 -2.76 c-1.52 0 -2.7 1.24 -2.7 2.76 c0 1.54 1.18 2.76 2.7 2.76 z M73.2 20 l0 -0.76 c-0.72 0.56 -1.84 0.9 -3 0.9 c-2.8 0 -5.18 -2.26 -5.18 -5.22 s2.38 -5.28 5.18 -5.28 c1.16 0 2.28 0.36 3 0.92 l0 -4.26 l2.78 0 l0 13.7 l-2.78 0 z"></path></g></svg>
                     </Link>
-                    <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+                    <div className="mt-16 grid grid-cols-2 gap-8 col-span-2 xl:mt-0">
                         <div className="md:grid md:grid-cols-2 md:gap-8">
                             <div>
                                 <h3 className="text-sm font-semibold leading-6 text-black dark:text-white">Solutions</h3>
                                 <ul role="list" className="mt-6 space-y-4">
                                     {navigation.solutions.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-sm leading-6 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">
+                                            <a href={item.href} className="text-sm leading-6 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white  hover:underline">
                                                 {item.name}
                                             </a>
                                         </li>
@@ -87,18 +81,18 @@ export default function Footer() {
                                 </ul>
                             </div>
                             <div className="mt-10 md:mt-0">
-                                <h3 className="text-sm font-semibold leading-6 text-black dark:text-white">Resources</h3>
+                                <h3 className="text-sm font-semibold leading-6 text-black dark:text-white">Documentation</h3>
                                 <ul role="list" className="mt-6 space-y-4">
                                     {navigation.support.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-sm leading-6 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">
+                                            <a href={item.href} className="text-sm leading-6 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white hover:underline">
                                                 {item.name}
                                             </a>
                                         </li>
                                     ))}
                                 </ul>
                             </div>
-                            
+
                         </div>
                         <div className="md:grid md:grid-cols-2 md:gap-8">
                             <div>
@@ -106,7 +100,7 @@ export default function Footer() {
                                 <ul role="list" className="mt-6 space-y-4">
                                     {navigation.company.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-sm leading-6 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">
+                                            <a href={item.href} className="text-sm leading-6 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white  hover:underline">
                                                 {item.name}
                                             </a>
                                         </li>
@@ -118,7 +112,7 @@ export default function Footer() {
                                 <ul role="list" className="mt-6 space-y-4">
                                     {navigation.legal.map((item) => (
                                         <li key={item.name}>
-                                            <a href={item.href} className="text-sm leading-6 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white">
+                                            <a href={item.href} className="text-sm leading-6 text-gray-600 dark:text-gray-300 hover:text-gray-800 dark:hover:text-white  hover:underline">
                                                 {item.name}
                                             </a>
                                         </li>
@@ -161,13 +155,15 @@ export default function Footer() {
                 <div className="mt-8 border-t border-black/10 dark:border-white/10 pt-8 md:flex md:items-center md:justify-between">
                     <div className="flex space-x-6 md:order-2">
                         {navigation.social.map((item) => (
-                            <a key={item.name} href={item.href} className="text-gray-500 hover:text-gray-400">
+                            <a key={item.name} href={item.href} className="text-secondary-foreground hover:text-zinc-400">
                                 <span className="sr-only">{item.name}</span>
                                 <item.icon className="h-6 w-6" aria-hidden="true" />
                             </a>
                         ))}
+                        {/* <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" ><g fill="currentColor"><path d="M1 2h2.5L3.5 2h-2.5z"><animate fill="freeze" attributeName="d" dur="0.4s" values="M1 2h2.5L3.5 2h-2.5z;M1 2h2.5L18.5 22h-2.5z" /></path><path d="M5.5 2h2.5L7.2 2h-2.5z"><animate fill="freeze" attributeName="d" dur="0.4s" values="M5.5 2h2.5L7.2 2h-2.5z;M5.5 2h2.5L23 22h-2.5z" /></path><path d="M3 2h5v0h-5z" opacity="0"><set attributeName="opacity" begin="0.4s" to="1" /><animate fill="freeze" attributeName="d" begin="0.4s" dur="0.4s" values="M3 2h5v0h-5z;M3 2h5v2h-5z" /></path><path d="M16 22h5v0h-5z" opacity="0"><set attributeName="opacity" begin="0.4s" to="1" /><animate fill="freeze" attributeName="d" begin="0.4s" dur="0.4s" values="M16 22h5v0h-5z;M16 22h5v-2h-5z" /></path><path d="M18.5 2h3.5L22 2h-3.5z" opacity="0"><set attributeName="opacity" begin="0.5s" to="1" /><animate fill="freeze" attributeName="d" begin="0.5s" dur="0.4s" values="M18.5 2h3.5L22 2h-3.5z;M18.5 2h3.5L5 22h-3.5z" /></path></g></svg>), */}
+
                     </div>
-                    <p className="mt-8 text-sm leading-5 text-gray-400 md:order-1 md:mt-0">
+                    <p className="mt-8 text-sm leading-5 text-zinc-400 md:order-1 md:mt-0">
                         &copy; Paywind LLC. All rights reserved.
                     </p>
                 </div>

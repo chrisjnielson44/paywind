@@ -148,7 +148,7 @@ export default function ClientSwitcher({ className }: TeamSwitcherProps) {
                           alt={team.label}
                           // className="grayscale"
                         />
-                        <AvatarFallback className="text-xs bg-gray-300 dark:text-black">{team.image}</AvatarFallback>
+                        <AvatarFallback className="text-xs bg-gray-300 dark:text-black ">{team.image}</AvatarFallback>
                       </Avatar>
                       {team.label}
                       <CheckIcon

@@ -138,7 +138,7 @@ ListItem.displayName = "ListItem"
 const ListItem2 = React.forwardRef<
   React.ElementRef<"a">,
   React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+>(({ className, title, ...props }, ref) => {
   return (
     <li>
       <NavigationMenuLink asChild>

@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation'
 import Link from "next/link";
 import toast, { Toaster } from "react-hot-toast";
 import { PatternFormat } from 'react-number-format';
-import { signIn } from "next-auth/react";
+import { signup } from "../confirm/actions";
 
 
 export default function SignUp() {
@@ -12,98 +12,98 @@ export default function SignUp() {
 
     const [phone, setPhone] = useState('');
 
-    const isNumeric = (str: string) => {
-        return !isNaN(parseFloat(str)) && isFinite(Number(str));
-    };
+    // const isNumeric = (str: string) => {
+    //     return !isNaN(parseFloat(str)) && isFinite(Number(str));
+    // };
 
 
-    const validatePassword = (password: string): string | null => {
-        if (password.length < 8) {
-            return 'Password must be at least 8 characters long.';
-        }
-        if (!/[A-Z]/.test(password)) {
-            return 'Password must contain at least one uppercase letter.';
-        }
-        if (!/\d/.test(password)) {
-            return 'Password must contain at least one number.';
-        }
-        if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
-            return 'Password must contain at least one special character.';
-        }
-        return null;
-    };
+    // const validatePassword = (password: string): string | null => {
+    //     if (password.length < 8) {
+    //         return 'Password must be at least 8 characters long.';
+    //     }
+    //     if (!/[A-Z]/.test(password)) {
+    //         return 'Password must contain at least one uppercase letter.';
+    //     }
+    //     if (!/\d/.test(password)) {
+    //         return 'Password must contain at least one number.';
+    //     }
+    //     if (!/[!@#$%^&*(),.?":{}|<>]/.test(password)) {
+    //         return 'Password must contain at least one special character.';
+    //     }
+    //     return null;
+    // };
 
-    const validatePhoneNumber = (phoneNumber: string): boolean => {
-        // Regular expression for validating US phone number format +1 (###) ###-####
-        const phoneRegex = /^\+1 \(\d{3}\) \d{3}-\d{4}$/;
-        return phoneRegex.test(phoneNumber);
-    };
-
-
-    const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        const formData = new FormData(e.currentTarget);
-        const firstName = formData.get('first_name') as string;
-        const lastName = formData.get('family_name') as string;
-        const password = formData.get('password') as string;
-        const phoneNumber = formData.get('phone-number') as string;
-
-        const confirmPassword = formData.get('confirm-password') as string;
+    // const validatePhoneNumber = (phoneNumber: string): boolean => {
+    //     // Regular expression for validating US phone number format +1 (###) ###-####
+    //     const phoneRegex = /^\+1 \(\d{3}\) \d{3}-\d{4}$/;
+    //     return phoneRegex.test(phoneNumber);
+    // };
 
 
-        // Check for numeric values in first and last name
-        if (isNumeric(firstName) || isNumeric(lastName)) {
-            toast.error('First and Last name should not contain numbers.');
-            return;
-        }
+    // const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    //     e.preventDefault();
+    //     const formData = new FormData(e.currentTarget);
+    //     const firstName = formData.get('first_name') as string;
+    //     const lastName = formData.get('family_name') as string;
+    //     const password = formData.get('password') as string;
+    //     const phoneNumber = formData.get('phone-number') as string;
 
-        const passwordError = validatePassword(password);
-        if (passwordError) {
-            toast.error(passwordError);
-            return;
-        }
+    //     const confirmPassword = formData.get('confirm-password') as string;
 
 
-        if (password !== confirmPassword) {
-            toast.error('Passwords do not match');
-            return;
-        }
+    //     // Check for numeric values in first and last name
+    //     if (isNumeric(firstName) || isNumeric(lastName)) {
+    //         toast.error('First and Last name should not contain numbers.');
+    //         return;
+    //     }
 
-        if (phoneNumber && !validatePhoneNumber(phoneNumber)) {
-            toast.error('Phone number must be in the format +1 (XXX) XXX-XXXX.');
-            return;
-        }
+    //     const passwordError = validatePassword(password);
+    //     if (passwordError) {
+    //         toast.error(passwordError);
+    //         return;
+    //     }
 
-        try {
-            const response = await fetch(`/api/auth/register`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    email: formData.get('email'),
-                    password: formData.get('password'),
-                    first_name: formData.get('first_name'),
-                    family_name: formData.get('family_name'),
-                    phone: formData.get('phone-number'),
-                    role: 'base'
-                }),
-            });
 
-            const data = await response.json(); // Parse the response data
+    //     if (password !== confirmPassword) {
+    //         toast.error('Passwords do not match');
+    //         return;
+    //     }
 
-            if (response.ok) {
-                router.push('/dashboard');
-                router.refresh();
-            } else {
-                // Use the error message from the response, if available
-                toast.error(data.message || 'An error occurred during sign up');
-            }
-        } catch (error) {
-            console.error('Error during sign up:', error);
-            toast.error('An unexpected error occurred');
-        }
-    };
+    //     if (phoneNumber && !validatePhoneNumber(phoneNumber)) {
+    //         toast.error('Phone number must be in the format +1 (XXX) XXX-XXXX.');
+    //         return;
+    //     }
+
+    //     try {
+    //         const response = await fetch(`/api/auth/register`, {
+    //             method: 'POST',
+    //             headers: {
+    //                 'Content-Type': 'application/json',
+    //             },
+    //             body: JSON.stringify({
+    //                 email: formData.get('email'),
+    //                 password: formData.get('password'),
+    //                 first_name: formData.get('first_name'),
+    //                 family_name: formData.get('family_name'),
+    //                 phone: formData.get('phone-number'),
+    //                 role: 'base'
+    //             }),
+    //         });
+
+    //         const data = await response.json(); // Parse the response data
+
+    //         if (response.ok) {
+    //             router.push('/dashboard');
+    //             router.refresh();
+    //         } else {
+    //             // Use the error message from the response, if available
+    //             toast.error(data.message || 'An error occurred during sign up');
+    //         }
+    //     } catch (error) {
+    //         console.error('Error during sign up:', error);
+    //         toast.error('An unexpected error occurred');
+    //     }
+    // };
     return (
 
         <div className="bg-white dark:bg-background md:h-screen ">
@@ -122,7 +122,7 @@ export default function SignUp() {
                 </div>
 
                 <div className=" sm:mx-auto sm:w-full sm:max-w-sm">
-                    <form className="space-y-6 " onSubmit={handleSubmit}>
+                    <form className="space-y-6 ">
                         <div className="pb-5 sm:mx-auto sm:w-full sm:max-w-sm">
 
 
@@ -241,6 +241,7 @@ export default function SignUp() {
                         </div>
 
                         <button
+                            formAction={signup}
                             type="submit"
                             className="flex w-full justify-center rounded-md bg-green-500 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
                         >
@@ -258,15 +259,15 @@ export default function SignUp() {
                         </div>
 
                         <div className="pt-2">
-                            <button type="button" onClick={() => signIn('google')} className="text-white w-full  bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-between dark:focus:ring-[#4285F4]/55 mr-2 mb-2"><svg className="mr-2 -ml-1 w-4 h-4" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path></svg>Google<div></div></button>
+                            <button type="button" className="text-white w-full  bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-between dark:focus:ring-[#4285F4]/55 mr-2 mb-2"><svg className="mr-2 -ml-1 w-4 h-4" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="google" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 488 512"><path fill="currentColor" d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"></path></svg>Google<div></div></button>
                         </div>
-                        {/* <div className="pt-2">
+                        <div className="pt-2">
                             <button type="button" className="text-white w-full  dark:bg-white dark:text-black dark:hover:bg-gray-200 justify-between bg-[#050708] hover:bg-[#050708]/90 focus:ring-4 focus:ring-[#050708]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#050708]/50 dark:hover:bg-[#050708]/30 mr-2">
                                 <svg className="mr-2 -ml-1 w-5 h-5" aria-hidden="true" focusable="false" data-prefix="fab" data-icon="apple" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path fill="currentColor" d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"></path></svg>
                                 Apple
                                 <div></div>
                             </button>
-                        </div> */}
+                        </div>
                         <div className="pt-4">
                             <button type="button" className="text-white w-full  bg-black dark:bg-white dark:text-black hover:bg-gray-900 hover:dark:bg-gray-200 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center justify-between dark:focus:ring-[#4285F4]/55 mr-2">
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="mr-2 -ml-1 w-5 h-5" viewBox="0 0 1792 1792">

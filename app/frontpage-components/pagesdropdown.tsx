@@ -20,7 +20,7 @@ export function PagesDropDown() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-lg font-semibold dark:bg-background dark:hover:bg-secondary">Features</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="text-lg font-semibold bg-transparent dark:bg-transparent dark:hover:bg-secondary">Features</NavigationMenuTrigger>
               <NavigationMenuContent>
                 <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
                   <li className="row-span-3">
@@ -62,7 +62,7 @@ export function PagesDropDown() {
 
             <NavigationMenuItem>
               <Link href="/integrations" legacyBehavior passHref>
-                <NavigationMenuLink className="group inline-flex h-10 w-max dark:bg-background dark:hover:bg-secondary items-center justify-center rounded-md bg-background px-4 py-2 text-lg font-semibold transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                <NavigationMenuLink className="group inline-flex h-10 w-max dark:bg-transparent dark:hover:bg-secondary items-center justify-center rounded-md bg-transparent px-4 py-2 text-lg font-semibold transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
                   Integrations
                 </NavigationMenuLink>
               </Link>
@@ -71,7 +71,7 @@ export function PagesDropDown() {
 
             <NavigationMenuItem>
               <Link href="/pricing" legacyBehavior passHref>
-                <NavigationMenuLink className="group inline-flex h-10 w-max dark:bg-background dark:hover:bg-secondary items-center justify-center rounded-md bg-background px-4 py-2 text-lg font-semibold transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
+                <NavigationMenuLink className="group inline-flex h-10 w-max dark:bg-transparent dark:hover:bg-secondary items-center justify-center rounded-md bg-transparent px-4 py-2 text-lg font-semibold transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
                   Pricing
                 </NavigationMenuLink>
               </Link>
@@ -84,7 +84,7 @@ export function PagesDropDown() {
         <NavigationMenu>
           <NavigationMenuList>
             <NavigationMenuItem>
-              <NavigationMenuTrigger className="text-lg font-semibold dark:bg-background dark:hover:bg-secondary">About</NavigationMenuTrigger>
+              <NavigationMenuTrigger className="text-lg font-semibold dark:bg-transparent dark:hover:bg-secondary">About</NavigationMenuTrigger>
               <NavigationMenuContent >
               <ul className="grid gap-3 p-4 w-[200px] ">
                   <ListItem2 href="/about" title="Our Story">

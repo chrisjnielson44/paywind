@@ -7,6 +7,7 @@ import { ModeToggle } from './DarkModeToggle'
 import { PagesDropDown } from './pagesdropdown'
 import { Button } from '@/components/ui/button'
 import { LoginOptions } from './LoginOptions'
+import { UserButton } from "@clerk/nextjs";
 
 const solutions = [
     { name: 'Customizable Dashboard', description: 'Get a better understanding of your traffic', href: '#' },
@@ -64,7 +65,7 @@ export default function Header() {
 
     return (
 
-            <header className=" bg-white bg-opacity-50 backdrop-blur-lg dark:backdrop-blur-sm dark:bg-background relative z-50">
+            <header className="relative z-50">
 
                 <nav className="lg:px-4 px-2 py-4" aria-label="Global">
                     <div className='flex flex-wrap justify-between items-center mx-auto px-4 xl:max-w-screen-2xl'>
@@ -97,8 +98,9 @@ export default function Header() {
                             Sign Up
                         </Link> */}
                             <Button asChild className='text-md font-semibold dark:bg-white dark:hover:bg-gray-300'>
-                                <Link href="/auth/login">Log in</Link>
+                                <Link href="/auth/login/">Log in</Link>
                             </Button>
+                   
                             {/* <LoginOptions /> */}
                             <div className='ml-3'>
                                 <ModeToggle />

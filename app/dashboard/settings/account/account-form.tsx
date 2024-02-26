@@ -45,9 +45,6 @@ const languages = [
   { label: "Chinese", value: "zh" },
 ] as const
 
-import { authOptions } from "@/app/api/auth/[...nextauth]/authOptions"
-import { getServerSession } from 'next-auth/next';
-
 
 const accountFormSchema = z.object({
   name: z

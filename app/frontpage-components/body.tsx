@@ -1,6 +1,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
+import { cn } from "@/lib/utils";
 
 import { Button } from "@/components/ui/button"
 
@@ -16,6 +17,12 @@ import {
 import { Bot } from "lucide-react"
 import { BoltIcon, CalendarDaysIcon, UsersIcon } from '@heroicons/react/24/outline'
 import { JSX, SVGProps } from "react"
+import { TypewriterEffect } from "@/components/ui/type-writer-effect"
+import { Boxes } from "@/components/ui/background-boxes"
+import { BackgroundBeams } from "@/components/ui/background-beams";
+import { Meteors } from "@/components/ui/meteors";
+// import { WavyBackground } from "@/components/ui/wavy-background";
+
 
 const primaryFeatures = [
     {
@@ -78,22 +85,40 @@ const stats = [
     { id: 4, name: 'Reduction in Compliance Errors', value: '99%' },
 ];
 
+const words = [
+    {
+        text: "Simplify",
+    },
+    {
+        text: "financial",
+    },
+    {
+        text: "advisory",
+    },
+    {
+        text: "with",
+    },
+    {
+        text: "Paywind.",
+        className: "text-primary dark:text-green-primary",
+    },
+]
 
 
 export default function Body() {
 
 
     return (
-        <main className="bg-white dark:bg-background z-40">
+        <main className="bg-background dark:bg-background z-40">
+
             <section>
-                <div className="relative pt-10">
+                <div className="relative pt-10 h-[50rem] flex items-center justify-center ">
                     <div className="py-20 sm:py-15 lg:pb-40">
+                        <div className=""><TypewriterEffect words={words} /></div>
                         <div className="mx-auto max-w-7xl xl:max-screen-2xl px-6 lg:px-8">
                             <div className="mx-auto max-w-2xl text-center">
-                                <h1 className="text-4xl font-bold tracking-tight text-black dark:text-white sm:text-6xl">
-                                    Automate. Innovate. Elevate.
-                                </h1>
-                                <p className="mt-6 text-xl leading-8 text-black dark:text-zinc-700 dark:text-zinc-100">
+                              
+                                <p className="mt-10 text-2xl leading-8 text-black dark:text-zinc-100">
                                     Simplify your workflow with Paywind. Our fintech tool automates tedious compliance and paperwork,
                                     offers critical client data at your fingertips, and integrates AI to streamline workflows for
                                     financial advisors.
@@ -101,24 +126,20 @@ export default function Body() {
                                 <div className="mt-10 flex items-center justify-center gap-x-6">
                                     <Button className="bg-primary text-white">See How It Works</Button>
                                 </div>
-                            </div>
-                            {/* <img
-                                src="dashboard.png" // Ensure this image showcases Paywind's interface or a relevant feature
-                                alt="Paywind dashboard showcasing automated workflows and client data"
-                                width={2432}
-                                height={1442}
-                                className="mt-16 rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10 sm:mt-24"
-                            /> */}
+                            </div> 
+                          
 
                         </div>
                     </div>
+                    {/* <BackgroundBeams /> */}
+
                 </div>
             </section>
 
 
             {/* Logo cloud */}
-            <div className="mx-auto max-w-7xl xl:max-w-screen-2xl px-6 sm:py-16 lg:px-8 rounded-lg">
-                <h2 className="text-center text-2xl font-semibold leading-8 text-black dark:text-white">
+            <div className="mx-auto max-w-7xl xl:max-w-screen-xl px-6 sm:py-16 lg:px-8 rounded-lg">
+                <h2 className="text-center text-3xl font-semibold leading-8 text-black dark:text-white">
                     Trusted by Firms
                 </h2>
                 <div className="bg-primary py-10 rounded-xl mx-auto mt-10 grid max-w-lg grid-cols-4 items-center gap-x-8 gap-y-10 sm:max-w-xl sm:grid-cols-6 sm:gap-x-10 lg:mx-0 lg:max-w-none lg:grid-cols-5">
@@ -161,7 +182,7 @@ export default function Body() {
             </div>
 
             {/* Feature section */}
-            <div className="mx-auto mt-32 max-w-7xl xl:max-w-screen-2xl px-6 sm:mt-56 lg:px-8">
+            <div className="mx-auto mt-32 max-w-7xl xl:max-w-screen-xl px-6 sm:mt-56 lg:px-8">
                 <div className="mx-auto max-w-2xl text-center">
                     <h2 className="text-base font-semibold leading-7 text-primary">Empower Your Advisory</h2>
                     <p className="mt-2 text-3xl font-bold tracking-tight text-black dark:text-white sm:text-4xl">
@@ -198,7 +219,7 @@ export default function Body() {
 
 
             {/* Stats */}
-            <div className="mx-auto mt-32 max-w-7xl xl:max-w-screen-2xl px-6 sm:mt-56 lg:px-8">
+            <div className="mx-auto mt-32 max-w-7xl xl:max-w-screen-xl px-6 sm:mt-56 lg:px-8">
                 <div className="mx-auto max-w-2xl lg:mx-0 lg:max-w-xl">
                     <h2 className="text-base font-semibold leading-8 text-primary">Proven Impact</h2>
                     <p className="mt-2 text-3xl font-bold tracking-tight text-black dark:text-white sm:text-4xl">
@@ -219,7 +240,7 @@ export default function Body() {
             </div>
 
             <div className="bg-background">
-                <div className="mx-auto max-w-screen-2xl py-24 sm:py-32 ">
+                <div className="mx-auto max-w-screen-xl py-24 sm:py-32 ">
                     <div className="relative isolate overflow-hidden bg-background px-6 pt-16 md:pt-24 lg:flex lg:gap-x-20 ">
                         {/* <svg
                             viewBox="0 0 1024 1024"
@@ -247,15 +268,15 @@ export default function Body() {
                                 <Button asChild className="text-white">
                                     <Link href="/">Get Started</Link>
                                 </Button>
-                                <Button asChild className="text-white font-semibold leading-6 gap-x-1" variant={"outline"}>
-                                    <Link href="/features"> Learn More <span aria-hidden="true">→</span> </Link> 
+                                <Button asChild className="text-black dark:text-white font-semibold leading-6 gap-x-1" variant={"outline"}>
+                                    <Link href="/features"> Learn More <span aria-hidden="true">→</span> </Link>
                                 </Button>
                             </div>
                         </div>
                         <div className="relative mt-16 h-80 lg:mt-8">
                             <img
                                 className="absolute left-0 top-0 w-[57rem] max-w-none rounded-md bg-white/5 ring-1 ring-white/10"
-                                src="https://tailwindui.com/img/component-images/dark-project-app-screenshot.png" // Replace with a screenshot showcasing Paywind's interface
+                                src="/dashboard.png"
                                 alt="Paywind dashboard screenshot"
                                 width={1824}
                                 height={1080}

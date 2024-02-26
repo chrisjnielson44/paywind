@@ -22,7 +22,6 @@ import { Search } from "./components/search"
 import TeamSwitcher from "./components/team-switcher"
 import { UserNav } from "./components/nav/user-nav"
 import { Nav } from "./components/nav/nav"
-import { PieGraph } from "./components/piechart"
 import { BanknoteIcon, CandlestickChart, CandlestickChartIcon, CoinsIcon, CreditCardIcon, DollarSign, InfoIcon, LandmarkIcon, LineChart, LineChartIcon, NewspaperIcon, Percent, PieChart, PieChartIcon, PiggyBankIcon, Plus, PlusCircleIcon, PlusIcon, Wallet } from "lucide-react"
 import { Accounts } from "./components/combo-box"
 import { AppleTicker } from "./components/stock-ticker"
@@ -254,7 +253,7 @@ export default async function DashboardPage() {
                                         </div>
                                     </CardHeader>
                                     <CardContent className="flex items-center justify-center">
-                                        <PieGraph />
+                                        {/* <PieGraph /> */}
                                     </CardContent>
                                 </Card>
 

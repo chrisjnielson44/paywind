@@ -46,7 +46,7 @@ const premiumPlan =
     href: '#',
     price: '$179.95',
     description: 'Builds on Basic by adding account aggregation, budgeting tools, smart transaction categorization, RightIntel™ business intelligence, and an optional assistant access for an additional fee.',
-    features: ['All Basic features', 'Account aggregation', 'Budgeting tools', 'Smart transaction categorization', 'RightIntel™ business intelligence', '1 assistant access for add’l fee*'],
+    features: ['All Basic features', 'Account aggregation', 'Budgeting tools', 'Smart transaction categorization', 'RightIntel™ business intelligence', '1 assistant access for add&apos;l fee*'],
     mostPopular: true,
   }]
   ;

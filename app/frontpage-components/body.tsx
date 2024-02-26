@@ -14,13 +14,16 @@ import {
     LockClosedIcon,
     ServerIcon,
 } from '@heroicons/react/20/solid'
-import { Bot } from "lucide-react"
+import { ArrowRightIcon, Bot } from "lucide-react"
 import { BoltIcon, CalendarDaysIcon, UsersIcon } from '@heroicons/react/24/outline'
 import { JSX, SVGProps } from "react"
-import { TypewriterEffect } from "@/components/ui/type-writer-effect"
+import {  TypewriterEffectSmooth } from "@/components/ui/type-writer-effect"
 import { Boxes } from "@/components/ui/background-boxes"
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Meteors } from "@/components/ui/meteors";
+import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
+import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
+import { Separator } from "@/components/ui/separator";
 // import { WavyBackground } from "@/components/ui/wavy-background";
 
 
@@ -44,6 +47,34 @@ const primaryFeatures = [
         icon: Cog6ToothIcon, // Update with an appropriate icon
     },
 
+];
+
+const testimonials = [
+    {
+        quote: "Paywind has revolutionized the way we approach financial planning. Its automation tools have drastically reduced our administrative workload, allowing us to focus more on strategy and client relationships.",
+        name: "Alex Johnson",
+        title: "Senior Financial Advisor, Quantum Financial Services",
+    },
+    {
+        quote: "Implementing Paywind was a game-changer for our firm. The seamless integration of client data and insightful analytics has enabled us to offer personalized advice like never before.",
+        name: "Samantha Lee",
+        title: "Director of Advisory, Apex Wealth Management",
+    },
+    {
+        quote: "The efficiency and accuracy Paywind brings to compliance and document management is unparalleled. It&apos;s not just a tool; it&apos;s become an essential part of our advisory practice.",
+        name: "Michael Torres",
+        title: "Compliance Officer, Elite Advisors Group",
+    },
+    {
+        quote: "Thanks to Paywind, our advisors can now automate tedious tasks and spend more time doing what they do best: advising clients and driving value. It&apos;s an essential asset for any financial advisory firm looking to scale.",
+        name: "Christina Ramirez",
+        title: "Chief Operating Officer, Innovate Financials",
+    },
+    {
+        quote: "Paywind&apos;s intuitive design and powerful features have made it a favorite among our team. The client-facing app has significantly improved our engagement and satisfaction rates.",
+        name: "Ethan Wright",
+        title: "Head of Client Relations, Prosperity Partners Wealth Management",
+    },
 ];
 
 const secondaryFeatures = [
@@ -87,13 +118,13 @@ const stats = [
 
 const words = [
     {
-        text: "Simplify",
+        text: "Automate",
     },
     {
-        text: "financial",
+        text: "Financial",
     },
     {
-        text: "advisory",
+        text: "Advisory",
     },
     {
         text: "with",
@@ -104,6 +135,29 @@ const words = [
     },
 ]
 
+const content = [
+    {
+        title: "Collaborative Editing",
+        description:
+            "Work together in real time with your team, clients, and stakeholders. Collaborate on documents, share ideas, and make decisions quickly. With our platform, you can streamline your workflow and increase productivity.",
+    },
+    {
+        title: "Real time changes",
+        description:
+            "See changes as they happen. With our platform, you can track every modification in real time. No more confusion about the latest version of your project. Say goodbye to the chaos of version control and embrace the simplicity of real-time updates.",
+    },
+    {
+        title: "Version control",
+        description:
+            "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+    },
+    {
+        title: "Running out of content",
+        description:
+            "Experience real-time updates and never stress about version control again. Our platform ensures that you're always working on the most recent version of your project, eliminating the need for constant manual updates. Stay in the loop, keep your team aligned, and maintain the flow of your work without any interruptions.",
+    },
+];
+
 
 export default function Body() {
 
@@ -112,12 +166,15 @@ export default function Body() {
         <main className="bg-background dark:bg-background z-40">
 
             <section>
-                <div className="relative pt-10 h-[50rem] flex items-center justify-center ">
+                <div className="relative pt-10 h-[40rem] flex items-center justify-center bg-dot-green-500/70 dark:bg-dot-white/10">
                     <div className="py-20 sm:py-15 lg:pb-40">
-                        <div className=""><TypewriterEffect words={words} /></div>
+                       <div className="flex justify-center items-center">
+                  
+                        </div>
+                         <TypewriterEffectSmooth words={words}/>
                         <div className="mx-auto max-w-7xl xl:max-screen-2xl px-6 lg:px-8">
                             <div className="mx-auto max-w-2xl text-center">
-                              
+
                                 <p className="mt-10 text-2xl leading-8 text-black dark:text-zinc-100">
                                     Simplify your workflow with Paywind. Our fintech tool automates tedious compliance and paperwork,
                                     offers critical client data at your fingertips, and integrates AI to streamline workflows for
@@ -126,8 +183,8 @@ export default function Body() {
                                 <div className="mt-10 flex items-center justify-center gap-x-6">
                                     <Button className="bg-primary text-white">See How It Works</Button>
                                 </div>
-                            </div> 
-                          
+                            </div>
+
 
                         </div>
                     </div>
@@ -136,9 +193,22 @@ export default function Body() {
                 </div>
             </section>
 
+            <section>
+                <div className="mx-auto max-w-7xl xl:max-w-screen-xl px-6 sm:py-16 lg:px-8 rounded-lg">
+                    <InfiniteMovingCards
+                        items={testimonials}
+                        direction="left"
+                        speed="slow"
+                        className="max-w-7xl mx-auto"
+                    />
+                </div>
+
+            </section>
+
+            {/* <StickyScroll content={content} /> */}
 
             {/* Logo cloud */}
-            <div className="mx-auto max-w-7xl xl:max-w-screen-xl px-6 sm:py-16 lg:px-8 rounded-lg">
+            {/* <div className="mx-auto max-w-7xl xl:max-w-screen-xl px-6 sm:py-16 lg:px-8 rounded-lg">
                 <h2 className="text-center text-3xl font-semibold leading-8 text-black dark:text-white">
                     Trusted by Firms
                 </h2>
@@ -179,7 +249,7 @@ export default function Body() {
                         height={48}
                     />
                 </div>
-            </div>
+            </div> */}
 
             {/* Feature section */}
             <div className="mx-auto mt-32 max-w-7xl xl:max-w-screen-xl px-6 sm:mt-56 lg:px-8">

@@ -1,3 +1,4 @@
+// import { MacbookScroll } from "@/components/ui/macbook-scroll";
 
 export default function Features() {
   return (
@@ -9,6 +10,7 @@ export default function Features() {
             Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
             fugiat veniam occaecat fugiat aliqua.
           </p>
+          {/* <MacbookScroll /> */}
         </div>
       </div>
     </div>

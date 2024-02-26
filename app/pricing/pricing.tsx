@@ -78,7 +78,7 @@ export default function Example() {
           </p>
         </div>
         <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-gray-600 dark:text-gray-300 pb-20">
-          Explore our clear and customizable pricing plans designed to meet the diverse needs of financial advisors. Whether you're managing a small client base or a large advisory firm, our packages are built to equip you with the necessary tools and insights for efficient practice management. With Paywind, you enjoy straightforward pricing structures without any concealed charges, empowering you to concentrate on delivering exceptional value to your clients and expanding your advisory business.
+          Explore our clear and customizable pricing plans designed to meet the diverse needs of financial advisors. Whether you&apos;re managing a small client base or a large advisory firm, our packages are built to equip you with the necessary tools and insights for efficient practice management. With Paywind, you enjoy straightforward pricing structures without any concealed charges, empowering you to concentrate on delivering exceptional value to your clients and expanding your advisory business.
         </p>
 
 

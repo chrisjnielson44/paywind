@@ -1,4 +1,3 @@
-
 import Image from "next/image"
 import Link from "next/link"
 import { cn } from "@/lib/utils";
@@ -17,13 +16,14 @@ import {
 import { ArrowRightIcon, Bot } from "lucide-react"
 import { BoltIcon, CalendarDaysIcon, UsersIcon } from '@heroicons/react/24/outline'
 import { JSX, SVGProps } from "react"
-import {  TypewriterEffectSmooth } from "@/components/ui/type-writer-effect"
+import { TypewriterEffectSmooth } from "@/components/ui/type-writer-effect"
 import { Boxes } from "@/components/ui/background-boxes"
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { Meteors } from "@/components/ui/meteors";
 import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { Separator } from "@/components/ui/separator";
+import { GlowingStarsHeroBackground } from "@/components/ui/glowing-stars";
 // import { WavyBackground } from "@/components/ui/wavy-background";
 
 
@@ -166,35 +166,68 @@ export default function Body() {
         <main className="bg-background dark:bg-background z-40">
 
             <section>
-                <div className="relative pt-10 h-[40rem] flex items-center justify-center bg-dot-green-500/70 dark:bg-dot-white/10">
-                    <div className="py-20 sm:py-15 lg:pb-40">
-                       <div className="flex justify-center items-center">
-                  
-                        </div>
-                         <TypewriterEffectSmooth words={words}/>
-                        <div className="mx-auto max-w-7xl xl:max-screen-2xl px-6 lg:px-8">
-                            <div className="mx-auto max-w-2xl text-center">
+                <div>
+                <GlowingStarsHeroBackground className="relative pt-10 flex items-center justify-center">
+                    <div className="relative pt-10 h-[35rem] flex items-center justify-center ">
 
-                                <p className="mt-10 text-2xl leading-8 text-black dark:text-zinc-100">
-                                    Simplify your workflow with Paywind. Our fintech tool automates tedious compliance and paperwork,
-                                    offers critical client data at your fingertips, and integrates AI to streamline workflows for
-                                    financial advisors.
-                                </p>
-                                <div className="mt-10 flex items-center justify-center gap-x-6">
-                                    <Button className="bg-primary text-white">See How It Works</Button>
+                        <div className="py-15 sm:py-15 lg:pb-40">
+                            <TypewriterEffectSmooth words={words} className="z-20" />
+                            <div className="mx-auto max-w-7xl xl:max-screen-2xl px-6 lg:px-8">
+                                <div className="mx-auto max-w-2xl text-center">
+
+                                    <p className="mt-10 text-2xl leading-8 text-black dark:text-zinc-100">
+                                        Simplify your workflow with Paywind. Our fintech tool automates tedious compliance and paperwork,
+                                        offers critical client data at your fingertips, and integrates AI to streamline workflows for
+                                        financial advisors.
+                                    </p>
+                                    <div className="mt-10 flex items-center justify-center gap-x-6">
+                                        <Button className="bg-primary text-white">See How It Works</Button>
+                                    </div>
+
                                 </div>
+
+
                             </div>
 
-
                         </div>
+
                     </div>
-                    {/* <BackgroundBeams /> */}
-
-                </div>
+                    </GlowingStarsHeroBackground>
+                    </div>
             </section>
-
+{/* 
             <section>
-                <div className="mx-auto max-w-7xl xl:max-w-screen-xl px-6 sm:py-16 lg:px-8 rounded-lg">
+                <div>
+                    <div className="h-96 relative w-full overflow-hidden bg-background dark:bg-background flex flex-col items-center justify-center rounded-lg">
+                        <div className="absolute inset-0 w-full h-full bg-background dark:bg-background z-20 [mask-image:radial-gradient(transparent,white)] pointer-events-none" />
+
+                        <Boxes />
+                        <TypewriterEffectSmooth words={words} className="z-20" />
+
+                        <p className="mt-10 text-2xl leading-8 text-black dark:text-zinc-100 z-20">
+                                        Simplify your workflow with Paywind. Our fintech tool automates tedious compliance and paperwork,
+                                        offers critical client data at your fingertips, and integrates AI to streamline workflows for
+                                        financial advisors.
+                                    </p>
+                                    <div className="mt-10 flex items-center justify-center gap-x-6 z-30">
+                                        <Button className="bg-primary text-white ">See How It Works</Button>
+                                    </div>
+                    </div>
+                </div>
+            </section> */}
+
+            {/* 
+            <section>
+                <div className="mx-auto max-w-screen px-6 sm:py-16 lg:px-8">
+
+                    <StickyScroll content={content} />
+                </div>
+
+            </section> */}
+
+            
+            <section>
+                <div className="mx-auto max-w-7xl px-6 sm:py-16 lg:px-8 rounded-lg">
                     <InfiniteMovingCards
                         items={testimonials}
                         direction="left"
@@ -205,7 +238,6 @@ export default function Body() {
 
             </section>
 
-            {/* <StickyScroll content={content} /> */}
 
             {/* Logo cloud */}
             {/* <div className="mx-auto max-w-7xl xl:max-w-screen-xl px-6 sm:py-16 lg:px-8 rounded-lg">

@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import Login from "./login"
+import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 // import LottieAnimation from "./animation";
 
 export const metadata: Metadata = {
@@ -13,7 +14,7 @@ export const metadata: Metadata = {
     description: "Authentication forms built using the components.",
 }
 
-
+const words = `Transforming Investment Management with Intuitive Solutions.`;
 
 export default function AuthenticationPage() {
     
@@ -34,9 +35,10 @@ export default function AuthenticationPage() {
                         </div>
                     </div>
                     <div className="relative z-20 mt-auto">
-                        <h1 className="text-lg font-bold tracking-tight text-gray-900 sm:text-3xl text-white dark:text-white">
+                        {/* <h1 className="text-lg font-bold tracking-tight text-gray-900 sm:text-3xl text-white dark:text-white">
                             Transforming Investment Management with <span className="text-black dark:text-primary">Intuitive Solutions</span>.
-                        </h1>
+                        </h1> */}
+                        <TextGenerateEffect words={words}/>
                     </div>
                 </div>
                 <div className="lg:p-8">

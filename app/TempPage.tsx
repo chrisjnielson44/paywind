@@ -4,7 +4,7 @@ import { BackgroundGradientAnimation } from "@/components/ui/background-gradient
 export default function TempPage() {
     return (
         <BackgroundGradientAnimation className="z-10">
-            <div className="relative isolate flex items-center gap-x-6 overflow-hidden  px-6 py-4 sm:px-3.5 sm:before:flex-1 border-b border-1 border-gray-100 border-gray-700 z-20">
+            <div className="relative isolate flex items-center gap-x-6 overflow-hidden  px-6 py-4 sm:px-3.5 sm:before:flex-1 border-b border-1 border-gray-700 z-20">
 
                 <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
                     <p className="text-sm leading-6 text-gray-200">

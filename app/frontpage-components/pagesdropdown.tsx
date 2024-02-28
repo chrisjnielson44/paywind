@@ -85,7 +85,7 @@ export function PagesDropDown() {
       <NavigationMenu>
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="text-lg font-semibold dark:bg-transparent dark:hover:bg-secondary">About</NavigationMenuTrigger>
+            <NavigationMenuTrigger className="text-lg font-semibold bg-transparent dark:bg-transparent dark:hover:bg-secondary">About</NavigationMenuTrigger>
             <NavigationMenuContent >
               <ul className="grid gap-3 p-4 w-[200px] ">
                 <Link href="/about" legacyBehavior passHref>

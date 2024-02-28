@@ -1,28 +1,36 @@
 'use client'
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, ReactNode, FC, MouseEvent } from "react";
 import { motion } from "framer-motion";
 
-export const GlowingStarsHeroBackground = ({ className, children }) => {
-  const containerRef = useRef(null);
+interface GlowingStarsHeroBackgroundProps {
+  className?: string;
+  children?: ReactNode;
+}
 
-  const [glowingStars, setGlowingStars] = useState(new Set());
+export const GlowingStarsHeroBackground: FC<GlowingStarsHeroBackgroundProps> = ({ className = "", children }) => {
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
-  const handleMouseMove = (event) => {
+  const [glowingStars, setGlowingStars] = useState<Set<number>>(new Set<number>());
+
+  const handleMouseMove = (event: MouseEvent<HTMLDivElement>) => {
     const { clientX, clientY } = event;
-    const { left, top, width, height } = containerRef.current.getBoundingClientRect();
+    const container = containerRef.current;
+    if (!container) return;
+
+    const { left, top } = container.getBoundingClientRect();
     const x = clientX - left; // Mouse x position within the container
     const y = clientY - top; // Mouse y position within the container
 
     // Calculate proximity for each star
-    const proximityStars = new Set();
-    const stars = containerRef.current.querySelectorAll('.star');
-    stars.forEach((star, index) => {
+    const proximityStars = new Set<number>();
+    const stars = container.querySelectorAll('.star');
+    stars.forEach((star: { getBoundingClientRect: () => any; }, index: number) => {
       const starRect = star.getBoundingClientRect();
       const starX = starRect.left + starRect.width / 2 - left;
       const starY = starRect.top + starRect.height / 2 - top;
       const distance = Math.sqrt(Math.pow(starX - x, 2) + Math.pow(starY - y, 2));
 
-      if (distance < 50) { // Glowing effect threshold (100 pixels)
+      if (distance < 70) { // Glowing effect threshold (50 pixels)
         proximityStars.add(index);
       }
     });
@@ -43,7 +51,11 @@ export const GlowingStarsHeroBackground = ({ className, children }) => {
   );
 };
 
-const Illustration = ({ glowingStars }) => {
+interface IllustrationProps {
+  glowingStars: Set<number>;
+}
+
+const Illustration: FC<IllustrationProps> = ({ glowingStars }) => {
   const stars = 2500; // Number of stars
   const columns = 100; // Columns in the grid
 
@@ -63,7 +75,10 @@ const Illustration = ({ glowingStars }) => {
   );
 };
 
-const Star = React.memo(({ isGlowing }) => {
+interface StarProps {
+  isGlowing: boolean;
+}
+const Star: FC<StarProps> = React.memo(({ isGlowing }) => {
   return (
     <motion.div
       className={`star h-[2px] w-[2px] rounded-full ${isGlowing ? "bg-primary" : "bg-white/20"}`}

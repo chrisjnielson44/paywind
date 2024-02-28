@@ -24,6 +24,7 @@ import { StickyScroll } from "@/components/ui/sticky-scroll-reveal";
 import { InfiniteMovingCards } from "@/components/ui/infinite-moving-cards";
 import { Separator } from "@/components/ui/separator";
 import { GlowingStarsHeroBackground } from "@/components/ui/glowing-stars";
+import { GridPattern } from "@/components/ui/pattern-background";
 // import { WavyBackground } from "@/components/ui/wavy-background";
 
 
@@ -61,17 +62,17 @@ const testimonials = [
         title: "Director of Advisory, Apex Wealth Management",
     },
     {
-        quote: "The efficiency and accuracy Paywind brings to compliance and document management is unparalleled. It&apos;s not just a tool; it&apos;s become an essential part of our advisory practice.",
+        quote: "The efficiency and accuracy Paywind brings to compliance and document management is unparalleled. It's not just a tool; it's become an essential part of our advisory practice.",
         name: "Michael Torres",
         title: "Compliance Officer, Elite Advisors Group",
     },
     {
-        quote: "Thanks to Paywind, our advisors can now automate tedious tasks and spend more time doing what they do best: advising clients and driving value. It&apos;s an essential asset for any financial advisory firm looking to scale.",
+        quote: "Thanks to Paywind, our advisors can now automate tedious tasks and spend more time doing what they do best: advising clients and driving value. It's an essential asset for any financial advisory firm looking to scale.",
         name: "Christina Ramirez",
         title: "Chief Operating Officer, Innovate Financials",
     },
     {
-        quote: "Paywind&apos;s intuitive design and powerful features have made it a favorite among our team. The client-facing app has significantly improved our engagement and satisfaction rates.",
+        quote: "Paywind's intuitive design and powerful features have made it a favorite among our team. The client-facing app has significantly improved our engagement and satisfaction rates.",
         name: "Ethan Wright",
         title: "Head of Client Relations, Prosperity Partners Wealth Management",
     },
@@ -167,35 +168,43 @@ export default function Body() {
 
             <section>
                 <div>
-                <GlowingStarsHeroBackground className="relative pt-10 flex items-center justify-center">
-                    <div className="relative pt-10 h-[35rem] flex items-center justify-center ">
+                    <div className="relative pt-10 flex items-center justify-center">
+                        {/* <GlowingStarsHeroBackground className="relative pt-10 flex items-center justify-center"> */}
+                        <div className="relative pt-10 h-[35rem] flex items-center justify-center z-20">
 
-                        <div className="py-15 sm:py-15 lg:pb-40">
-                            <TypewriterEffectSmooth words={words} className="z-20" />
-                            <div className="mx-auto max-w-7xl xl:max-screen-2xl px-6 lg:px-8">
-                                <div className="mx-auto max-w-2xl text-center">
+                            <div className="py-15 sm:py-15 lg:pb-40">
+                                <TypewriterEffectSmooth words={words} className="z-20" />
+                                <div className="mx-auto max-w-7xl xl:max-screen-2xl px-6 lg:px-8">
+                                    <div className="mx-auto max-w-2xl text-center">
 
-                                    <p className="mt-10 text-2xl leading-8 text-black dark:text-zinc-100">
-                                        Simplify your workflow with Paywind. Our fintech tool automates tedious compliance and paperwork,
-                                        offers critical client data at your fingertips, and integrates AI to streamline workflows for
-                                        financial advisors.
-                                    </p>
-                                    <div className="mt-10 flex items-center justify-center gap-x-6">
-                                        <Button className="bg-primary text-white">See How It Works</Button>
+                                        <p className="mt-10 text-2xl leading-8 text-black dark:text-zinc-100">
+                                            Simplify your workflow with Paywind. Our fintech tool automates tedious compliance and paperwork,
+                                            offers critical client data at your fingertips, and integrates AI to streamline workflows for
+                                            financial advisors.
+                                        </p>
+                                        <div className="mt-10 flex items-center justify-center gap-x-6">
+                                            <Button className="bg-primary text-white">See How It Works</Button>
+                                            <Button variant={"outline"} >Request a Demo</Button>
+                                        </div>
+
                                     </div>
 
-                                </div>
 
+                                </div>
 
                             </div>
 
                         </div>
-
+                        {/* </GlowingStarsHeroBackground> */}
                     </div>
-                    </GlowingStarsHeroBackground>
-                    </div>
+                    <GridPattern
+                        className="absolute inset-x-0 -top-14 z-0 h-full w-full fill-neutral-50 dark:fill-neutral-900 stroke-neutral-950/5 dark:stroke-neutral-100/5 [mask-image:linear-gradient(to_bottom_left,white_40%,transparent_50%)]"
+                        yOffset={-96}
+                        interactive
+                    />
+                </div>
             </section>
-{/* 
+            {/* 
             <section>
                 <div>
                     <div className="h-96 relative w-full overflow-hidden bg-background dark:bg-background flex flex-col items-center justify-center rounded-lg">
@@ -225,14 +234,14 @@ export default function Body() {
 
             </section> */}
 
-            
+
             <section>
                 <div className="mx-auto max-w-7xl px-6 sm:py-16 lg:px-8 rounded-lg">
                     <InfiniteMovingCards
                         items={testimonials}
                         direction="left"
                         speed="slow"
-                        className="max-w-7xl mx-auto"
+                        className="max-w-screen-2xl mx-auto"
                     />
                 </div>
 

@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+
 import { cn } from "@/lib/utils";
 
 import { Button } from "@/components/ui/button"
@@ -26,6 +27,8 @@ import { Separator } from "@/components/ui/separator";
 import { GlowingStarsHeroBackground } from "@/components/ui/glowing-stars";
 import { GridPattern } from "@/components/ui/pattern-background";
 // import { WavyBackground } from "@/components/ui/wavy-background";
+import LottieAnimation from "./Lottie";
+
 
 
 const primaryFeatures = [
@@ -170,13 +173,13 @@ export default function Body() {
                 <div>
                     <div className="relative pt-10 flex items-center justify-center">
                         {/* <GlowingStarsHeroBackground className="relative pt-10 flex items-center justify-center"> */}
-                        <div className="relative pt-10 h-[35rem] flex items-center justify-center z-20">
+                        <div className="relative pt-10 h-[50rem] flex items-center justify-center z-20">
 
                             <div className="py-15 sm:py-15 lg:pb-40">
                                 <TypewriterEffectSmooth words={words} className="z-20" />
-                                <div className="mx-auto max-w-7xl xl:max-screen-2xl px-6 lg:px-8">
+                             <div className="mx-auto max-w-7xl xl:max-screen-2xl px-6 lg:px-8">
                                     <div className="mx-auto max-w-2xl text-center">
-
+                                        <h1 className="py-20 text-4xl">Lottie Here</h1>
                                         <p className="mt-10 text-2xl leading-8 text-black dark:text-zinc-100">
                                             Simplify your workflow with Paywind. Our fintech tool automates tedious compliance and paperwork,
                                             offers critical client data at your fingertips, and integrates AI to streamline workflows for

@@ -1,0 +1,68 @@
+
+model clients {
+  id                 Int                 @id @default(autoincrement())
+  first_name         String              @db.VarChar(50)
+  family_name        String              @db.VarChar(50)
+  email              String              @unique @db.VarChar(100)
+  phone_number       String?             @db.VarChar(20)
+  advisor_id         Int?
+  address            String?             @db.VarChar(255)
+  account_number     String?             @unique @db.VarChar(50)
+  financial_advisors financial_advisors? @relation(fields: [advisor_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model financial_advisors {
+  id              Int              @id @default(autoincrement())
+  first_name      String           @db.VarChar(50)
+  family_name     String           @db.VarChar(50)
+  email           String           @unique @db.VarChar(100)
+  phone_number    String?          @db.VarChar(20)
+  firm_id         Int?
+  role            String           @default("Financial Advisor") @db.VarChar(50)
+  clients         clients[]
+  financial_firms financial_firms? @relation(fields: [firm_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model financial_firm_admins {
+  id              Int              @id @default(autoincrement())
+  first_name      String           @db.VarChar(50)
+  family_name     String           @db.VarChar(50)
+  email           String           @unique @db.VarChar(100)
+  phone_number    String?          @db.VarChar(20)
+  firm_id         Int?
+  role            String           @default("Financial Firm Admin") @db.VarChar(50)
+  financial_firms financial_firms? @relation(fields: [firm_id], references: [id], onDelete: NoAction, onUpdate: NoAction)
+}
+
+model financial_firms {
+  id                    Int                     @id @default(autoincrement())
+  name                  String                  @db.VarChar(255)
+  address               String?
+  phone_number          String?                 @db.VarChar(20)
+  email                 String?                 @unique @db.VarChar(100)
+  website               String?                 @db.VarChar(255)
+  registration_number   String?                 @unique @db.VarChar(50)
+  established_date      DateTime?               @db.Date
+  financial_advisors    financial_advisors[]
+  financial_firm_admins financial_firm_admins[]
+}
+
+model super_admins {
+  id              Int      @id @default(autoincrement())
+  first_name      String   @db.VarChar(50)
+  family_name     String   @db.VarChar(50)
+  email           String   @unique @db.VarChar(100)
+  phone_number    String?  @db.VarChar(20)
+  role            String   @default("Super Admin") @db.VarChar(20)
+  password_hash   String   @db.VarChar(255)
+  created_at      DateTime @default(now()) @db.Timestamptz(6)
+  updated_at      DateTime @default(now()) @db.Timestamptz(6)
+  status          String   @default("Active") @db.VarChar(20)
+  two_factor_auth Boolean  @default(false)
+}
+
+model test_table {
+  id   Int    @id @default(autoincrement())
+  name String @db.VarChar(255)
+  age  Int
+}

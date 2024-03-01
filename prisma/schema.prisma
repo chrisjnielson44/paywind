@@ -1,12 +1,11 @@
 generator client {
-  provider        = "prisma-client-js"
-  previewFeatures = ["multiSchema"]
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider  = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
+  url       = env("PAYWIND_POSTGRES_PRISMA_URL")
+  directUrl = env("PAYWIND_POSTGRES_URL_NON_POOLING")
 }
 
 model clients {

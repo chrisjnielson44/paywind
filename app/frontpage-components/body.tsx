@@ -176,7 +176,7 @@ export default function Body() {
                         <div className="relative pt-10 h-[50rem] flex items-center justify-center z-20">
 
                             <div className="py-15 sm:py-15 lg:pb-40">
-                                <TypewriterEffectSmooth words={words} className="z-20" />
+                                {/* <TypewriterEffectSmooth words={words} className="z-20" /> */}
                              <div className="mx-auto max-w-7xl xl:max-screen-2xl px-6 lg:px-8">
                                     <div className="mx-auto max-w-2xl text-center">
                                         <h1 className="py-20 text-4xl">Lottie Here</h1>
